@@ -1,5 +1,4 @@
 ﻿using DnD_3._5_Character_Sheet_Tool.Classes.DataModel;
-using DnD_3._5_Character_Sheet_Tool.GUI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,12 +16,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DnD_3._5_Character_Sheet_Tool
+namespace DnD_3._5_Character_Sheet_Tool.GUI
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für CharacterSheet.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class CharacterSheet : Page, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string sProperty)
@@ -44,16 +43,33 @@ namespace DnD_3._5_Character_Sheet_Tool
             set { activeCharacter = value; OnPropertyChanged(nameof(ActiveCharacter)); }
         }
 
-
-        public MainWindow()
+        public CharacterSheet()
         {
             InitializeComponent();
             this.DataContext = this;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new CharacterSheet());
+            Characters = new ObservableCollection<Character>(DataLoader.Load<Character>("Character.json"));
+        }
+
+        private void btnNewCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            Character character = new Character();
+            Characters.Add(character);
+            ActiveCharacter = character;
+            tbxName.Focus();
+        }
+
+        private void btnDeleteCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show(Properties.Resources.DeleteCharacterQuestion, Properties.Resources.Warning, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                Character character = ActiveCharacter;
+                Characters.Remove(character);
+                ActiveCharacter = null;
+            }
         }
     }
 }

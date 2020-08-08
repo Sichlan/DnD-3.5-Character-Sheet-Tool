@@ -1,4 +1,5 @@
 ﻿using DnD_3._5_Character_Sheet_Tool.Classes.DataModel;
+using DnD_3._5_Character_Sheet_Tool.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -19,30 +20,20 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
 
         private static string BaseSavePath = Environment.CurrentDirectory + "\\..\\..\\..\\DnD 3.5 Character Sheet Tool\\Saves\\";
 
-        private static string SpellSavePath = BaseSavePath + "Spells.json";
-
-        public static List<Spell> LoadSpells()
+        public static List<T> Load<T>(string SavePath)
         {
-            List<Spell> spells = new List<Spell>();
+            string fullPath = BaseSavePath + SavePath;
 
-            FileStream fileStream = new FileStream(SpellSavePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-            StreamReader reader = new StreamReader(fileStream);
-            spells = JsonConvert.DeserializeObject<List<Spell>>(reader.ReadToEnd()).OrderBy(x => x.Name).ToList();
+            List<T> elements = JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(fullPath)).ToList();
 
-            reader.Close();
-            fileStream.Close();
-
-            return spells;
+            return elements;
         }
 
-        public static void SaveSpells(List<Spell> spells)
+        public static void Save<T>(List<T> elements, string SavePath)
         {
-            FileStream fileStream = new FileStream(SpellSavePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write);
-            StreamWriter writer = new StreamWriter(fileStream);
-            writer.Write(JsonConvert.SerializeObject(spells, settings));
+            string fullPath = BaseSavePath + SavePath;
 
-            writer.Close();
-            fileStream.Close();
+            File.WriteAllText(fullPath, JsonConvert.SerializeObject(elements, settings));
         }
     }
 }
