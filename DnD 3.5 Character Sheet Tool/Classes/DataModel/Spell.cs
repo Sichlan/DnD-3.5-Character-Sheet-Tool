@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DnD_3._5_Character_Sheet_Tool.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +9,7 @@ using System.Linq;
 namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
 {
     [Serializable]
-	public class Spell : INotifyPropertyChanged
+	public class Spell : INotifyPropertyChanged, ILoadable
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 		public void OnPropertyChanged(string sProperty = "")
@@ -396,5 +397,6 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
 			set { flavour = value; OnPropertyChanged(nameof(Flavour)); }
 		}
 
-	}
+        public string SavePath => "Spells.json";
+    }
 }

@@ -107,4 +107,18 @@
         Wisdom = 5,
         Charisma = 6
     }
+
+    public enum LNCAlignment
+    {
+        Lawful,
+        Neutral,
+        Chaotic
+    }
+
+    public enum GNEAlignment
+    {
+        Good,
+        Neutral,
+        Evil
+    }
 }
