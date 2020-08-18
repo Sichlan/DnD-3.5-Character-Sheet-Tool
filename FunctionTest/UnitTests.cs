@@ -11,8 +11,14 @@ namespace FunctionTest
         [TestMethod]
         public void LoadAndSaveSpells()
         {
-            List<Spell> spells = DataLoader.LoadSpells();
-            DataLoader.SaveSpells(spells);
+            List<Spell> spells = DataLoader.Load<Spell>("Spells.json");
+            DataLoader.Save<Spell>(spells, "Spells.json");
+        }
+
+        [TestMethod]
+        public void ReWriteRaceTemp()
+        {
+            var help = DataLoader.Load<object>("RaceTEMP.json");
         }
     }
 }

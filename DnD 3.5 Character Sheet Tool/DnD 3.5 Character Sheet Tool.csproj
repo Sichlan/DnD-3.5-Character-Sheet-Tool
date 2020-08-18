@@ -99,7 +99,9 @@
     <Compile Include="Classes\DataModel\Character.cs" />
     <Compile Include="Classes\DataModel\DataLoader.cs" />
     <Compile Include="Classes\DataModel\Enums.cs" />
+    <Compile Include="Classes\DataModel\Race.cs" />
     <Compile Include="Classes\DataModel\Spell.cs" />
+    <Compile Include="Classes\DataModel\StatChange.cs" />
     <Compile Include="GUI\CharacterSheet.xaml.cs">
       <DependentUpon>CharacterSheet.xaml</DependentUpon>
     </Compile>
@@ -135,6 +137,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Saves\Character.json" />
+    <None Include="Saves\Races.json" />
+    <None Include="Saves\RaceTEMP.json" />
     <None Include="Saves\Spells.json" />
   </ItemGroup>
   <ItemGroup>
@@ -169,4 +173,5 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets'))" />
   </Target>
+  <ProjectExtensions />
 </Project>

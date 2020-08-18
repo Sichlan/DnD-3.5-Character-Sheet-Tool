@@ -121,4 +121,73 @@
         Neutral,
         Evil
     }
+
+    public enum CreatureType
+    {
+        Aberration,
+        Animal,
+        Celestial,
+        Construct,
+        Dragon,
+        Elemental,
+        Fey,
+        Fiend,
+        Giant,
+        Humanoid,
+        Magical_Beast,
+        Monstrous_Humanoid,
+        Ooze,
+        Outsider,
+        Plant,
+        Undead,
+        Vermin
+    }
+
+    public enum CreatureSubTypes
+    {
+        Air,
+        Angel,
+        Aquatic,
+        Archon,
+        Augmented,
+        Chaotic,
+        Cold,
+        Demon,
+        Devil,
+        Dwarf,
+        Earth,
+        Elf,
+        Evil,
+        Extraplanar,
+        Fire,
+        Good,
+        Gnoll,
+        Gnome,
+        Goblinoid,
+        Halfling,
+        Human,
+        Incorporeal,
+        Lawful,
+        Native,
+        Orc,
+        Psionic,
+        Reptilian,
+        Shapechanger,
+        Swarm,
+        Water
+    }
+
+    public enum SizeCategory
+    {
+        Fine = -4,
+        Diminutive = -3,
+        Tiny = -2,
+        Small = -1,
+        Medium = 0,
+        Large = 1,
+        Huge = 2,
+        Gargantuan = 3,
+        Colossal = 4,
+        BiggerThanColossal = 5
+    }
 }
