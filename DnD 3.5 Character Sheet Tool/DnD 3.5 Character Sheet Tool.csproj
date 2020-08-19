@@ -175,7 +175,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties saves_4test_1json__JsonSchema="..\json schemas\test-schema.json" saves_4races_1json__JsonSchema="..\JSON Schemas\Race-Schema.json" />
+      <UserProperties saves_4races_1json__JsonSchema="..\JSON Schemas\Race-Schema.json" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
