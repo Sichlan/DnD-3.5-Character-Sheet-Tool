@@ -12,13 +12,13 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
 {
     public static class DataLoader
     {
-        private static JsonSerializerSettings settings = new JsonSerializerSettings() 
+        private static readonly JsonSerializerSettings settings = new JsonSerializerSettings() 
         { 
             TypeNameHandling = TypeNameHandling.Auto, 
-            Formatting = Formatting.Indented 
+            Formatting = Formatting.Indented
         };
 
-        private static string BaseSavePath = Environment.CurrentDirectory + "\\..\\..\\..\\DnD 3.5 Character Sheet Tool\\Saves\\";
+        private static readonly string BaseSavePath = Environment.CurrentDirectory + "\\..\\..\\..\\DnD 3.5 Character Sheet Tool\\Saves\\";
 
         public static List<T> Load<T>(string SavePath)
         {

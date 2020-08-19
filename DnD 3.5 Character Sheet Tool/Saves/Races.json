@@ -1,0 +1,3594 @@
+[
+  {
+    "Name": "Human",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": null,
+    "StatChanges": [],
+    "RaceFeatures": [
+      "bounus feat",
+      "1 bounus skill point each level",
+      "4 bounus skill points level 1"
+    ]
+  },
+  {
+    "Name": "Aventi",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [
+      2
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": null,
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Able to breathe Water",
+      "Able to survive out of water for 2 rounds per Constitution point before suffocation begins",
+      "Swim Speed of 30",
+      "Can run while swimming straight",
+      "Water Spells at +1 caster level",
+      "+8 racial on swim",
+      "can always take 10 when swimming"
+    ]
+  },
+  {
+    "Name": "Death-Touched",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": "Sorcerer",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 5,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": 4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial bounus on Intimidate and Move Silently checks",
+      "Cold Resistance 5",
+      "Chill Touch 1/Day at Character Level"
+    ]
+  },
+  {
+    "Name": "Deep Imaskari",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 4,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+4 bounus on Hide checks when underground",
+      "Spell Cluch - may re-prepare one 1rst level spell that he/she prepared and cast that day"
+    ]
+  },
+  {
+    "Name": "Aquatic Human",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Human",
+    "Type": 9,
+    "SubTypes": [
+      2
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "1 extra feat at 1rst level ",
+      "4 extra skill points at 1rst level",
+      "1 extra skill point at the following levels",
+      "Able to breathe water",
+      "Able to survive out of water for 2 rounds per Constitution point before suffocation begins",
+      "Swim speed of 20",
+      "Can Run when swimming straight",
+      "+8 Racial on Swim",
+      "Can always take 10 on swimchecks"
+    ]
+  },
+  {
+    "Name": "Illumian",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": null,
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Luminous Sigils",
+      "Glyphic Resonace",
+      "Final Utterance",
+      "+2 Racial vs spells with the shadow descriptor",
+      "Superior Literacy",
+      "No Monk/Paladin Cross class restrictuions"
+    ]
+  },
+  {
+    "Name": "Mongrelfolk",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Emulate Race",
+      "Sound Imitation",
+      "Immunity to magic sleep",
+      "+2 racial vs spells that target and or ignore a subrace that is part of the Mongrelfolks general ancestry",
+      "+1 Racial vs. Enchantments  & Illusions",
+      "+1 racial vs Poison",
+      "+1 Racial on Appraise, Climb,Jump,Listen,Move Silently,Search,Spot",
+      "+4 Racial to Hide, Sleight of Hand"
+    ]
+  },
+  {
+    "Name": "Neanderthal",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Primitive Weapon Mastery",
+      "+2 Racial on Listen, Spot, Survival",
+      "Climate Tolerant",
+      "Illiteracy"
+    ]
+  },
+  {
+    "Name": "Sea Kin",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": "Druid",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Swim Speed 30",
+      "4 extra skill points at 1rst level",
+      "1 bounus skill point every following level",
+      "+2 racial on Escape Artist",
+      "Hold Breath for 8*Con",
+      "Weapon Familiarity Trident and Net",
+      "Water Dependency"
+    ]
+  },
+  {
+    "Name": "Sharakim",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 30
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "1 Natural Armor",
+      "Shadow Affinity",
+      "Light Sensitivity",
+      "+1 Racial on attacks vs Orcs & Half Orcs"
+    ]
+  },
+  {
+    "Name": "Skulk",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 2,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 5,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+8 racial on Hide and +15 on Move silently if not wearing Heavy or Medium Armor",
+      "Peerless Camouflage",
+      "Innate Nondetection",
+      "Trackless Path",
+      "+1 Racial on attacks vs Orcs & Half Orcs"
+    ]
+  },
+  {
+    "Name": "Underfolk",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 30
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "4 Extra Skillpoints at level 1",
+      "1 Bounus skill point every following level",
+      "+1 Natural Armor",
+      "+2 Racial on Listen",
+      "Weapon Familiarity: Picks and Heavy Pick",
+      "Camouflage",
+      "Light Sensitivity"
+    ]
+  },
+  {
+    "Name": "Half-Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 racial vs Enchantments",
+      "+1 Racial on Listen, Search & Spot",
+      "+2 Racial bounus on Diplomacy & Gather Information"
+    ]
+  },
+  {
+    "Name": "Aquatic Half-Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Elf",
+    "Type": 9,
+    "SubTypes": [
+      11,
+      2
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Racial vs Enchantments",
+      "+1 Racial on Listen, Search & Spot",
+      "Swim Speed 40",
+      "Can run underwater while going straight",
+      "Able to breathe water and can be outside of it for 2*Conmod rounds",
+      "Can always take 10 on swim",
+      "+8 Racial on Swim"
+    ]
+  },
+  {
+    "Name": "Aquatic Half-Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Racial vs Enchantments",
+      "+1 Racial on Listen, Search & Spot",
+      "Swim Speed 15",
+      "Can run underwater while going straight",
+      "Sealonging"
+    ]
+  },
+  {
+    "Name": "Arctic Half-Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Racial vs Enchantments",
+      "+1 Racial on Listen, Search & Spot",
+      "+2 Racial on Gather Information, Survival",
+      "Cold Endurance"
+    ]
+  },
+  {
+    "Name": "Desert Half-Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Racial vs Enchantments",
+      "+1 Racial on Search & Spot",
+      "+2 Racial on Diplomacy, Gather Information",
+      "Heat Endurance",
+      "+2 Racial on Sense Motive"
+    ]
+  },
+  {
+    "Name": "Fire Half-Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Racial vs Enchantments",
+      "+1 Racial on Listen, Search & Spot",
+      "+2 Racial on Diplomacy,Gather Information",
+      "+ 1 racial against creatures with Water subtype",
+      "-1 penalty on all saving throws against Water spells or spells generated by a water creature"
+    ]
+  },
+  {
+    "Name": "Jungle Half-Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": null,
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Racial vs Enchantments",
+      "+1 Racial on Listen, Search & Spot",
+      "+2 Racial on Bluff, Sense Motive"
+    ]
+  },
+  {
+    "Name": "Half-Human",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Racial vs Enchantments",
+      "+1 Racial on Listen, Search & Spot",
+      "+2 Racial on Diplomacy,Gather Information",
+      "Proficient with all straight bows, longbows, Rapier"
+    ]
+  },
+  {
+    "Name": "Half-Orc",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": null,
+    "Type": 9,
+    "SubTypes": [
+      24
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": []
+  },
+  {
+    "Name": "Aquatic Half-Orc",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Orc",
+    "Type": 9,
+    "SubTypes": [
+      24,
+      2
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Diplomacy & Gather Information",
+      "Able to breath Water",
+      "Survive for 2*Con rounds out of water before drowing",
+      "Can run while swimming straight",
+      "Swim Speed 20",
+      "+8 Swim",
+      "Can always take 10 on swim"
+    ]
+  },
+  {
+    "Name": "Arctic Half-Orc",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Orc",
+    "Type": 9,
+    "SubTypes": [
+      24
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Gather Information & Diplomacy",
+      "Cold Endurance"
+    ]
+  },
+  {
+    "Name": "Desert Half-Orc",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Orc",
+    "Type": 9,
+    "SubTypes": [
+      24
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "gain Feat: run"
+    ]
+  },
+  {
+    "Name": "Jungle Half-Orc",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Orc",
+    "Type": 9,
+    "SubTypes": [
+      24
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Climb & Jump"
+    ]
+  },
+  {
+    "Name": "Scab-Lands Half-Orc",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Orc",
+    "Type": 9,
+    "SubTypes": [
+      24
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Gain Feat: Heat Endurance",
+      "Able to 2 days + Constitution score hours before beginning to experience the ill effects of thirst"
+    ]
+  },
+  {
+    "Name": "Water HAlf-Orc",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Half-Orc",
+    "Type": 9,
+    "SubTypes": [
+      24
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial bounus on attacks against water creatures",
+      "-1 on saves against Water spells or spells cast by a water creature"
+    ]
+  },
+  {
+    "Name": "Hill Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison, Spell Like Effects"
+    ]
+  },
+  {
+    "Name": "Aquatic Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9,
+      2
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison, Spell Like Effects",
+      "Aquatic Effects"
+    ]
+  },
+  {
+    "Name": "Arctic Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Kobolds",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone & ice",
+      "+2 Racial on saves vs Poison, Spell Like Effects Cold Endurance Ice Cunning"
+    ]
+  },
+  {
+    "Name": "Badlands Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Waterwise",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 on saves against poison & spell like abilities",
+      "gain Feat: Heat Endurance",
+      "Able to go 2 days + Constituation hours before experiencing the effects of thirst",
+      "Stability"
+    ]
+  },
+  {
+    "Name": "Deep Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 90
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+3 Racial on saves vs Poison, Spell Like Effects",
+      "Light Sensitivity"
+    ]
+  },
+  {
+    "Name": "Desert Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Fighter",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stability",
+      "eapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Dragons & Humanoid(reptilian)",
+      "4 Dodge AC against Dragons",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 racial on Knowledge(engeneering),(dungeoneering),Profession(miner)",
+      "+2 Racial on saves vs Poison, Spell Like Effects",
+      "Heat Endurance"
+    ]
+  },
+  {
+    "Name": "Dream Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Druid",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 90
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Caster Level on Divinations",
+      "+1 Racial on Diplomacy with Earth creatures",
+      "Dream Sight"
+    ]
+  },
+  {
+    "Name": "Frost Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9,
+      13
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 120
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Always CE",
+      "Stonecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison, Spell Like Effects",
+      "Cold Resistance 10",
+      "Light Sensitivity",
+      "Able to cast the following spells 1/Day at Character level +2: Chill Touch, \tObscuring Mist"
+    ]
+  },
+  {
+    "Name": "Earth Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning 4",
+      "Stability 8",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+4 Dodge AC against Giants",
+      "+4 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison",
+      "+1 racial attack bounus against air creatuers",
+      "-2 on saves against air spells or spells cast by an air creature"
+    ]
+  },
+  {
+    "Name": "Glacier Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Icecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for frostfell materials",
+      "+2 Racial on saves vs Poison, Cold based effects",
+      "Treated as having Feat: Cold Endurance"
+    ]
+  },
+  {
+    "Name": "Gold Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Aberrations",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison, Spell Like Effects"
+    ]
+  },
+  {
+    "Name": "Gray Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 120
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison, Spell Like Effects, Paralysis, Phantasms",
+      "+2 Racial on Move Silently, Hide",
+      "Light Sensitivity",
+      "Able to cast the following spells 1/day at 2*Character level: Enlarge Person (self only), Invisibility (self only)"
+    ]
+  },
+  {
+    "Name": "Lesser Gray Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison, Spell Like Effects",
+      "+4 Racial on Move Silently",
+      "+1 Racial on Spot, Listen",
+      "Immune to Paralysis, Phantasms, Poisons",
+      "Light Sensitivity",
+      "Able to cast the following spells 1/day at 2*Character level: Enlarge Person (self only)"
+    ]
+  },
+  {
+    "Name": "Jungle Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Ranger",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+1 bounus on attacks against Goblins & Orcs",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Heal, Knowledge(nature), Spot, Survival",
+      "+2 Racial on saves vs Poison, Spell Like Effects"
+    ]
+  },
+  {
+    "Name": "Seacliff Dwarf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dwarf",
+    "Type": 9,
+    "SubTypes": [
+      9
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Stonecunning",
+      "Stability",
+      "Weapon Familiarity: Dwarven Waraxe, Urgrosch",
+      "+4 Dodge AC against Giants",
+      "+2 Racial on Appraise, craft checks for metal & stone",
+      "+2 Racial on saves vs Poison, Spell Like Effects",
+      "Strong Swimmer"
+    ]
+  },
+  {
+    "Name": "High Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments"
+    ]
+  },
+  {
+    "Name": "Aquatic Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11,
+      2
+    ],
+    "FavoredClass": "Figther",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": 2
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with Trident, Longspear, Net",
+      "Swim Speed 40",
+      "Gills for 1 hour per constitution point in air"
+    ]
+  },
+  {
+    "Name": "Arctic Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Spot, Survival, 1 Craftskill",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments",
+      "Cold Endurance"
+    ]
+  },
+  {
+    "Name": "Dark Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Male: Wizard, Female: Cleric",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 2,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 120
+    },
+    "StatChanges": [
+      {
+        "Stat": 4,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with Hand-Crossbow, Rapier, Shortsword",
+      "+2 on Will saves against spells & spell like abilities",
+      "Spell Resistance of 11+Level",
+      "Able to cast following Spells 1/Day at Characterlevel: Dancing Lighs, Darkness, Faerie Fire",
+      "Light Blindness"
+    ]
+  },
+  {
+    "Name": "Lesser Dark Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Dark Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Male: Wizard, Female: Cleric",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with Hand-Crossbow, Rapier, Shortsword",
+      "+2 on Will saves against spells & spell like abilities",
+      "Able to cast following Spells 1/Day at Characterlevel: Dancing Lighs, Daze,  Touch of Fatigue",
+      "Light Blindness"
+    ]
+  },
+  {
+    "Name": "Desert Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "Immunity to magic sleep",
+      "+2 Listen, Search, Spot, Handle Animal, Climb ",
+      "Automatic Secret Door Search",
+      "Proficient with all Shortbows, Scimitar, Rapier",
+      "+2 on saves vs Enchantment"
+    ]
+  },
+  {
+    "Name": "Fire Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments",
+      "Fire Resistance 5",
+      "+1 Racial on attacks against Water creatures",
+      "-2 on Saves against Water spells or spells cast by a water creature"
+    ]
+  },
+  {
+    "Name": "Ghost Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with Scimitar, Shortsword",
+      "Knowledge Planes is classskill",
+      "Glows as Bright as a Candle",
+      {
+        "Ethereal Power usable 1/day:": [
+          {
+            "1": "Slip Binding"
+          },
+          {
+            "4": "See Invisibility"
+          },
+          {
+            "6": "Blink"
+          },
+          {
+            "14": "Ethereal Jaunt"
+          },
+          {
+            "18": "Ethereal Shift"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Gray Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments"
+    ]
+  },
+  {
+    "Name": "Jungle Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot, Knowledge(History)",
+      "Proficient with all Short bows, Handaxe, Shortsword, Rapier",
+      "+2 Saves vs Enchantments"
+    ]
+  },
+  {
+    "Name": "Painted Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Druid",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments"
+    ]
+  },
+  {
+    "Name": "Snow Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Wizard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments"
+    ]
+  },
+  {
+    "Name": "Umbragen Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Warlock",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 2,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 120
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments",
+      "Light Blindness",
+      "Spell Resistance 11+Level",
+      "Cast the following 1/day at Character Level: Dancing Lights, Darkness, Faerie Fire"
+    ]
+  },
+  {
+    "Name": "Wild Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Sorcerer",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments"
+    ]
+  },
+  {
+    "Name": "Wood Elf",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Elf",
+    "Type": 9,
+    "SubTypes": [
+      11
+    ],
+    "FavoredClass": "Ranger",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": 0,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 4,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "immunity to magic sleep",
+      "+2 Listen, Search, Spot",
+      "Automatic Secret Door Search",
+      "Proficient with all straight bows, Longsword, Rapier",
+      "+2 Saves vs Enchantments"
+    ]
+  },
+  {
+    "Name": "Rock Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Listen,Craft(Alchemy)",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "+1 attack against Kobolds, Goblinoids",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tGhost Sound, Prestidigitation, Speak with Animals(Burrowing only"
+    ]
+  },
+  {
+    "Name": "Air Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Listen,Craft(Alchemy)",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tGhost Sound, Prestidigitation, Speak with Animals(Burrowing only)",
+      "+1 racial attack against earth creatures",
+      "-2 on saves against earht spells or spells cast by earth creatures",
+      "Breathless",
+      "+4 Dodge AC against Large+ creatures with Earth Type"
+    ]
+  },
+  {
+    "Name": "Aquatic Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17,
+      2
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Listen, Sense Motive, Gather Information",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tGhost Sound, Prestidigitation, Speak with Animals(Burrowing only)",
+      "Well Travled",
+      "Swim Speed 20"
+    ]
+  },
+  {
+    "Name": "Arctic Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on ,Craft(Alchemy)",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "+1 attack against Kobolds, Goblinoids",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tGhost Sound, Prestidigitation, Speak with Animals(Burrowing only)",
+      "Cold Endurance"
+    ]
+  },
+  {
+    "Name": "Chaos Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Sorcerer",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 1,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 on Listen",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+1 Caster level on Chaos spells",
+      "Luck of Chaos",
+      "Immunity to Confusion",
+      "Able to cast following Spells 1/Day at 1rst Level: Dancing Lights, Daze, Flare, Entropic Shield, Prestidigitation"
+    ]
+  },
+  {
+    "Name": "Deep Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 3,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 120
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 5,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -4,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 DC to any illusion spell cast",
+      "+1 Bounus on attack against Kobolds, Goblinoids",
+      "+2 on Saves against Illusions",
+      "+2 on all saving throws",
+      "+2 on Hide, +4 if underground",
+      "+4 Dodge AC against all creatures",
+      "Nondetection at character level at all times",
+      "Spell Resistance 11+Level",
+      "Stonecunning",
+      "Able to cast the following Spells at Character Level with DC +4: Blindness/Deafness, Blur, Disguise Self"
+    ]
+  },
+  {
+    "Name": "Lesser Deep Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Deep Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 120
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 DC to any illusion spell cast",
+      "+1 Bounus on attack against Kobolds, Goblinoids",
+      "+2 on Saves against Illusions",
+      "+2 on saves against Spells and Spell Like Abilities",
+      "+2 on Hide, 4 if underground",
+      "+1 Dodge AC against all",
+      "Stonecunning",
+      "Able to cast following Spells at 1/2 Level: Daze, Resistance, Lullaby"
+    ]
+  },
+  {
+    "Name": "Desert Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Bluff, Diplomacy, Sense Motive ",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "+1 attack against Kobolds, Goblinoids",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tGhost Sound, Prestidigitation, Speak with Animals(Burrowing only)",
+      "Heat Endurance"
+    ]
+  },
+  {
+    "Name": "Fire Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17,
+      14,
+      13
+    ],
+    "FavoredClass": "Sorcerer",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+1 attack against Kobolds and Goblinoids",
+      "+2 Effective Caster level when casting Fire Spells or Spell Like Abilities",
+      "Able to cast the following Spells 1/Day at 3rd Level: Heat Metal, Produce Flame",
+      "Stonecunning"
+    ]
+  },
+  {
+    "Name": "Forest Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Listen,Craft(Alchemy)",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "+1 attack against Orcs , Reptilians",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tGhost Sound, Prestidigitation, Speak with Animals(Burrowing only) ",
+      "+4 on Hide",
+      "+8 on Hide in wooded areas",
+      "Pass without trace (self) always on"
+    ]
+  },
+  {
+    "Name": "Ice Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 0,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Listen,Craft(Alchemy)",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "+1 attack against Kobolds, Goblinoids",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tRay of Frost, Prestidigitation, Speak with Animals(artic only"
+    ]
+  },
+  {
+    "Name": "Jungle Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Climb,Craft(Shipbulding),Swim, Use Rope",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tGhost Sound, Prestidigitation, Speak with Animals(Burrowing only"
+    ]
+  },
+  {
+    "Name": "Wavecrest Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Bard",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": null
+    },
+    "StatChanges": [
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Listen,Craft(Alchemy)",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+2 racial save against Illusions",
+      "+1 DC to any Illusion spell cast",
+      "+1 attack against Locathah, Shaugain",
+      "Able to cast Following spells 1/Day at 1rst Level: Dancing Lights, \tKnow Direction, Prestidigitation, Speak with Animals(Sea Birdsonly)"
+    ]
+  },
+  {
+    "Name": "Whisper Gnome",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Gnome",
+    "Type": 9,
+    "SubTypes": [
+      17
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 30
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 6,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+2 Racial on Listen,Spot",
+      "+4 Dodge AC vs Giants",
+      "Weapon Familiarity Gnome Hooked Hammer",
+      "+1 attack against Kobolds, Goblinoids",
+      "Able to cast following spells 1/day as 1rst Level: Ghost Sound, Mage Hand, Message, Silence (self only)"
+    ]
+  },
+  {
+    "Name": "Lightfood Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons & Slings",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Jump, Move Silently , Climb"
+    ]
+  },
+  {
+    "Name": "Aquatic Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19,
+      2
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Low_Light": 2
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons & Slings",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Jump, Move Silently , Climb",
+      "Swim Speed 20"
+    ]
+  },
+  {
+    "Name": "Arctic Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Ranger",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Jump, Move Silently , Climb, Swim",
+      "Cold Endurance"
+    ]
+  },
+  {
+    "Name": "Deep Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": {
+      "Darkvision": 60
+    },
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons & Slings",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Appraise, Craft for Metal & Stone ",
+      "Stonecunning"
+    ]
+  },
+  {
+    "Name": "Desert Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons & Slings",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Sleight of Hand, Move Silently , Hide",
+      "Heat Endurance"
+    ]
+  },
+  {
+    "Name": "Jungle Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Barbarian",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons",
+      "+2 Racial on Listen",
+      "+2 Bounus Jump, Move Silently , Climb",
+      "Poison Use",
+      "+2 Racial on Fortitude vs Poison",
+      "Automatic Proficient with Throwing Axe, Handaxe, Shortbow"
+    ]
+  },
+  {
+    "Name": "Shoal Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19,
+      2
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Jump, Move Silently , Climb",
+      "Amphibious",
+      "Swim Speed 20"
+    ]
+  },
+  {
+    "Name": "Talefellow Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons & Slings",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Search, Spot",
+      "Automatic Search next to Secret Door"
+    ]
+  },
+  {
+    "Name": "Tundra Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Ranger",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons & Slings",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Jump, Move Silently , Survival"
+    ]
+  },
+  {
+    "Name": "Water Halfling",
+    "Source": null,
+    "Page": null,
+    "Link": null,
+    "SubraceOf": "Halfling",
+    "Type": 9,
+    "SubTypes": [
+      19
+    ],
+    "FavoredClass": "Rouge",
+    "CountHitDice": 0,
+    "SizeHitDice": 0,
+    "LevelAdjustment": 0,
+    "SizeCategory": -1,
+    "Movement": {
+      "Ground": 20
+    },
+    "Senses": null,
+    "StatChanges": [
+      {
+        "Stat": 2,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 3,
+        "Value": 2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      },
+      {
+        "Stat": 1,
+        "Value": -2,
+        "OnlyIf": null,
+        "Source": "Racial"
+      }
+    ],
+    "RaceFeatures": [
+      "+1 Racial on attacks with thrown weapons & Slings",
+      "+1 on all saves",
+      "+2 Morale bounus against Fear",
+      "+2 Racial on Listen",
+      "+2 Bounus Jump, Move Silently , Climb",
+      "+1 Racial bonus on attacks vs. creatures with the(fire) subtype",
+      "2 penalty on all saving throws vs. the spell, spelllike abilities, & supernatural abilities that have the (fire) subtype or are generated by creatures with the (fire) subtype",
+      "Swim Speed 20"
+    ]
+  }
+]
