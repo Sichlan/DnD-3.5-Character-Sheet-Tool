@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-04/schema",
+  "$id": "Races.json",
   "definitions": {
     "Race": {
       "type": [
@@ -233,8 +234,9 @@
       ]
     }
   },
-  "type": "array",
   "items": {
     "$ref": "#/definitions/Race"
-  }
+  },
+  "title": "JSON Schema for Races.json",
+  "type": "array"
 }

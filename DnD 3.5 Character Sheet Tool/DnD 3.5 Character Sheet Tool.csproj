@@ -131,6 +131,8 @@
     </EmbeddedResource>
     <None Include="Classes\DataModel\ModelDiagramm.cd" />
     <None Include="Classes\GeneralClassDiagram.cd" />
+    <None Include="JSON Schemas\json-schema1.json" />
+    <None Include="JSON Schemas\Race-Schema.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,7 +140,6 @@
     </None>
     <None Include="Saves\Character.json" />
     <None Include="Saves\Races.json" />
-    <None Include="Saves\RaceTEMP.json" />
     <None Include="Saves\Spells.json" />
   </ItemGroup>
   <ItemGroup>
