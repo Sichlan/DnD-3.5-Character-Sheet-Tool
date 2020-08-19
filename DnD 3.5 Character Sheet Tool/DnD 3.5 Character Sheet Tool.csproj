@@ -132,7 +132,6 @@
     <None Include="Classes\DataModel\ModelDiagramm.cd" />
     <None Include="Classes\GeneralClassDiagram.cd" />
     <None Include="JSON Schemas\Race-Schema.json" />
-    <None Include="JSON Schemas\Test-schema.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,7 +140,6 @@
     <None Include="Saves\Character.json" />
     <None Include="Saves\Races.json" />
     <None Include="Saves\Spells.json" />
-    <None Include="Saves\Test.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
