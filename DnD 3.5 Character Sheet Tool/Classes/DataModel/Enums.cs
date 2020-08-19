@@ -124,57 +124,57 @@
 
     public enum CreatureType
     {
-        Aberration,
-        Animal,
-        Celestial,
-        Construct,
-        Dragon,
-        Elemental,
-        Fey,
-        Fiend,
-        Giant,
-        Humanoid,
-        Magical_Beast,
-        Monstrous_Humanoid,
-        Ooze,
-        Outsider,
-        Plant,
-        Undead,
-        Vermin
+        Aberration = 0,
+        Animal = 1,
+        Celestial = 2,
+        Construct = 3,
+        Dragon = 4,
+        Elemental = 5,
+        Fey = 6,
+        Fiend = 7,
+        Giant = 8,
+        Humanoid = 9,
+        Magical_Beast = 10,
+        Monstrous_Humanoid = 11,
+        Ooze = 12,
+        Outsider = 13,
+        Plant = 14,
+        Undead = 15,
+        Vermin = 16
     }
 
     public enum CreatureSubTypes
     {
-        Air,
-        Angel,
-        Aquatic,
-        Archon,
-        Augmented,
-        Chaotic,
-        Cold,
-        Demon,
-        Devil,
-        Dwarf,
-        Earth,
-        Elf,
-        Evil,
-        Extraplanar,
-        Fire,
-        Good,
-        Gnoll,
-        Gnome,
-        Goblinoid,
-        Halfling,
-        Human,
-        Incorporeal,
-        Lawful,
-        Native,
-        Orc,
-        Psionic,
-        Reptilian,
-        Shapechanger,
-        Swarm,
-        Water
+        Air = 0,
+        Angel = 1,
+        Aquatic = 2,
+        Archon = 3,
+        Augmented = 4,
+        Chaotic = 5,
+        Cold = 6,
+        Demon = 7,
+        Devil = 8,
+        Dwarf = 9,
+        Earth = 10,
+        Elf = 11,
+        Evil = 12,
+        Extraplanar = 13,
+        Fire = 14,
+        Good = 15,
+        Gnoll = 16,
+        Gnome = 17,
+        Goblinoid = 18,
+        Halfling = 19,
+        Human = 20,
+        Incorporeal = 21,
+        Lawful = 22,
+        Native = 23,
+        Orc = 24,
+        Psionic = 25,
+        Reptilian = 26,
+        Shapechanger = 27,
+        Swarm = 28,
+        Water = 29
     }
 
     public enum SizeCategory
@@ -189,5 +189,32 @@
         Gargantuan = 3,
         Colossal = 4,
         BiggerThanColossal = 5
+    }
+
+    public enum MovementMode
+    {
+        Ground,
+        Fly,
+        Swim,
+        Burrow,
+        Climb
+    }
+
+    public enum Sense
+    {
+        Low_Light,
+        Darkvision,
+        Tremorsense,
+        Scent,
+        Blindsense,
+        Blindsight,
+        Touchsight,
+        Lifesight,
+        Mindsight,
+        Total_Vision,
+        //Name from the warlockinvocation; Darkvision that also works in magical darkness
+        Devilsight,
+        Spirit_Sense,
+        Clearsight
     }
 }

@@ -1,71 +1,95 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Spell">
-    <Position X="3.5" Y="1.5" Width="1.5" />
+  <Class Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Spell" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gCAACALpAmgiyoJkoJAnBG6CjiBEQhEIAIEgSQCICEE=</HashCode>
+      <HashCode>gCAACALpAmgiyoJkoJAnBG6CjiBEQhkIAIEgSQCICEE=</HashCode>
       <FileName>Classes\DataModel\Spell.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Race" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARQAAAERAgIUCQICNIgAAA2AgAANAgAAAQIAAAAEAAA=</HashCode>
+      <FileName>Classes\DataModel\Race.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.StatChange" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAAAAAAAAAAAAIAAAAAAAgAAAAgAAAAIgAAgAAAA=</HashCode>
+      <FileName>Classes\DataModel\StatChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Character" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAoAAAABggAQAaIIEAIgAQAgDAEAAgwAAAAAAAAIAA=</HashCode>
+      <FileName>Classes\DataModel\Character.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.SpellSchool" Collapsed="true">
-    <Position X="9.5" Y="4.25" Width="1.5" />
+    <Position X="3.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QQAAAAAAIAAAAgAMAAIAAAAAAAAAAAIAACAAAAEAAAg=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.SubSchool" Collapsed="true">
-    <Position X="13" Y="4.25" Width="1.5" />
+    <Position X="7" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgSAAIAAAAAkAAgAAAQAAAAABAAgAAEAAAgAAA=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Descriptor" Collapsed="true">
-    <Position X="9.5" Y="3.5" Width="1.5" />
+    <Position X="3.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIABAAAAIAAAFAAAhQAQAgAAAIgkAAAgEAAAAAQIAAE=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.SpellType" Collapsed="true">
-    <Position X="11.25" Y="4.25" Width="1.5" />
+    <Position X="5.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAEAAAA=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.CastingTimeIndicator" Collapsed="true">
-    <Position X="13" Y="2.75" Width="1.5" />
+    <Position X="7" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AUAAAAAAIAAAAAAAAAAAAAAAAIAAACIAAAAAAAIAAAI=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Saves" Collapsed="true">
-    <Position X="13" Y="3.5" Width="1.5" />
+    <Position X="7" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQBAEAAAA=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.SaveEffect" Collapsed="true">
-    <Position X="11.25" Y="3.5" Width="1.5" />
+    <Position X="5.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAABAA=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Attack" Collapsed="true">
-    <Position X="9.5" Y="2.75" Width="1.5" />
+    <Position X="3.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAABEAAAA=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnD_3._5_Character_Sheet_Tool.Classes.DataModel.Attributes" Collapsed="true">
-    <Position X="11.25" Y="2.75" Width="1.5" />
+    <Position X="5.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAEAAAAAAABBAAAAAAAAACAAAACA=</HashCode>
       <FileName>Classes\DataModel\Enums.cs</FileName>

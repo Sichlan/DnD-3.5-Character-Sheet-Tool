@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
 {
-    class StatChange : INotifyPropertyChanged
+    public class StatChange : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string sProperty)
@@ -15,14 +16,18 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(sProperty));
         }
 
-        private Attribute stat;
-        public Attribute Stat
+        private Attributes stat;
+        [Description("The stat that is changed.\n1 - Strength\n2 - Dexterity\n3 - Constitution\n4 - Intelligence\n5 - Wisdom\n6 - Charisma")]
+        [JsonProperty(Required = Required.Always)]
+        public Attributes Stat
         {
             get { return stat; }
             set { stat = value; OnPropertyChanged(nameof(Stat)); }
         }
 
         private int _value;
+        [Description("The value of the change")]
+        [JsonProperty(Required = Required.Always)]
         public int Value
         {
             get { return _value; }
@@ -30,10 +35,20 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
         }
 
         private string onlyIf;
+        [Description("The requirements for this change to apply. Set to null if always active/no requirement attached.")]
         public string OnlyIf
         {
             get { return onlyIf; }
             set { onlyIf = value; OnPropertyChanged(nameof(OnlyIf)); }
+        }
+
+        private string source;
+        [Description("The source of the Statchange, for Example 'Racial' or 'Magical Item'")]
+        [JsonProperty(Required = Required.Always)]
+        public string Source
+        {
+            get { return source; }
+            set { source = value; OnPropertyChanged(nameof(Source)); }
         }
 
     }
