@@ -2997,7 +2997,7 @@
         "Stat": 3,
         "Value": 0,
         "OnlyIf": null,
-        "Source": null
+        "Source": "Racial"
       },
       {
         "Stat": 1,

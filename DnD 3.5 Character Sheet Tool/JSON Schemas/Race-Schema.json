@@ -1,12 +1,10 @@
 {
-  "$schema": "https://json-schema.org/draft-04/schema",
-  "$id": "Races.json",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
   "definitions": {
     "Race": {
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "Name": {
           "description": "The races name",
@@ -31,7 +29,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "format": "uri"
         },
         "SubraceOf": {
           "description": "The direct race this race was derived from.\nFor Example: a Lesser Dark Elf is a Subrace of Dark Elf, which is a subrace of Elf.",
@@ -179,7 +178,9 @@
             "array",
             "null"
           ],
-          "items": {}
+          "items": {
+            "type": [ "object", "string" ]
+          }
         }
       },
       "required": [
@@ -194,10 +195,7 @@
       ]
     },
     "StatChange": {
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "Stat": {
           "description": "The stat that is changed.\n1 - Strength\n2 - Dexterity\n3 - Constitution\n4 - Intelligence\n5 - Wisdom\n6 - Charisma",
@@ -234,9 +232,9 @@
       ]
     }
   },
+
+  "type": "array",
   "items": {
     "$ref": "#/definitions/Race"
-  },
-  "title": "JSON Schema for Races.json",
-  "type": "array"
+  }
 }
