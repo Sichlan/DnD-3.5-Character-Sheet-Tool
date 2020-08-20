@@ -21,7 +21,7 @@ namespace DnD_3._5_Character_Sheet_Tool.GUI
     /// <summary>
     /// Interaktionslogik für CharacterSheet.xaml
     /// </summary>
-    public partial class CharacterSheet : Page, INotifyPropertyChanged
+    public partial class pgCharacterSheet : Page, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string sProperty)
@@ -43,7 +43,7 @@ namespace DnD_3._5_Character_Sheet_Tool.GUI
             set { activeCharacter = value; OnPropertyChanged(nameof(ActiveCharacter)); }
         }
 
-        public CharacterSheet()
+        public pgCharacterSheet()
         {
             InitializeComponent();
             this.DataContext = this;

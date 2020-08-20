@@ -1,4 +1,4 @@
-﻿<Page x:Class="DnD_3._5_Character_Sheet_Tool.GUI.CharacterSheet"
+﻿<Page x:Class="DnD_3._5_Character_Sheet_Tool.GUI.pgCharacterSheet"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

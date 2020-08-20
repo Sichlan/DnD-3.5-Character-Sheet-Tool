@@ -84,7 +84,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="GUI\CharacterSheet.xaml">
+    <Page Include="GUI\pgCharacterSheet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,8 +102,8 @@
     <Compile Include="Classes\DataModel\Race.cs" />
     <Compile Include="Classes\DataModel\Spell.cs" />
     <Compile Include="Classes\DataModel\StatChange.cs" />
-    <Compile Include="GUI\CharacterSheet.xaml.cs">
-      <DependentUpon>CharacterSheet.xaml</DependentUpon>
+    <Compile Include="GUI\pgCharacterSheet.xaml.cs">
+      <DependentUpon>pgCharacterSheet.xaml</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ILoadable.cs" />
     <Compile Include="MainWindow.xaml.cs">

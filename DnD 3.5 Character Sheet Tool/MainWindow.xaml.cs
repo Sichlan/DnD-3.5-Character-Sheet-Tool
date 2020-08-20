@@ -53,7 +53,7 @@ namespace DnD_3._5_Character_Sheet_Tool
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new CharacterSheet());
+            MainFrame.Navigate(new pgCharacterSheet());
         }
     }
 }
