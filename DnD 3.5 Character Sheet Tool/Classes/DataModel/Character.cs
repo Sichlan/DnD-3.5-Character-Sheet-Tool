@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
 {
-    public class Character : INotifyPropertyChanged, ILoadable
+    public class Character : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string sProperty = "")
@@ -86,6 +86,47 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
             set { notes = value; OnPropertyChanged(nameof(Notes)); }
         }
 
-        public string SavePath => "Character.json";
+        private CharacterStat strengthStat;
+        public CharacterStat StrengthStat
+        {
+            get { return strengthStat; }
+            set { strengthStat = value; OnPropertyChanged(nameof(StrengthStat)); }
+        }
+
+        private CharacterStat dexterityStat;
+        public CharacterStat DexterityStat
+        {
+            get { return dexterityStat; }
+            set { dexterityStat = value; OnPropertyChanged(nameof(DexterityStat)); }
+        }
+
+        private CharacterStat constitutionStat;
+        public CharacterStat ConstitutionStat
+        {
+            get { return constitutionStat; }
+            set { constitutionStat = value; OnPropertyChanged(nameof(ConstitutionStat)); }
+        }
+
+        private CharacterStat intelligenceStat;
+        public CharacterStat IntelligenceStat
+        {
+            get { return intelligenceStat; }
+            set { intelligenceStat = value; OnPropertyChanged(nameof(IntelligenceStat)); }
+        }
+
+        private CharacterStat wisdomStat;
+        public CharacterStat WisdomStat
+        {
+            get { return wisdomStat; }
+            set { wisdomStat = value; OnPropertyChanged(nameof(WisdomStat)); }
+        }
+
+        private CharacterStat charismaStat;
+        public CharacterStat CharismaStat
+        {
+            get { return strengthStat; }
+            set { strengthStat = value; OnPropertyChanged(nameof(CharismaStat)); }
+        }
+
     }
 }

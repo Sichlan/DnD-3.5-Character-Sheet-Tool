@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DnD_3._5_Character_Sheet_Tool.GUI"
       xmlns:resx="clr-namespace:DnD_3._5_Character_Sheet_Tool.Properties"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d"
       Loaded="Page_Loaded"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -23,6 +23,7 @@
             <ComboBox Name="cbxSelectCharacter" ItemsSource="{Binding Characters, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding ActiveCharacter, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" MinWidth="100" materialDesign:HintAssist.Hint="{x:Static resx:Resources.SelectCharacter}"/>
             <Button x:Name="btnNewCharacter" Content="{x:Static resx:Resources.NewCharacter}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,5,5" Click="btnNewCharacter_Click"/>
             <Button x:Name="btnDeleteCharacter" Content="{x:Static resx:Resources.DeleteCharacter}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,5,5" Click="btnDeleteCharacter_Click"/>
+            <Button Content="Test" Name="Test" Click="Test_Click"/>
         </StackPanel>
 
         <Grid Grid.Row="1">

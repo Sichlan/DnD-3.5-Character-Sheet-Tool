@@ -71,5 +71,11 @@ namespace DnD_3._5_Character_Sheet_Tool.GUI
                 ActiveCharacter = null;
             }
         }
+
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+            frmNewCharacter frmNewCharacter = new frmNewCharacter();
+            frmNewCharacter.ShowDialog();
+        }
     }
 }

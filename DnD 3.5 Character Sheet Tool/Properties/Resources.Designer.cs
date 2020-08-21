@@ -61,6 +61,15 @@ namespace DnD_3._5_Character_Sheet_Tool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Attribute ähnelt.
+        /// </summary>
+        public static string AbilityScores {
+            get {
+                return ResourceManager.GetString("AbilityScores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Kampagne ähnelt.
         /// </summary>
         public static string Campaign {
@@ -98,6 +107,15 @@ namespace DnD_3._5_Character_Sheet_Tool.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Neuer Character ähnelt.
+        /// </summary>
+        public static string frmNewCharacterTitle {
+            get {
+                return ResourceManager.GetString("frmNewCharacterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Geschlecht ähnelt.
         /// </summary>
         public static string Gender {
@@ -121,6 +139,15 @@ namespace DnD_3._5_Character_Sheet_Tool.Properties {
         public static string NewCharacter {
             get {
                 return ResourceManager.GetString("NewCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Character Sheet ähnelt.
+        /// </summary>
+        public static string pgCharacterSheetTitle {
+            get {
+                return ResourceManager.GetString("pgCharacterSheetTitle", resourceCulture);
             }
         }
         
