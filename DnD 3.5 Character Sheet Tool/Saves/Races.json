@@ -1,10 +1,15 @@
 [
   {
     "Name": "Human",
-    "Source": null,
-    "Page": null,
-    "Link": null,
+    "Source": {
+              "Name": "Player's Handbook  I",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+    "Page": 12,
+    "Link": "http://dnd.arkalseif.info/races/players-handbook-v35--6/human--5/index.html",
     "SubraceOf": null,
+    "Description": "Humans typically stand from 5 feet to a little over 6 feet tall and weigh from 125 to 250 pounds, with men noticeably taller and heavier than women. Thanks to their penchant for migration and conquest, and to their short life spans, humans are more physically diverse than other common races. Their skin shades range from nearly black to very pale, their hair from black to blond (curly, kinky, or straight), and their facial hair (for men) from sparse to thick. Plenty of humans have a dash of nonhuman blood, and they may demonstrate hints of elf, orc, or other lineages. Members of this race are often ostentatious or unorthodox in their grooming and dress, sporting unusual hairstyles, fanciful clothes, tattoos, body piercings, and the like. Humans have short life spans, reaching adulthood at about age 15 and rarely living even a single century.",
     "Type": 9,
     "SubTypes": [],
     "FavoredClass": null,

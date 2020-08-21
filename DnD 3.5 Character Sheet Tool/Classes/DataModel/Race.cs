@@ -27,9 +27,9 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
             set { name = value; OnPropertyChanged(nameof(Name)); }
         }
 
-        private string source;
+        private SourceBook source;
         [Description("The title of the source the race was added in")]
-        public string Source
+        public SourceBook Source
         {
             get { return source; }
             set { source = value; OnPropertyChanged(nameof(Source)); }
@@ -58,6 +58,15 @@ namespace DnD_3._5_Character_Sheet_Tool.Classes.DataModel
             get { return subraceOf; }
             set { subraceOf = value; OnPropertyChanged(nameof(SubraceOf)); }
         }
+
+        private string description;
+        [Description("Just a short description for the race, should not be more than a paragraph")]
+        public string Description
+        {
+            get { return description; }
+            set { description = value; OnPropertyChanged(nameof(Description)); }
+        }
+
 
         private CreatureType type;
         [Description("The races type.\n0 - Aberration\n1 - Animal\n2 - Celestial\n3 - Construct\n4 - Dragon\n5 - Elemental\n6 - Fey\n7 - Fiend\n8 - Giant\n9 - Humanoid\n10 - Magical_Beast\n11 - Monstrous_Humanoid\n12 - Ooze\n13 - Outsider\n14 - Plant\n15 - Undead\n16 - Vermin")]

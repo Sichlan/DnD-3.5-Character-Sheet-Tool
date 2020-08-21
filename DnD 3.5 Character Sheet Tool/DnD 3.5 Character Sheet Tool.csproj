@@ -100,6 +100,7 @@
     <Compile Include="Classes\DataModel\DataLoader.cs" />
     <Compile Include="Classes\DataModel\Enums.cs" />
     <Compile Include="Classes\DataModel\Race.cs" />
+    <Compile Include="Classes\DataModel\SourceBook.cs" />
     <Compile Include="Classes\DataModel\Spell.cs" />
     <Compile Include="Classes\DataModel\StatChange.cs" />
     <Compile Include="GUI\CharacterSheet.xaml.cs">
@@ -139,6 +140,7 @@
     </None>
     <None Include="Saves\Character.json" />
     <None Include="Saves\Races.json" />
+    <None Include="Saves\SourceBooks.json" />
     <None Include="Saves\Spells.json" />
   </ItemGroup>
   <ItemGroup>
