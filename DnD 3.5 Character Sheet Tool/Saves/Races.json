@@ -30,11 +30,15 @@
   },
   {
     "Name": "Aventi",
-    "Source": null,
-    "Page": null,
-    "Link": null,
-    "SubraceOf": null,
-    "Description": null,
+    "Source": {
+      "Name": "Stormwrack",
+      "Edition": "3.5",
+      "Category": "ENVIRONMENT"
+    },
+    "Page": 34,
+    "Link": "http://dnd.arkalseif.info/races/stormwrack--87/aventi--43/index.html",
+    "SubraceOf": "Human",
+    "Description": "Citizens of an ancient empire that sank beneath the ocean, the aventi adapted to their new home and now adventure both at sea and on land. A proud people who hold personal honor in high regard, the aventi can be found anywhere from the human-settled coasts to the deepest trenches of the ocean floor.",
     "Type": 9,
     "SubTypes": [
       2
@@ -107,8 +111,12 @@
   },
   {
     "Name": "Deep Imaskari",
-    "Source": null,
-    "Page": null,
+    "Source": {
+              "Name": "Underdark",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+    "Page": 9,
     "Link": null,
     "SubraceOf": null,
     "Description": null,
