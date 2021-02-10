@@ -1,0 +1,105 @@
+[
+  {
+    "Name": "Core (3.0)",
+    "System": "DnD 3.0",
+    "Core": true,
+    "Id": 1
+  },
+  {
+    "Name": "Realms (3.0)",
+    "System": "DnD 3.0",
+    "Core": false,
+    "Id": 2
+  },
+  {
+    "Name": "Generic (3.0)",
+    "System": "DnD 3.0",
+    "Core": false,
+    "Id": 3
+  },
+  {
+    "Name": "Dark Sun (3.0)",
+    "System": "DnD 3.0",
+    "Core": false,
+    "Id": 4
+  },
+  {
+    "Name": "Class (3.0)",
+    "System": "DnD 3.0",
+    "Core": false,
+    "Id": 5
+  },
+  {
+    "Name": "Greyhawk (3.0)",
+    "System": "DnD 3.0",
+    "Core": false,
+    "Id": 6
+  },
+  {
+    "Name": "Core (3.5)",
+    "System": "DnD 3.5",
+    "Core": true,
+    "Id": 7
+  },
+  {
+    "Name": "Realms (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 8
+  },
+  {
+    "Name": "Generic (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 9
+  },
+  {
+    "Name": "Dark Sun (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 10
+  },
+  {
+    "Name": "Class (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 11
+  },
+  {
+    "Name": "Greyhawk (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 12
+  },
+  {
+    "Name": "Dragonlance (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 13
+  },
+  {
+    "Name": "Eberron (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 13
+  },
+  {
+    "Name": "Environment (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 14
+  },
+  {
+    "Name": "Planescape (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 15
+  },
+  {
+    "Name": "Races (3.5)",
+    "System": "DnD 3.5",
+    "Core": false,
+    "Id": 16
+  }
+]
+

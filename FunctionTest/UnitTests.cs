@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using DnD_3._5_Character_Sheet_Tool.Classes.DataModel;
+using DnDCharacterSheetTool.Classes.DataModel;
+using DnDCharacterSheetTool.Classes.NewDataModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -32,10 +33,16 @@ namespace FunctionTest
         }
 
         [TestMethod]
+        public void TestModel()
+        {
+            Model model = Model.GetInstance();
+        }
+
+        [TestMethod]
         public void GenerateJSONSchema()
         {
             JSchemaGenerator schemaGenerator = new JSchemaGenerator();
-            JSchema schema = schemaGenerator.Generate(typeof(List<Race>));
+            JSchema schema = schemaGenerator.Generate(typeof(List<Language>));
             string help = schema.ToString();
         }
 
@@ -100,7 +107,7 @@ namespace FunctionTest
                                 race.FavoredClass = null;
                             break;
                         case "Size":
-                            if (Enum.TryParse(property.Value.ToString(), out SizeCategory category))
+                            if (Enum.TryParse(property.Value.ToString(), out DnDCharacterSheetTool.Classes.DataModel.SizeCategory category))
                                 race.SizeCategory = category;
                             else
                                 System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");

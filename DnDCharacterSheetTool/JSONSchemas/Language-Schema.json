@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Language"
+  }
+
+  "definitions": {
+    "Language": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Id": {
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": [ "string", "null" ]
+        }
+      },
+      "required": [
+        "Id",
+        "Name"
+      ]
+    }
+  }
+}

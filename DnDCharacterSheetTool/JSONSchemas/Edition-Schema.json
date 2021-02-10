@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Edition"
+  },
+
+  "definitions": {
+    "Edition": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Id": {
+          "type": "integer"
+        },
+        "Name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "System": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Core": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "Id",
+        "Name",
+        "System",
+        "Core"
+      ]
+    }
+  }
+}
