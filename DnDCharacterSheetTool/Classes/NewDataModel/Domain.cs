@@ -2,12 +2,10 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DnDCharacterSheetTool.Classes.NewDataModel
 {
-    public class Feat : INotifyPropertyChanged
+    public class Domain : INotifyPropertyChanged
     {
         [JsonProperty("Id")]
         public int ID { get; set; }
@@ -15,12 +13,12 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
         [JsonProperty("Name")]
         public string Name { get; set; }
 
-        
-        
+
+
         [JsonIgnore]
-        public ObservableCollection<FeatVariant> FeatVariants
+        public ObservableCollection<DomainVariant> DomainVariants
         {
-            get => new ObservableCollection<FeatVariant>(Model.GetInstance().FeatVariants.Where(x => x.FeatID == ID));
+            get => new ObservableCollection<DomainVariant>(Model.GetInstance().DomainVariants.Where(x => x.DomainID == ID));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

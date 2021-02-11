@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using DnDCharacterSheetTool.Classes.DataModel;
@@ -35,15 +36,18 @@ namespace FunctionTest
         [TestMethod]
         public void TestModel()
         {
+#pragma warning disable IDE0059 // Unnötige Zuweisung eines Werts.
             Model model = Model.GetInstance();
+#pragma warning restore IDE0059 // Unnötige Zuweisung eines Werts.
         }
 
         [TestMethod]
         public void GenerateJSONSchema()
         {
             JSchemaGenerator schemaGenerator = new JSchemaGenerator();
-            JSchema schema = schemaGenerator.Generate(typeof(List<Language>));
+            JSchema schema = schemaGenerator.Generate(typeof(List<Feat>));
             string help = schema.ToString();
+            Trace.WriteLine(help);
         }
 
         [TestMethod]

@@ -120,11 +120,24 @@
     <Compile Include="Classes\DataModel\Race.cs" />
     <Compile Include="Classes\DataModel\Spell.cs" />
     <Compile Include="Classes\DataModel\StatChange.cs" />
+    <Compile Include="Classes\NewDataModel\AbilityStat.cs" />
+    <Compile Include="Classes\NewDataModel\Alignment.cs" />
+    <Compile Include="Classes\NewDataModel\BaseSaveStat.cs" />
+    <Compile Include="Classes\NewDataModel\Deity.cs" />
+    <Compile Include="Classes\NewDataModel\Domain.cs" />
+    <Compile Include="Classes\NewDataModel\DomainVariant.cs" />
     <Compile Include="Classes\NewDataModel\Edition.cs" />
     <Compile Include="Classes\NewDataModel\Feat.cs" />
+    <Compile Include="Classes\NewDataModel\FeatCategory.cs" />
+    <Compile Include="Classes\NewDataModel\FeatVariant.cs" />
+    <Compile Include="Classes\NewDataModel\IAbility.cs" />
+    <Compile Include="Classes\NewDataModel\IFeatBenefit.cs" />
     <Compile Include="Classes\NewDataModel\Language.cs" />
     <Compile Include="Classes\NewDataModel\Model.cs" />
     <Compile Include="Classes\NewDataModel\SizeCategory.cs" />
+    <Compile Include="Classes\NewDataModel\Skill.cs" />
+    <Compile Include="Classes\NewDataModel\SkillRankPrerequisite.cs" />
+    <Compile Include="Classes\NewDataModel\SkillVariant.cs" />
     <Compile Include="Classes\NewDataModel\SourceBook.cs" />
     <Compile Include="GUI\frmNewCharacter.xaml.cs">
       <DependentUpon>frmNewCharacter.xaml</DependentUpon>
@@ -222,7 +235,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" />
+      <UserProperties saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\Fody.6.3.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.3.0\build\Fody.targets')" />
