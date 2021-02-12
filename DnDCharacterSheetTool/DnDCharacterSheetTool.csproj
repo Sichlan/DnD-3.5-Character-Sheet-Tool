@@ -123,6 +123,7 @@
     <Compile Include="Classes\NewDataModel\AbilityStat.cs" />
     <Compile Include="Classes\NewDataModel\Alignment.cs" />
     <Compile Include="Classes\NewDataModel\BaseSaveStat.cs" />
+    <Compile Include="Classes\NewDataModel\Condition.cs" />
     <Compile Include="Classes\NewDataModel\Deity.cs" />
     <Compile Include="Classes\NewDataModel\Domain.cs" />
     <Compile Include="Classes\NewDataModel\DomainVariant.cs" />
@@ -174,6 +175,7 @@
     <None Include="Classes\NewDataModel\NewDataModel.cd" />
     <None Include="JSONSchemas\Abilities-Schema.json" />
     <None Include="JSONSchemas\Character-Schema.json" />
+    <None Include="JSONSchemas\Condition-Schema.json" />
     <None Include="JSONSchemas\Edition-Schema.json" />
     <None Include="JSONSchemas\Feats-Schema.json" />
     <None Include="JSONSchemas\Language-Schema.json" />
@@ -189,6 +191,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Saves\Character.json" />
+    <None Include="Saves\Conditions.json" />
     <None Include="Saves\Editions.json" />
     <None Include="Saves\Feats.json" />
     <None Include="Saves\Languages.json" />
@@ -235,7 +238,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" />
+      <UserProperties saves_4conditions_1json__JsonSchema="..\JSONSchemas\Condition-Schema.json" saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\Fody.6.3.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.3.0\build\Fody.targets')" />

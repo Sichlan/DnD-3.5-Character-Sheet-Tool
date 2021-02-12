@@ -45,7 +45,7 @@ namespace FunctionTest
         public void GenerateJSONSchema()
         {
             JSchemaGenerator schemaGenerator = new JSchemaGenerator();
-            JSchema schema = schemaGenerator.Generate(typeof(List<Feat>));
+            JSchema schema = schemaGenerator.Generate(typeof(List<Condition>));
             string help = schema.ToString();
             Trace.WriteLine(help);
         }

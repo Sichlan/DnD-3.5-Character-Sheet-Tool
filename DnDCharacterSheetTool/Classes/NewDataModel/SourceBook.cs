@@ -44,9 +44,9 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
         }
 
         [JsonIgnore]
-        public ObservableCollection<Feat> Feats
+        public ObservableCollection<FeatVariant> FeatVariants
         {
-            get => new ObservableCollection<Feat>(Model.GetInstance().Feats.Where(x => x.RulebookID == ID));
+            get => new ObservableCollection<FeatVariant>(Model.GetInstance().FeatVariants.Where(x => x.RulebookID == ID));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

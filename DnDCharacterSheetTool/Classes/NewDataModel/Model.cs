@@ -11,6 +11,7 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public ObservableCollection<Condition> Conditions { get; set; }
         public ObservableCollection<Deity> Deities { get; set; }
         public ObservableCollection<Domain> Domains { get; set; }
         public ObservableCollection<DomainVariant> DomainVariants { get; set; }
@@ -24,6 +25,7 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
 
         private Model()
         {
+            Conditions = new ObservableCollection<Condition>(DataLoader.Load<Condition>("Conditions.json"));
             Deities = new ObservableCollection<Deity>(DataLoader.Load<Deity>("Deities.json"));
             Domains = new ObservableCollection<Domain>(DataLoader.Load<Domain>("Domains.json"));
             DomainVariants = new ObservableCollection<DomainVariant>(DataLoader.Load<DomainVariant>("DomainVariants.json"));
