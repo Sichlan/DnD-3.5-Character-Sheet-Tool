@@ -4,194 +4,24 @@
 
   "definitions": {
     "Race": {
-      "type": "object",
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
+        "Id": {
+          "type": "integer"
+        },
         "Name": {
-          "description": "The races name",
-          "type": "string"
-        },
-        "Source": {
-          "description": "The title of the source the race was added in",
           "type": [
             "string",
             "null"
           ]
-        },
-        "Page": {
-          "description": "The page the race can be found on in the source",
-          "type": [
-            "integer",
-            "null"
-          ]
-        },
-        "Link": {
-          "description": "The link to dndtools.net for the race as a reference",
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "SubraceOf": {
-          "description": "The direct race this race was derived from.\nFor Example: a Lesser Dark Elf is a Subrace of Dark Elf, which is a subrace of Elf.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "Type": {
-          "description": "The races type.\n0 - Aberration\n1 - Animal\n2 - Celestial\n3 - Construct\n4 - Dragon\n5 - Elemental\n6 - Fey\n7 - Fiend\n8 - Giant\n9 - Humanoid\n10 - Magical_Beast\n11 - Monstrous_Humanoid\n12 - Ooze\n13 - Outsider\n14 - Plant\n15 - Undead\n16 - Vermin",
-          "type": "integer",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10,
-            11,
-            12,
-            13,
-            14,
-            15,
-            16
-          ]
-        },
-        "SubTypes": {
-          "description": "The races subtype(s), if any.\n0 - Air\n1 - Angel\n2 - Aquatic\n3 - Archon\n4 - Augmented\n5 - Chaotic\n6 - Cold\n7 - Demon\n8 - Devil\n9 - Dwarf\n10 - Earth\n11 - Elf\n12 - Evil\n13 - Extraplanar\n14 - Fire\n15 - Good\n16 - Gnoll\n17 - Gnome\n18 - Goblinoid\n19 - Halfling\n20 - Human\n21 - Incorporeal\n22 - Lawful\n23 - Native\n24 - Orc\n25 - Psionic\n26 - Reptilian\n27 - Shapechanger\n28 - Swarm\n29 - Water",
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": "integer",
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
-              12,
-              13,
-              14,
-              15,
-              16,
-              17,
-              18,
-              19,
-              20,
-              21,
-              22,
-              23,
-              24,
-              25,
-              26,
-              27,
-              28,
-              29
-            ]
-          }
-        },
-        "FavoredClass": {
-          "description": "The races favored class(es), if any\nIf the race has 'Any' as it's favored class, this field has to be NULL!",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "CountHitDice": {
-          "description": "The number of racial hitdice",
-          "type": "integer"
-        },
-        "SizeHitDice": {
-          "description": "The type of racial hitdie.\nFor example a 'd8' is simply noted as '8'",
-          "type": "integer"
-        },
-        "LevelAdjustment": {
-          "description": "The races LA",
-          "type": "integer"
-        },
-        "SizeCategory": {
-          "description": "The races default sizeCategory.\nMULTI-SIZED RACES HAVE TO BE NOTED IN THE COMMENT ABOVE SIZECATEGORY IN RACE.CS!\n-4 - Fine\n-3 - Diminutive\n-2 - Tiny\n-1 - Small\n0 - Medium\n1 - Large\n2 - Huge\n3 - Gargantuan\n4 - Colossal\n5 - BiggerThanColossal",
-          "type": "integer",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            -4,
-            -3,
-            -2,
-            -1
-          ]
-        },
-        "Movement": {
-          "description": "The races movement modes.\nUse the name of the movement as Key and the range as value.\nFor Example: Flyspeed 30ft. = \"Fly\": \"30\"\nKeys derived from 'Enums.cs/MovementModes'",
-          "type": [
-            "object",
-            "null"
-          ],
-          "additionalProperties": {
-            "type": "integer"
-          }
-        },
-        "Senses": {
-          "description": "The races senses like low-light vision, blindsight, etc.\nIf the sense is limited to a static range (opposed by senses like low light vision, hich just double the standard vision range) enter the range in feet as an int, otherwise enter 'NULL'.\nAn exception is 'Improved Low-Light Vision', to insert this you set 'Low-light Vision' as key and set its value to '2' (aka '2' * LLV Range)'\nKey derived from Enums.cs/Sense.",
-          "type": [
-            "object",
-            "null"
-          ],
-          "additionalProperties": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          }
-        },
-        "StatChanges": {
-          "description": "The Races StatChanges",
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "$ref": "StatChange-Schema.json#"
-          }
-        },
-        "RaceFeatures": {
-          "description": "The races Race Features",
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": [ "object", "string" ]
-          }
         }
       },
       "required": [
-        "Name",
-        "Source",
-        "Type",
-        "FavoredClass",
-        "CountHitDice",
-        "SizeHitDice",
-        "SizeCategory",
-        "Movement"
+        "Id",
+        "Name"
       ]
     }
   },

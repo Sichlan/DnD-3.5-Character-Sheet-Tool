@@ -12,12 +12,12 @@ namespace DnDCharacterSheetTool.Classes.DataModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(sProperty));
         }
 
-        private Attributes attributes;
-        public Attributes Attributes
-        {
-            get { return attributes; }
-            set { attributes = value; OnPropertyChanged(nameof(Attributes)); }
-        }
+        //private Attributes attributes;
+        //public Attributes Attributes
+        //{
+        //    get { return attributes; }
+        //    set { attributes = value; OnPropertyChanged(nameof(Attributes)); }
+        //}
 
         public int TotalValue
         {

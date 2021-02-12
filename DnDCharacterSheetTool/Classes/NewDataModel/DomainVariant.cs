@@ -19,7 +19,7 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
 
         [JsonProperty("SpellPerLevel")]
         [Description("Key is Level, value is spell")]
-        public Dictionary<int, int> SpellsPerLevel { get; set; }
+        public Dictionary<int, int> SpellsPerLevelIDs { get; set; }
 
         [JsonProperty("RulebookId")]
         public int RulebookID { get; set; }
@@ -46,10 +46,24 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
             set => this.RulebookID = value.ID;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        [JsonIgnore]
+        public Dictionary<int, Spell> SpellsPerLevel
+        {
+            get
+            {
+                Dictionary<int, Spell> output = new Dictionary<int, Spell>();
 
-        //TODO: Add constraint to spell when implemented
+                foreach (var Level in SpellsPerLevelIDs)
+                {
+                    output.Add(Level.Key, Model.GetInstance().Spells.FirstOrDefault(x => x.ID == Level.Value));
+                }
+
+                return output;
+            }
+        }
 
         //TODO: Add granted Power as Ability or so
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

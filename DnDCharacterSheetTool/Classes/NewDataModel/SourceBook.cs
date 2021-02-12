@@ -49,6 +49,30 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
             get => new ObservableCollection<FeatVariant>(Model.GetInstance().FeatVariants.Where(x => x.RulebookID == ID));
         }
 
+        [JsonIgnore]
+        public ObservableCollection<SkillVariant> SkillVariants
+        {
+            get => new ObservableCollection<SkillVariant>(Model.GetInstance().SkillVariants.Where(x => x.RulebookID == ID));
+        }
+
+        [JsonIgnore]
+        public ObservableCollection<DomainVariant> DomainVariants
+        {
+            get => new ObservableCollection<DomainVariant>(Model.GetInstance().DomainVariants.Where(x => x.RulebookID == ID));
+        }
+
+        [JsonIgnore]
+        public ObservableCollection<RaceVariant> RaceVariants
+        {
+            get => new ObservableCollection<RaceVariant>(Model.GetInstance().RaceVariants.Where(x => x.RulebookID == ID));
+        }
+
+        [JsonIgnore]
+        public ObservableCollection<SpellVariant> SpellVariants
+        {
+            get => new ObservableCollection<SpellVariant>(Model.GetInstance().SpellVariants.Where(x => x.RulebookID == ID));
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

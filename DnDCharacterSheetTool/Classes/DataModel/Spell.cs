@@ -362,12 +362,12 @@ namespace DnDCharacterSheetTool.Classes.DataModel
 			set { attackType = value; OnPropertyChanged(nameof(AttackType)); }
 		}
 
-		private Attributes? attackWith;
-		public Attributes? AttackWith
-		{
-			get { return attackWith; }
-			set { attackWith = value; OnPropertyChanged(nameof(AttackWith)); }
-		}
+		//private Attributes? attackWith;
+		//public Attributes? AttackWith
+		//{
+		//	get { return attackWith; }
+		//	set { attackWith = value; OnPropertyChanged(nameof(AttackWith)); }
+		//}
 
 		private int attackBonus;
 		public int AttackBonus

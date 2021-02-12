@@ -117,14 +117,18 @@
     <Compile Include="Classes\DataModel\CharacterStat.cs" />
     <Compile Include="Classes\DataModel\DataLoader.cs" />
     <Compile Include="Classes\DataModel\Enums.cs" />
-    <Compile Include="Classes\DataModel\Race.cs" />
     <Compile Include="Classes\DataModel\Spell.cs" />
     <Compile Include="Classes\DataModel\StatChange.cs" />
     <Compile Include="Classes\NewDataModel\AbilityStat.cs" />
     <Compile Include="Classes\NewDataModel\Alignment.cs" />
+    <Compile Include="Classes\NewDataModel\AllowedSave.cs" />
     <Compile Include="Classes\NewDataModel\BaseSaveStat.cs" />
+    <Compile Include="Classes\NewDataModel\CastingTimeIndicator.cs" />
     <Compile Include="Classes\NewDataModel\Condition.cs" />
+    <Compile Include="Classes\NewDataModel\CreatureSubType.cs" />
+    <Compile Include="Classes\NewDataModel\CreatureType.cs" />
     <Compile Include="Classes\NewDataModel\Deity.cs" />
+    <Compile Include="Classes\NewDataModel\Descriptor.cs" />
     <Compile Include="Classes\NewDataModel\Domain.cs" />
     <Compile Include="Classes\NewDataModel\DomainVariant.cs" />
     <Compile Include="Classes\NewDataModel\Edition.cs" />
@@ -135,11 +139,21 @@
     <Compile Include="Classes\NewDataModel\IFeatBenefit.cs" />
     <Compile Include="Classes\NewDataModel\Language.cs" />
     <Compile Include="Classes\NewDataModel\Model.cs" />
+    <Compile Include="Classes\NewDataModel\MovementMode.cs" />
+    <Compile Include="Classes\NewDataModel\Race.cs" />
+    <Compile Include="Classes\NewDataModel\RaceVariant.cs" />
+    <Compile Include="Classes\NewDataModel\SaveType.cs" />
+    <Compile Include="Classes\NewDataModel\Sense.cs" />
     <Compile Include="Classes\NewDataModel\SizeCategory.cs" />
     <Compile Include="Classes\NewDataModel\Skill.cs" />
     <Compile Include="Classes\NewDataModel\SkillRankPrerequisite.cs" />
     <Compile Include="Classes\NewDataModel\SkillVariant.cs" />
     <Compile Include="Classes\NewDataModel\SourceBook.cs" />
+    <Compile Include="Classes\NewDataModel\Spell.cs" />
+    <Compile Include="Classes\NewDataModel\SpellSchool.cs" />
+    <Compile Include="Classes\NewDataModel\SpellVariant.cs" />
+    <Compile Include="Classes\NewDataModel\StatChange.cs" />
+    <Compile Include="Classes\NewDataModel\SubSchool.cs" />
     <Compile Include="GUI\frmNewCharacter.xaml.cs">
       <DependentUpon>frmNewCharacter.xaml</DependentUpon>
     </Compile>
@@ -176,10 +190,12 @@
     <None Include="JSONSchemas\Abilities-Schema.json" />
     <None Include="JSONSchemas\Character-Schema.json" />
     <None Include="JSONSchemas\Condition-Schema.json" />
+    <None Include="JSONSchemas\CreatureType-Schema.json" />
     <None Include="JSONSchemas\Edition-Schema.json" />
     <None Include="JSONSchemas\Feats-Schema.json" />
     <None Include="JSONSchemas\Language-Schema.json" />
     <None Include="JSONSchemas\Race-Schema.json" />
+    <None Include="JSONSchemas\RaceVariant-Schema.json" />
     <None Include="JSONSchemas\SizeCategory-schema.json" />
     <None Include="JSONSchemas\SourceBook-Schema.json" />
     <None Include="JSONSchemas\Spells-Schema.json" />
@@ -192,6 +208,7 @@
     </None>
     <None Include="Saves\Character.json" />
     <None Include="Saves\Conditions.json" />
+    <None Include="Saves\CreatureTypes.json" />
     <None Include="Saves\Editions.json" />
     <None Include="Saves\Feats.json" />
     <None Include="Saves\Languages.json" />
@@ -238,7 +255,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties saves_4conditions_1json__JsonSchema="..\JSONSchemas\Condition-Schema.json" saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" />
+      <UserProperties saves_4conditions_1json__JsonSchema="..\JSONSchemas\Condition-Schema.json" saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" saves_4creaturetypes_1json__JsonSchema="..\JSONSchemas\CreatureType-Schema.json" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\Fody.6.3.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.3.0\build\Fody.targets')" />

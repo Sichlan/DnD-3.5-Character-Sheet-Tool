@@ -30,19 +30,19 @@ namespace DnDCharacterSheetTool.Classes.DataModel
             set { gender = value; OnPropertyChanged(nameof(Gender)); }
         }
 
-        private LNCAlignment lNCAlignment;
-        public LNCAlignment LNCAlignment
-        {
-            get { return lNCAlignment; }
-            set { lNCAlignment = value; OnPropertyChanged(nameof(LNCAlignment)); }
-        }
+        //private LNCAlignment lNCAlignment;
+        //public LNCAlignment LNCAlignment
+        //{
+        //    get { return lNCAlignment; }
+        //    set { lNCAlignment = value; OnPropertyChanged(nameof(LNCAlignment)); }
+        //}
 
-        private GNEAlignment gNEAlignment;
-        public GNEAlignment GNEAlignment
-        {
-            get { return gNEAlignment; }
-            set { gNEAlignment = value; OnPropertyChanged(nameof(GNEAlignment)); }
-        }
+        //private GNEAlignment gNEAlignment;
+        //public GNEAlignment GNEAlignment
+        //{
+        //    get { return gNEAlignment; }
+        //    set { gNEAlignment = value; OnPropertyChanged(nameof(GNEAlignment)); }
+        //}
 
         private int age;
         public int Age

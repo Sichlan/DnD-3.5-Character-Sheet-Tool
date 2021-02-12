@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Linq;
 
 namespace DnDCharacterSheetTool.Classes.NewDataModel
 {
@@ -15,6 +16,18 @@ namespace DnDCharacterSheetTool.Classes.NewDataModel
         [Description("Ususally used to add a specification, such as \"Arcane\" for Knowledge(Arcane) or \"Weaving\" for Craft(Weaving)")]
         public string Extra { get; set; }
 
-        //TODO: Add constraint for Skill when it is implemented
+
+        [JsonIgnore]
+        public Skill Skill
+        {
+            get
+            {
+                return Model.GetInstance().Skills.FirstOrDefault(x => x.ID == SkillID);
+            }
+            set
+            {
+                this.SkillID = value.ID;
+            }
+        }
     }
 }

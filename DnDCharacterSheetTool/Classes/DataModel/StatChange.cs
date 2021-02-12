@@ -16,14 +16,14 @@ namespace DnDCharacterSheetTool.Classes.DataModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(sProperty));
         }
 
-        private Attributes stat;
-        [Description("The stat that is changed.\n1 - Strength\n2 - Dexterity\n3 - Constitution\n4 - Intelligence\n5 - Wisdom\n6 - Charisma")]
-        [JsonProperty(Required = Required.Always)]
-        public Attributes Stat
-        {
-            get { return stat; }
-            set { stat = value; OnPropertyChanged(nameof(Stat)); }
-        }
+        //private Attributes stat;
+        //[Description("The stat that is changed.\n1 - Strength\n2 - Dexterity\n3 - Constitution\n4 - Intelligence\n5 - Wisdom\n6 - Charisma")]
+        //[JsonProperty(Required = Required.Always)]
+        //public Attributes Stat
+        //{
+        //    get { return stat; }
+        //    set { stat = value; OnPropertyChanged(nameof(Stat)); }
+        //}
 
         private int _value;
         [Description("The value of the change")]

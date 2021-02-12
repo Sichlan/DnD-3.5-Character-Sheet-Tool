@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Edition" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8" Y="1.75" Width="1.5" />
+    <Position X="4.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAgAAAAAAAAAQAgAAAAEAAAAAAAAAAgAA=</HashCode>
       <FileName>Classes\NewDataModel\Edition.cs</FileName>
@@ -9,15 +9,15 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.SourceBook" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.25" Y="3.75" Width="1.5" />
+    <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAEggAAAAgAAAAQAgAAAAAAAAABAQAAAAAA=</HashCode>
+      <HashCode>AgAAACBAAAEggABAAgAAAAQAgAAAAABAgAAAQAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\SourceBook.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Feat" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.75" Y="2.75" Width="1.5" />
+    <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgABAAAAAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\Feat.cs</FileName>
@@ -25,7 +25,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Language" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.25" Y="2.75" Width="1.5" />
+    <Position X="9.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAggAAAAAAAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\Language.cs</FileName>
@@ -33,7 +33,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.SpellLikeAbility" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8" Y="3.75" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAggAQEBAAAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\IAbility.cs</FileName>
@@ -41,30 +41,30 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.SkillRankPrerequisite" Collapsed="true">
-    <Position X="2.75" Y="3.75" Width="1.5" />
+    <Position X="8" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAAIABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAAAAABAAAAIABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\SkillRankPrerequisite.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Skill" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8" Y="2.75" Width="1.5" />
+    <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAgAAAAAAAIAQAgAAAAABAAAAACAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\Skill.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Deity" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Deity" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAggAAAACAAAAQAkAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\Deity.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Domain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.5" Y="1.75" Width="1.5" />
+    <Position X="9.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAgAAAAAAAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\Domain.cs</FileName>
@@ -72,15 +72,15 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.DomainVariant" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.25" Y="1.75" Width="1.5" />
+    <Position X="2.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAgAAACAAAAAAAkgAAABAAAABAAAAgAAA=</HashCode>
+      <HashCode>YAAAAAAAAAAAgAAACAAAAAAAkgAAABAAAABAAAAgAAA=</HashCode>
       <FileName>Classes\NewDataModel\DomainVariant.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.FeatVariant" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.5" Y="2.75" Width="1.5" />
+    <Position X="8" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QBoAAAABAAAygQAIAAAIAAAAmAAAEAAAAABAgIgAAAA=</HashCode>
       <FileName>Classes\NewDataModel\FeatVariant.cs</FileName>
@@ -88,67 +88,170 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.SkillVariant" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.5" Y="3.75" Width="1.5" />
+    <Position X="9.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>UAAAACAAAAAggAAAAAAAACAFgAAAIAAAAADCAAAAgAQ=</HashCode>
       <FileName>Classes\NewDataModel\SkillVariant.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Condition" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\NewDataModel\Condition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.CreatureType" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACgCAAAAAAICQAAAAAAAAAgAAAAABAAAI=</HashCode>
+      <FileName>Classes\NewDataModel\CreatureType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Race" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAgAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Classes\NewDataModel\Race.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.RaceVariant" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAQAACAAIIAy0CICAACAIACBkAQCAASAAABIQBBAABI=</HashCode>
+      <FileName>Classes\NewDataModel\RaceVariant.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.Spell" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAgAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\NewDataModel\Spell.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.StatChange" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgIAAAAAA=</HashCode>
+      <FileName>Classes\NewDataModel\StatChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.SpellVariant" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wEAAAAAAAggSiggAgAACAGIAhABAAoAAAIBAAQAAAAA=</HashCode>
+      <FileName>Classes\NewDataModel\SpellVariant.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DnDCharacterSheetTool.Classes.NewDataModel.AllowedSave" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAABBAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\NewDataModel\AllowedSave.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
   <Interface Name="DnDCharacterSheetTool.Classes.NewDataModel.IAbility" Collapsed="true">
-    <Position X="2.75" Y="5" Width="1.5" />
+    <Position X="2.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\IAbility.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DnDCharacterSheetTool.Classes.NewDataModel.ISpellLikeReplicable" Collapsed="true">
-    <Position X="6.25" Y="5" Width="1.5" />
+    <Position X="6.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\IAbility.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DnDCharacterSheetTool.Classes.NewDataModel.IFeatBenefit" Collapsed="true">
-    <Position X="4.5" Y="5" Width="1.5" />
+    <Position X="4.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\IFeatBenefit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.FeatCategory" Collapsed="true">
-    <Position X="8" Y="6" Width="1.5" />
+    <Position X="9.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAmEICCpAQIAAoQBpCAAgGD4JhIACAYUBoB+iIkCiEA=</HashCode>
       <FileName>Classes\NewDataModel\FeatCategory.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.SizeCategory" Collapsed="true">
-    <Position X="2.75" Y="6.75" Width="1.5" />
+    <Position X="8" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAEAAgAAAABgAAAEAAIAAIAAABAEAAA=</HashCode>
       <FileName>Classes\NewDataModel\SizeCategory.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.AbilityStat" Collapsed="true">
-    <Position X="2.75" Y="6" Width="1.5" />
+    <Position X="2.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAECAAAAgAAAAAAAAAAIAAAAAAAAAAAAJAA=</HashCode>
       <FileName>Classes\NewDataModel\AbilityStat.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.BaseSaveStat" Collapsed="true">
-    <Position X="6.25" Y="6" Width="1.5" />
+    <Position X="6.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\BaseSaveStat.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.Alignment" Collapsed="true">
-    <Position X="4.5" Y="6" Width="1.5" />
+    <Position X="4.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAApAAAAAABACgAAAAAAAAAAACABAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NewDataModel\Alignment.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.CreatureSubType" Collapsed="true">
+    <Position X="8" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAwAAAAAAYAgAAgFCEAAAAAAABAAAASIAAAAAAAIAA=</HashCode>
+      <FileName>Classes\NewDataModel\CreatureSubType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.MovementMode" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAEACAAAAABAAAAEAA=</HashCode>
+      <FileName>Classes\NewDataModel\MovementMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.Sense" Collapsed="true">
+    <Position X="6.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAAAAEAAAQBAAAABRAAAAAAAQAAAAJCAAAAAAAE=</HashCode>
+      <FileName>Classes\NewDataModel\Sense.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.SpellSchool" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAAAAIAAAAgAMAAIAAAAAAAAAAAIAACAAAAEAAAg=</HashCode>
+      <FileName>Classes\NewDataModel\SpellSchool.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.SubSchool" Collapsed="true">
+    <Position X="2.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgSAAIAAAAAkAAgAAAQAAAAABAAgAAEAAAgAAA=</HashCode>
+      <FileName>Classes\NewDataModel\SubSchool.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DnDCharacterSheetTool.Classes.NewDataModel.SaveType" Collapsed="true">
+    <Position X="4.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAgAAAA=</HashCode>
+      <FileName>Classes\NewDataModel\SaveType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
