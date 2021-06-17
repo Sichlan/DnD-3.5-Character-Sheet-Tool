@@ -1,0 +1,3059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DnDDatabaseModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AbilityStat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="Abbreviation" Type="varchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActionTimeIndicator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <EntityType Name="Alignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Abbreviation" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <EntityType Name="AllowedSpellSave">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SpellID" Type="int" Nullable="false" />
+          <Property Name="SaveStatID" Type="int" Nullable="false" />
+          <Property Name="SaveTypeID" Type="int" Nullable="false" />
+          <Property Name="Extra" Type="longtext" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="longtext" Nullable="false" />
+          <Property Name="Description" Type="longtext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreatureSubType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreatureType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HitDieSize" Type="int" Nullable="false" />
+          <Property Name="BABType" Type="decimal" Precision="10" Scale="5" Nullable="false" />
+          <Property Name="FortType" Type="decimal" Precision="10" Scale="5" Nullable="false" />
+          <Property Name="RefType" Type="decimal" Precision="10" Scale="5" Nullable="false" />
+          <Property Name="WillType" Type="decimal" Precision="10" Scale="5" Nullable="false" />
+          <Property Name="BaseSkillPoints" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Alignment" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeityClericAlignments">
+          <Key>
+            <PropertyRef Name="DeityID" />
+            <PropertyRef Name="AlignmentID" />
+          </Key>
+          <Property Name="DeityID" Type="int" Nullable="false" />
+          <Property Name="AlignmentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Domain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DomainSpells">
+          <Key>
+            <PropertyRef Name="SpellID" />
+            <PropertyRef Name="DomainVariantID" />
+          </Key>
+          <Property Name="SpellID" Type="int" Nullable="false" />
+          <Property Name="DomainVariantID" Type="int" Nullable="false" />
+          <Property Name="Level" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DomainVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DomainID" Type="int" Nullable="false" />
+          <Property Name="RuleBookID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DomainVariantToDeity">
+          <Key>
+            <PropertyRef Name="DomainVariantID" />
+            <PropertyRef Name="DeityID" />
+          </Key>
+          <Property Name="DomainVariantID" Type="int" Nullable="false" />
+          <Property Name="DeityID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Edition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="System" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Core" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Feat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeatCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="FeatRequiresAlignments">
+          <Key>
+            <PropertyRef Name="FeatVariantID" />
+            <PropertyRef Name="AlignmentID" />
+          </Key>
+          <Property Name="FeatVariantID" Type="int" Nullable="false" />
+          <Property Name="AlignmentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeatRequiresFeat">
+          <Key>
+            <PropertyRef Name="RequiringFeatID" />
+            <PropertyRef Name="RequiredFeatID" />
+          </Key>
+          <Property Name="RequiringFeatID" Type="int" Nullable="false" />
+          <Property Name="RequiredFeatID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeatRequiresSaveValues">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaveID" Type="int" Nullable="false" />
+          <Property Name="FeatID" Type="int" Nullable="false" />
+          <Property Name="MinValue" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeatRequiresSkillRank">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillID" Type="int" Nullable="false" />
+          <Property Name="FeatID" Type="int" Nullable="false" />
+          <Property Name="MinRanks" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeatRequiresStatValues">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AbilityStatID" Type="int" Nullable="false" />
+          <Property Name="FeatID" Type="int" Nullable="false" />
+          <Property Name="MinValue" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeatVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FeatID" Type="int" Nullable="false" />
+          <Property Name="RuleBookID" Type="int" Nullable="false" />
+          <Property Name="PageNo" Type="int" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="RequiredCharacterLevel" Type="int" />
+          <Property Name="RequiredCharacterBAB" Type="int" />
+          <Property Name="RequiredCasterLevel" Type="int" />
+          <Property Name="RequiredArcaneCasterLevel" Type="int" />
+          <Property Name="RequiredDivineCasterLevel" Type="int" />
+          <Property Name="RequiredPatreonDeityID" Type="int" />
+        </EntityType>
+        <EntityType Name="FeatVariantToFeatCategory">
+          <Key>
+            <PropertyRef Name="FeatVariantID" />
+            <PropertyRef Name="FeatCategoryID" />
+          </Key>
+          <Property Name="FeatVariantID" Type="int" Nullable="false" />
+          <Property Name="FeatCategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="MovementMode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <EntityType Name="Race">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaceStatChanges">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="AbilityStatID" Type="int" Nullable="false" />
+          <Property Name="Bonus" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaceVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="RuleBookID" Type="int" Nullable="false" />
+          <Property Name="Page" Type="int" />
+          <Property Name="SubraceOfID" Type="int" />
+          <Property Name="CreatureTypeID" Type="int" Nullable="false" />
+          <Property Name="FavouredClass" Type="int" />
+          <Property Name="CountRacialHitDice" Type="int" Nullable="false" />
+          <Property Name="SizeRacialHitDie" Type="int" />
+          <Property Name="LevelAdjustment" Type="int" />
+          <Property Name="Space" Type="int" />
+          <Property Name="Reach" Type="int" />
+          <Property Name="NaturalArmor" Type="int" />
+          <Property Name="Combat" Type="text" />
+          <Property Name="Description" Type="text" />
+          <Property Name="BABType" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="FortType" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="RefType" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="WillType" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="BaseSkillPoints" Type="int" />
+        </EntityType>
+        <EntityType Name="RacialAutomaticLanguages">
+          <Key>
+            <PropertyRef Name="RaceID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RacialBonusLanguages">
+          <Key>
+            <PropertyRef Name="RaceID" />
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RacialMovementModes">
+          <Key>
+            <PropertyRef Name="RaceID" />
+            <PropertyRef Name="MovementModeID" />
+          </Key>
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="MovementModeID" Type="int" Nullable="false" />
+          <Property Name="Distance" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RacialSenses">
+          <Key>
+            <PropertyRef Name="RaceID" />
+            <PropertyRef Name="SenseID" />
+          </Key>
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="SenseID" Type="int" Nullable="false" />
+          <Property Name="Distance" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RacialSizeCategories">
+          <Key>
+            <PropertyRef Name="RaceID" />
+            <PropertyRef Name="SizeCategoryID" />
+          </Key>
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="SizeCategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RuleBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EditionID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Abbreviation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="PublishedAt" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Save">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="31" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SaveType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <EntityType Name="SizeCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="text" Nullable="false" />
+          <Property Name="AttackAndACMod" Type="int" Nullable="false" />
+          <Property Name="SpecialAttacksMod" Type="int" Nullable="false" />
+          <Property Name="HideMod" Type="int" Nullable="false" />
+          <Property Name="Space" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="ReachTall" Type="int" Nullable="false" />
+          <Property Name="ReachLong" Type="int" Nullable="false" />
+          <Property Name="CarryingCapacitorModificatorBiped" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+          <Property Name="CarryingCapacitorModificatorQuadruped" Type="decimal" Precision="20" Scale="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AbilityStatID" Type="int" Nullable="false" />
+          <Property Name="TrainedOnly" Type="bool" Nullable="false" />
+          <Property Name="ArmorCheckPenaltyModifier" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkillSynergy">
+          <Key>
+            <PropertyRef Name="SkillID" />
+            <PropertyRef Name="SynergizesWithID" />
+          </Key>
+          <Property Name="SkillID" Type="int" Nullable="false" />
+          <Property Name="SynergizesWithID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkillVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillID" Type="int" Nullable="false" />
+          <Property Name="RuleBookID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="Action" Type="text" />
+          <Property Name="TryAgain" Type="bool" />
+          <Property Name="Special" Type="text" />
+          <Property Name="Untrained" Type="text" />
+          <Property Name="Restrictions" Type="text" />
+        </EntityType>
+        <EntityType Name="Spell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SpellDescriptor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <EntityType Name="SpellSchool">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <EntityType Name="SpellSubSchool">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <EntityType Name="SpellToSpellDescriptor">
+          <Key>
+            <PropertyRef Name="SpellID" />
+            <PropertyRef Name="DescriptorID" />
+          </Key>
+          <Property Name="SpellID" Type="int" Nullable="false" />
+          <Property Name="DescriptorID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SpellToSpellSchool">
+          <Key>
+            <PropertyRef Name="SpellID" />
+            <PropertyRef Name="SchoolID" />
+          </Key>
+          <Property Name="SpellID" Type="int" Nullable="false" />
+          <Property Name="SchoolID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SpellToSpellSubSchool">
+          <Key>
+            <PropertyRef Name="SpellID" />
+            <PropertyRef Name="SubSchoolID" />
+          </Key>
+          <Property Name="SpellID" Type="int" Nullable="false" />
+          <Property Name="SubSchoolID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SpellVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SpellID" Type="int" Nullable="false" />
+          <Property Name="RuleBookID" Type="int" Nullable="false" />
+          <Property Name="Page" Type="int" />
+          <Property Name="HasVerbal" Type="bool" Nullable="false" />
+          <Property Name="HasSomatic" Type="bool" Nullable="false" />
+          <Property Name="Material" Type="text" />
+          <Property Name="ArcaneFocus" Type="text" />
+          <Property Name="DivineFocus" Type="text" />
+          <Property Name="XPCost" Type="int" />
+          <Property Name="CastingTimeValue" Type="int" Nullable="false" />
+          <Property Name="CastingTimeIndicatorID" Type="int" Nullable="false" />
+          <Property Name="Range" Type="text" Nullable="false" />
+          <Property Name="Target" Type="text" Nullable="false" />
+          <Property Name="Area" Type="text" Nullable="false" />
+          <Property Name="Effect" Type="text" Nullable="false" />
+          <Property Name="Concentration" Type="bool" Nullable="false" />
+          <Property Name="Duration" Type="text" Nullable="false" />
+          <Property Name="Harmless" Type="bool" Nullable="false" />
+          <Property Name="TargetsObject" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VisualSense">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="text" />
+        </EntityType>
+        <Association Name="DeityClericAlignments_ibfk_1">
+          <End Role="Deity" Type="Self.Deity" Multiplicity="1" />
+          <End Role="DeityClericAlignments" Type="Self.DeityClericAlignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deity">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeityClericAlignments">
+              <PropertyRef Name="DeityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DeityClericAlignments_ibfk_2">
+          <End Role="Alignment" Type="Self.Alignment" Multiplicity="1" />
+          <End Role="DeityClericAlignments" Type="Self.DeityClericAlignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alignment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeityClericAlignments">
+              <PropertyRef Name="AlignmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DomainSpells_ibfk_1">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="1" />
+          <End Role="DomainSpells" Type="Self.DomainSpells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainSpells">
+              <PropertyRef Name="SpellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DomainSpells_ibfk_2">
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="1" />
+          <End Role="DomainSpells" Type="Self.DomainSpells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomainVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainSpells">
+              <PropertyRef Name="DomainVariantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeatRequiresAlignments_ibfk_1">
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="1" />
+          <End Role="FeatRequiresAlignments" Type="Self.FeatRequiresAlignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeatVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresAlignments">
+              <PropertyRef Name="FeatVariantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FeatRequiresAlignments_ibfk_2">
+          <End Role="Alignment" Type="Self.Alignment" Multiplicity="1" />
+          <End Role="FeatRequiresAlignments" Type="Self.FeatRequiresAlignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alignment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresAlignments">
+              <PropertyRef Name="AlignmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AbilityStat">
+          <End Role="AbilityStat" Type="Self.AbilityStat" Multiplicity="1" />
+          <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbilityStat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Skill">
+              <PropertyRef Name="AbilityStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AbilityStatRequired">
+          <End Role="AbilityStat" Type="Self.AbilityStat" Multiplicity="1" />
+          <End Role="FeatRequiresStatValues" Type="Self.FeatRequiresStatValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbilityStat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresStatValues">
+              <PropertyRef Name="AbilityStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AllowedSpellSave_Saves">
+          <End Role="Save" Type="Self.Save" Multiplicity="1" />
+          <End Role="AllowedSpellSave" Type="Self.AllowedSpellSave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Save">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AllowedSpellSave">
+              <PropertyRef Name="SaveStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AllowedSpellSave_SaveType">
+          <End Role="SaveType" Type="Self.SaveType" Multiplicity="1" />
+          <End Role="AllowedSpellSave" Type="Self.AllowedSpellSave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaveType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AllowedSpellSave">
+              <PropertyRef Name="SaveTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutomaticLanguage">
+          <End Role="Language" Type="Self.Language" Multiplicity="1" />
+          <End Role="RacialAutomaticLanguages" Type="Self.RacialAutomaticLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialAutomaticLanguages">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BonusLanguage">
+          <End Role="Language" Type="Self.Language" Multiplicity="1" />
+          <End Role="RacialBonusLanguages" Type="Self.RacialBonusLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialBonusLanguages">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Category">
+          <End Role="FeatCategory" Type="Self.FeatCategory" Multiplicity="1" />
+          <End Role="FeatVariantToFeatCategory" Type="Self.FeatVariantToFeatCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeatCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariantToFeatCategory">
+              <PropertyRef Name="FeatCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContainedInRuleBook">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deity">
+          <End Role="Deity" Type="Self.Deity" Multiplicity="1" />
+          <End Role="DomainVariantToDeity" Type="Self.DomainVariantToDeity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deity">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainVariantToDeity">
+              <PropertyRef Name="DeityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DomainVariant">
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="1" />
+          <End Role="DomainVariantToDeity" Type="Self.DomainVariantToDeity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomainVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainVariantToDeity">
+              <PropertyRef Name="DomainVariantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EditionOfRulebook">
+          <End Role="Edition" Type="Self.Edition" Multiplicity="1" />
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Edition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RuleBook">
+              <PropertyRef Name="EditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatOriginRuleBook">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatRequiring">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatRequiresSkillRank" Type="Self.FeatRequiresSkillRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSkillRank">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatRequiringSave">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatRequiresSaveValues" Type="Self.FeatRequiresSaveValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSaveValues">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatRequiringStat">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatRequiresStatValues" Type="Self.FeatRequiresStatValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresStatValues">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovementMode">
+          <End Role="MovementMode" Type="Self.MovementMode" Multiplicity="1" />
+          <End Role="RacialMovementModes" Type="Self.RacialMovementModes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovementMode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialMovementModes">
+              <PropertyRef Name="MovementModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patreon">
+          <End Role="Deity" Type="Self.Deity" Multiplicity="0..1" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deity">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariant">
+              <PropertyRef Name="RequiredPatreonDeityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceOfRaceVariant">
+          <End Role="Race" Type="Self.Race" Multiplicity="1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithAutomaticLanguage">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RacialAutomaticLanguages" Type="Self.RacialAutomaticLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialAutomaticLanguages">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithBonusLanguage">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RacialBonusLanguages" Type="Self.RacialBonusLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialBonusLanguages">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithMovementMode">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RacialMovementModes" Type="Self.RacialMovementModes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialMovementModes">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithSense">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RacialSenses" Type="Self.RacialSenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialSenses">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithSizeCategory">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RacialSizeCategories" Type="Self.RacialSizeCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialSizeCategories">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithStatChange">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RaceStatChanges" Type="Self.RaceStatChanges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceStatChanges">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RacialStatChange">
+          <End Role="AbilityStat" Type="Self.AbilityStat" Multiplicity="1" />
+          <End Role="RaceStatChanges" Type="Self.RaceStatChanges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbilityStat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceStatChanges">
+              <PropertyRef Name="AbilityStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReferredFeat">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariant">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Required">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatRequiresFeat" Type="Self.FeatRequiresFeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresFeat">
+              <PropertyRef Name="RequiredFeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requiring">
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="1" />
+          <End Role="FeatRequiresFeat" Type="Self.FeatRequiresFeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeatVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresFeat">
+              <PropertyRef Name="RequiringFeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RuleBook">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="SkillVariant" Type="Self.SkillVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SkillVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RuleBookOfRaceVariant">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaveRequired">
+          <End Role="Save" Type="Self.Save" Multiplicity="1" />
+          <End Role="FeatRequiresSaveValues" Type="Self.FeatRequiresSaveValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Save">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSaveValues">
+              <PropertyRef Name="SaveID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sense">
+          <End Role="VisualSense" Type="Self.VisualSense" Multiplicity="1" />
+          <End Role="RacialSenses" Type="Self.RacialSenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisualSense">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialSenses">
+              <PropertyRef Name="SenseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SizeCategory">
+          <End Role="SizeCategory" Type="Self.SizeCategory" Multiplicity="1" />
+          <End Role="RacialSizeCategories" Type="Self.RacialSizeCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SizeCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialSizeCategories">
+              <PropertyRef Name="SizeCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skill">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="SkillVariant" Type="Self.SkillVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SkillVariant">
+              <PropertyRef Name="SkillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillRequired">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="FeatRequiresSkillRank" Type="Self.FeatRequiresSkillRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSkillRank">
+              <PropertyRef Name="SkillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillSynergySkill">
+          <End Role="SkillVariant" Type="Self.SkillVariant" Multiplicity="1" />
+          <End Role="SkillSynergy" Type="Self.SkillSynergy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SkillSynergy">
+              <PropertyRef Name="SkillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubraceOf">
+          <End Role="Race" Type="Self.Race" Multiplicity="0..1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="SubraceOfID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SynergizingSkill">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="SkillSynergy" Type="Self.SkillSynergy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SkillSynergy">
+              <PropertyRef Name="SynergizesWithID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeOfCreature">
+          <End Role="CreatureType" Type="Self.CreatureType" Multiplicity="1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreatureType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="CreatureTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Variant">
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="1" />
+          <End Role="FeatVariantToFeatCategory" Type="Self.FeatVariantToFeatCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeatVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariantToFeatCategory">
+              <PropertyRef Name="FeatVariantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VariantOfDomain">
+          <End Role="Domain" Type="Self.Domain" Multiplicity="1" />
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainVariant">
+              <PropertyRef Name="DomainID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellToSpellDescriptor_ibfk_1">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="1" />
+          <End Role="SpellToSpellDescriptor" Type="Self.SpellToSpellDescriptor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellToSpellDescriptor">
+              <PropertyRef Name="SpellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellToSpellDescriptor_ibfk_2">
+          <End Role="SpellDescriptor" Type="Self.SpellDescriptor" Multiplicity="1" />
+          <End Role="SpellToSpellDescriptor" Type="Self.SpellToSpellDescriptor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpellDescriptor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellToSpellDescriptor">
+              <PropertyRef Name="DescriptorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellToSpellSchool_ibfk_1">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="1" />
+          <End Role="SpellToSpellSchool" Type="Self.SpellToSpellSchool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellToSpellSchool">
+              <PropertyRef Name="SpellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellToSpellSchool_ibfk_2">
+          <End Role="SpellSchool" Type="Self.SpellSchool" Multiplicity="1" />
+          <End Role="SpellToSpellSchool" Type="Self.SpellToSpellSchool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpellSchool">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellToSpellSchool">
+              <PropertyRef Name="SchoolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellToSpellSubSchool_ibfk_1">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="1" />
+          <End Role="SpellToSpellSubSchool" Type="Self.SpellToSpellSubSchool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellToSpellSubSchool">
+              <PropertyRef Name="SpellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellToSpellSubSchool_ibfk_2">
+          <End Role="SpellSubSchool" Type="Self.SpellSubSchool" Multiplicity="1" />
+          <End Role="SpellToSpellSubSchool" Type="Self.SpellToSpellSubSchool" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpellSubSchool">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellToSpellSubSchool">
+              <PropertyRef Name="SubSchoolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellVariant_ibfk_1">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="SpellVariant" Type="Self.SpellVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellVariant_ibfk_2">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="1" />
+          <End Role="SpellVariant" Type="Self.SpellVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellVariant">
+              <PropertyRef Name="SpellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellVariant_ibfk_3">
+          <End Role="ActionTimeIndicator" Type="Self.ActionTimeIndicator" Multiplicity="1" />
+          <End Role="SpellVariant" Type="Self.SpellVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionTimeIndicator">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellVariant">
+              <PropertyRef Name="CastingTimeIndicatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DnDDatabaseModelStoreContainer">
+          <EntitySet Name="AbilityStat" EntityType="Self.AbilityStat" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="ActionTimeIndicator" EntityType="Self.ActionTimeIndicator" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Alignment" EntityType="Self.Alignment" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="AllowedSpellSave" EntityType="Self.AllowedSpellSave" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Condition" EntityType="Self.Condition" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="CreatureSubType" EntityType="Self.CreatureSubType" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="CreatureType" EntityType="Self.CreatureType" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Deity" EntityType="Self.Deity" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="DeityClericAlignments" EntityType="Self.DeityClericAlignments" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Domain" EntityType="Self.Domain" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="DomainSpells" EntityType="Self.DomainSpells" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="DomainVariant" EntityType="Self.DomainVariant" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="DomainVariantToDeity" EntityType="Self.DomainVariantToDeity" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Edition" EntityType="Self.Edition" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Feat" EntityType="Self.Feat" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatCategory" EntityType="Self.FeatCategory" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatRequiresAlignments" EntityType="Self.FeatRequiresAlignments" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatRequiresFeat" EntityType="Self.FeatRequiresFeat" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatRequiresSaveValues" EntityType="Self.FeatRequiresSaveValues" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatRequiresSkillRank" EntityType="Self.FeatRequiresSkillRank" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatRequiresStatValues" EntityType="Self.FeatRequiresStatValues" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatVariant" EntityType="Self.FeatVariant" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="FeatVariantToFeatCategory" EntityType="Self.FeatVariantToFeatCategory" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Language" EntityType="Self.Language" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="MovementMode" EntityType="Self.MovementMode" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Race" EntityType="Self.Race" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RaceStatChanges" EntityType="Self.RaceStatChanges" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RaceVariant" EntityType="Self.RaceVariant" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RacialAutomaticLanguages" EntityType="Self.RacialAutomaticLanguages" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RacialBonusLanguages" EntityType="Self.RacialBonusLanguages" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RacialMovementModes" EntityType="Self.RacialMovementModes" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RacialSenses" EntityType="Self.RacialSenses" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RacialSizeCategories" EntityType="Self.RacialSizeCategories" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="RuleBook" EntityType="Self.RuleBook" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Save" EntityType="Self.Save" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SaveType" EntityType="Self.SaveType" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SizeCategory" EntityType="Self.SizeCategory" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Skill" EntityType="Self.Skill" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SkillSynergy" EntityType="Self.SkillSynergy" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SkillVariant" EntityType="Self.SkillVariant" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="Spell" EntityType="Self.Spell" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SpellDescriptor" EntityType="Self.SpellDescriptor" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SpellSchool" EntityType="Self.SpellSchool" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SpellSubSchool" EntityType="Self.SpellSubSchool" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SpellToSpellDescriptor" EntityType="Self.SpellToSpellDescriptor" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SpellToSpellSchool" EntityType="Self.SpellToSpellSchool" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SpellToSpellSubSchool" EntityType="Self.SpellToSpellSubSchool" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="SpellVariant" EntityType="Self.SpellVariant" Schema="DnDDatabase" store:Type="Tables" />
+          <EntitySet Name="VisualSense" EntityType="Self.VisualSense" Schema="DnDDatabase" store:Type="Tables" />
+          <AssociationSet Name="DeityClericAlignments_ibfk_1" Association="Self.DeityClericAlignments_ibfk_1">
+            <End Role="Deity" EntitySet="Deity" />
+            <End Role="DeityClericAlignments" EntitySet="DeityClericAlignments" />
+          </AssociationSet>
+          <AssociationSet Name="DeityClericAlignments_ibfk_2" Association="Self.DeityClericAlignments_ibfk_2">
+            <End Role="Alignment" EntitySet="Alignment" />
+            <End Role="DeityClericAlignments" EntitySet="DeityClericAlignments" />
+          </AssociationSet>
+          <AssociationSet Name="DomainSpells_ibfk_1" Association="Self.DomainSpells_ibfk_1">
+            <End Role="Spell" EntitySet="Spell" />
+            <End Role="DomainSpells" EntitySet="DomainSpells" />
+          </AssociationSet>
+          <AssociationSet Name="DomainSpells_ibfk_2" Association="Self.DomainSpells_ibfk_2">
+            <End Role="DomainVariant" EntitySet="DomainVariant" />
+            <End Role="DomainSpells" EntitySet="DomainSpells" />
+          </AssociationSet>
+          <AssociationSet Name="FeatRequiresAlignments_ibfk_1" Association="Self.FeatRequiresAlignments_ibfk_1">
+            <End Role="FeatVariant" EntitySet="FeatVariant" />
+            <End Role="FeatRequiresAlignments" EntitySet="FeatRequiresAlignments" />
+          </AssociationSet>
+          <AssociationSet Name="FeatRequiresAlignments_ibfk_2" Association="Self.FeatRequiresAlignments_ibfk_2">
+            <End Role="Alignment" EntitySet="Alignment" />
+            <End Role="FeatRequiresAlignments" EntitySet="FeatRequiresAlignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AbilityStat" Association="Self.FK_AbilityStat">
+            <End Role="AbilityStat" EntitySet="AbilityStat" />
+            <End Role="Skill" EntitySet="Skill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AbilityStatRequired" Association="Self.FK_AbilityStatRequired">
+            <End Role="AbilityStat" EntitySet="AbilityStat" />
+            <End Role="FeatRequiresStatValues" EntitySet="FeatRequiresStatValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AllowedSpellSave_Saves" Association="Self.FK_AllowedSpellSave_Saves">
+            <End Role="Save" EntitySet="Save" />
+            <End Role="AllowedSpellSave" EntitySet="AllowedSpellSave" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AllowedSpellSave_SaveType" Association="Self.FK_AllowedSpellSave_SaveType">
+            <End Role="SaveType" EntitySet="SaveType" />
+            <End Role="AllowedSpellSave" EntitySet="AllowedSpellSave" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutomaticLanguage" Association="Self.FK_AutomaticLanguage">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="RacialAutomaticLanguages" EntitySet="RacialAutomaticLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BonusLanguage" Association="Self.FK_BonusLanguage">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="RacialBonusLanguages" EntitySet="RacialBonusLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Category" Association="Self.FK_Category">
+            <End Role="FeatCategory" EntitySet="FeatCategory" />
+            <End Role="FeatVariantToFeatCategory" EntitySet="FeatVariantToFeatCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContainedInRuleBook" Association="Self.FK_ContainedInRuleBook">
+            <End Role="RuleBook" EntitySet="RuleBook" />
+            <End Role="DomainVariant" EntitySet="DomainVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deity" Association="Self.FK_Deity">
+            <End Role="Deity" EntitySet="Deity" />
+            <End Role="DomainVariantToDeity" EntitySet="DomainVariantToDeity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DomainVariant" Association="Self.FK_DomainVariant">
+            <End Role="DomainVariant" EntitySet="DomainVariant" />
+            <End Role="DomainVariantToDeity" EntitySet="DomainVariantToDeity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EditionOfRulebook" Association="Self.FK_EditionOfRulebook">
+            <End Role="Edition" EntitySet="Edition" />
+            <End Role="RuleBook" EntitySet="RuleBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatOriginRuleBook" Association="Self.FK_FeatOriginRuleBook">
+            <End Role="RuleBook" EntitySet="RuleBook" />
+            <End Role="FeatVariant" EntitySet="FeatVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatRequiring" Association="Self.FK_FeatRequiring">
+            <End Role="Feat" EntitySet="Feat" />
+            <End Role="FeatRequiresSkillRank" EntitySet="FeatRequiresSkillRank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatRequiringSave" Association="Self.FK_FeatRequiringSave">
+            <End Role="Feat" EntitySet="Feat" />
+            <End Role="FeatRequiresSaveValues" EntitySet="FeatRequiresSaveValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatRequiringStat" Association="Self.FK_FeatRequiringStat">
+            <End Role="Feat" EntitySet="Feat" />
+            <End Role="FeatRequiresStatValues" EntitySet="FeatRequiresStatValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovementMode" Association="Self.FK_MovementMode">
+            <End Role="MovementMode" EntitySet="MovementMode" />
+            <End Role="RacialMovementModes" EntitySet="RacialMovementModes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patreon" Association="Self.FK_Patreon">
+            <End Role="Deity" EntitySet="Deity" />
+            <End Role="FeatVariant" EntitySet="FeatVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceOfRaceVariant" Association="Self.FK_RaceOfRaceVariant">
+            <End Role="Race" EntitySet="Race" />
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithAutomaticLanguage" Association="Self.FK_RaceWithAutomaticLanguage">
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+            <End Role="RacialAutomaticLanguages" EntitySet="RacialAutomaticLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithBonusLanguage" Association="Self.FK_RaceWithBonusLanguage">
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+            <End Role="RacialBonusLanguages" EntitySet="RacialBonusLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithMovementMode" Association="Self.FK_RaceWithMovementMode">
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+            <End Role="RacialMovementModes" EntitySet="RacialMovementModes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithSense" Association="Self.FK_RaceWithSense">
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+            <End Role="RacialSenses" EntitySet="RacialSenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithSizeCategory" Association="Self.FK_RaceWithSizeCategory">
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+            <End Role="RacialSizeCategories" EntitySet="RacialSizeCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithStatChange" Association="Self.FK_RaceWithStatChange">
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+            <End Role="RaceStatChanges" EntitySet="RaceStatChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RacialStatChange" Association="Self.FK_RacialStatChange">
+            <End Role="AbilityStat" EntitySet="AbilityStat" />
+            <End Role="RaceStatChanges" EntitySet="RaceStatChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReferredFeat" Association="Self.FK_ReferredFeat">
+            <End Role="Feat" EntitySet="Feat" />
+            <End Role="FeatVariant" EntitySet="FeatVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Required" Association="Self.FK_Required">
+            <End Role="Feat" EntitySet="Feat" />
+            <End Role="FeatRequiresFeat" EntitySet="FeatRequiresFeat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requiring" Association="Self.FK_Requiring">
+            <End Role="FeatVariant" EntitySet="FeatVariant" />
+            <End Role="FeatRequiresFeat" EntitySet="FeatRequiresFeat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RuleBook" Association="Self.FK_RuleBook">
+            <End Role="RuleBook" EntitySet="RuleBook" />
+            <End Role="SkillVariant" EntitySet="SkillVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RuleBookOfRaceVariant" Association="Self.FK_RuleBookOfRaceVariant">
+            <End Role="RuleBook" EntitySet="RuleBook" />
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaveRequired" Association="Self.FK_SaveRequired">
+            <End Role="Save" EntitySet="Save" />
+            <End Role="FeatRequiresSaveValues" EntitySet="FeatRequiresSaveValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sense" Association="Self.FK_Sense">
+            <End Role="VisualSense" EntitySet="VisualSense" />
+            <End Role="RacialSenses" EntitySet="RacialSenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SizeCategory" Association="Self.FK_SizeCategory">
+            <End Role="SizeCategory" EntitySet="SizeCategory" />
+            <End Role="RacialSizeCategories" EntitySet="RacialSizeCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skill" Association="Self.FK_Skill">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="SkillVariant" EntitySet="SkillVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillRequired" Association="Self.FK_SkillRequired">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="FeatRequiresSkillRank" EntitySet="FeatRequiresSkillRank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillSynergySkill" Association="Self.FK_SkillSynergySkill">
+            <End Role="SkillVariant" EntitySet="SkillVariant" />
+            <End Role="SkillSynergy" EntitySet="SkillSynergy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubraceOf" Association="Self.FK_SubraceOf">
+            <End Role="Race" EntitySet="Race" />
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SynergizingSkill" Association="Self.FK_SynergizingSkill">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="SkillSynergy" EntitySet="SkillSynergy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeOfCreature" Association="Self.FK_TypeOfCreature">
+            <End Role="CreatureType" EntitySet="CreatureType" />
+            <End Role="RaceVariant" EntitySet="RaceVariant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Variant" Association="Self.FK_Variant">
+            <End Role="FeatVariant" EntitySet="FeatVariant" />
+            <End Role="FeatVariantToFeatCategory" EntitySet="FeatVariantToFeatCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VariantOfDomain" Association="Self.FK_VariantOfDomain">
+            <End Role="Domain" EntitySet="Domain" />
+            <End Role="DomainVariant" EntitySet="DomainVariant" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellDescriptor_ibfk_1" Association="Self.SpellToSpellDescriptor_ibfk_1">
+            <End Role="Spell" EntitySet="Spell" />
+            <End Role="SpellToSpellDescriptor" EntitySet="SpellToSpellDescriptor" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellDescriptor_ibfk_2" Association="Self.SpellToSpellDescriptor_ibfk_2">
+            <End Role="SpellDescriptor" EntitySet="SpellDescriptor" />
+            <End Role="SpellToSpellDescriptor" EntitySet="SpellToSpellDescriptor" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellSchool_ibfk_1" Association="Self.SpellToSpellSchool_ibfk_1">
+            <End Role="Spell" EntitySet="Spell" />
+            <End Role="SpellToSpellSchool" EntitySet="SpellToSpellSchool" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellSchool_ibfk_2" Association="Self.SpellToSpellSchool_ibfk_2">
+            <End Role="SpellSchool" EntitySet="SpellSchool" />
+            <End Role="SpellToSpellSchool" EntitySet="SpellToSpellSchool" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellSubSchool_ibfk_1" Association="Self.SpellToSpellSubSchool_ibfk_1">
+            <End Role="Spell" EntitySet="Spell" />
+            <End Role="SpellToSpellSubSchool" EntitySet="SpellToSpellSubSchool" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellSubSchool_ibfk_2" Association="Self.SpellToSpellSubSchool_ibfk_2">
+            <End Role="SpellSubSchool" EntitySet="SpellSubSchool" />
+            <End Role="SpellToSpellSubSchool" EntitySet="SpellToSpellSubSchool" />
+          </AssociationSet>
+          <AssociationSet Name="SpellVariant_ibfk_1" Association="Self.SpellVariant_ibfk_1">
+            <End Role="RuleBook" EntitySet="RuleBook" />
+            <End Role="SpellVariant" EntitySet="SpellVariant" />
+          </AssociationSet>
+          <AssociationSet Name="SpellVariant_ibfk_2" Association="Self.SpellVariant_ibfk_2">
+            <End Role="Spell" EntitySet="Spell" />
+            <End Role="SpellVariant" EntitySet="SpellVariant" />
+          </AssociationSet>
+          <AssociationSet Name="SpellVariant_ibfk_3" Association="Self.SpellVariant_ibfk_3">
+            <End Role="ActionTimeIndicator" EntitySet="ActionTimeIndicator" />
+            <End Role="SpellVariant" EntitySet="SpellVariant" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DnDDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AbilityStat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Abbreviation" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Skills" Relationship="Self.FK_AbilityStat" FromRole="AbilityStat" ToRole="Skill" />
+          <NavigationProperty Name="FeatRequiresStatValues" Relationship="Self.FK_AbilityStatRequired" FromRole="AbilityStat" ToRole="FeatRequiresStatValues" />
+          <NavigationProperty Name="RaceStatChanges" Relationship="Self.FK_RacialStatChange" FromRole="AbilityStat" ToRole="RaceStatChanges" />
+        </EntityType>
+        <EntityType Name="ActionTimeIndicator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SpellVariants" Relationship="Self.SpellVariant_ibfk_3" FromRole="ActionTimeIndicator" ToRole="SpellVariant" />
+        </EntityType>
+        <EntityType Name="Alignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Abbreviation" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Deities" Relationship="Self.DeityClericAlignments" FromRole="Alignment" ToRole="Deity" />
+          <NavigationProperty Name="FeatVariants" Relationship="Self.FeatRequiresAlignments" FromRole="Alignment" ToRole="FeatVariant" />
+        </EntityType>
+        <EntityType Name="AllowedSpellSave">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SpellID" Type="Int32" Nullable="false" />
+          <Property Name="SaveStatID" Type="Int32" Nullable="false" />
+          <Property Name="SaveTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Extra" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Save" Relationship="Self.FK_AllowedSpellSave_Saves" FromRole="AllowedSpellSave" ToRole="Save" />
+          <NavigationProperty Name="SaveType" Relationship="Self.FK_AllowedSpellSave_SaveType" FromRole="AllowedSpellSave" ToRole="SaveType" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreatureSubType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreatureType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HitDieSize" Type="Int32" Nullable="false" />
+          <Property Name="BABType" Type="Decimal" Nullable="false" />
+          <Property Name="FortType" Type="Decimal" Nullable="false" />
+          <Property Name="RefType" Type="Decimal" Nullable="false" />
+          <Property Name="WillType" Type="Decimal" Nullable="false" />
+          <Property Name="BaseSkillPoints" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RaceVariants" Relationship="Self.FK_TypeOfCreature" FromRole="CreatureType" ToRole="RaceVariant" />
+        </EntityType>
+        <EntityType Name="Deity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Alignment" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FeatVariants" Relationship="Self.FK_Patreon" FromRole="Deity" ToRole="FeatVariant" />
+          <NavigationProperty Name="Alignments" Relationship="Self.DeityClericAlignments" FromRole="Deity" ToRole="Alignment" />
+          <NavigationProperty Name="DomainVariants" Relationship="Self.DomainVariantToDeity" FromRole="Deity" ToRole="DomainVariant" />
+        </EntityType>
+        <EntityType Name="Domain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DomainVariants" Relationship="Self.FK_VariantOfDomain" FromRole="Domain" ToRole="DomainVariant" />
+        </EntityType>
+        <EntityType Name="DomainSpell">
+          <Key>
+            <PropertyRef Name="SpellID" />
+            <PropertyRef Name="DomainVariantID" />
+          </Key>
+          <Property Name="SpellID" Type="Int32" Nullable="false" />
+          <Property Name="DomainVariantID" Type="Int32" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Spell" Relationship="Self.DomainSpells_ibfk_1" FromRole="DomainSpells" ToRole="Spell" />
+          <NavigationProperty Name="DomainVariant" Relationship="Self.DomainSpells_ibfk_2" FromRole="DomainSpells" ToRole="DomainVariant" />
+        </EntityType>
+        <EntityType Name="DomainVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DomainID" Type="Int32" Nullable="false" />
+          <Property Name="RuleBookID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Domain" Relationship="Self.FK_VariantOfDomain" FromRole="DomainVariant" ToRole="Domain" />
+          <NavigationProperty Name="DomainSpells" Relationship="Self.DomainSpells_ibfk_2" FromRole="DomainVariant" ToRole="DomainSpells" />
+          <NavigationProperty Name="RuleBook" Relationship="Self.FK_ContainedInRuleBook" FromRole="DomainVariant" ToRole="RuleBook" />
+          <NavigationProperty Name="Deities" Relationship="Self.DomainVariantToDeity" FromRole="DomainVariant" ToRole="Deity" />
+        </EntityType>
+        <EntityType Name="Edition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="System" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Core" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="RuleBooks" Relationship="Self.FK_EditionOfRulebook" FromRole="Edition" ToRole="RuleBook" />
+        </EntityType>
+        <EntityType Name="Feat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="FeatRequiresSkillRanks" Relationship="Self.FK_FeatRequiring" FromRole="Feat" ToRole="FeatRequiresSkillRank" />
+          <NavigationProperty Name="FeatRequiresSaveValues" Relationship="Self.FK_FeatRequiringSave" FromRole="Feat" ToRole="FeatRequiresSaveValues" />
+          <NavigationProperty Name="FeatRequiresStatValues" Relationship="Self.FK_FeatRequiringStat" FromRole="Feat" ToRole="FeatRequiresStatValues" />
+          <NavigationProperty Name="FeatVariants" Relationship="Self.FK_ReferredFeat" FromRole="Feat" ToRole="FeatVariant" />
+          <NavigationProperty Name="FeatVariants1" Relationship="Self.FeatRequiresFeat" FromRole="Feat" ToRole="FeatVariant" />
+        </EntityType>
+        <EntityType Name="FeatCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FeatVariants" Relationship="Self.FeatVariantToFeatCategory" FromRole="FeatCategory" ToRole="FeatVariant" />
+        </EntityType>
+        <EntityType Name="FeatRequiresSaveValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaveID" Type="Int32" Nullable="false" />
+          <Property Name="FeatID" Type="Int32" Nullable="false" />
+          <Property Name="MinValue" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Feat" Relationship="Self.FK_FeatRequiringSave" FromRole="FeatRequiresSaveValues" ToRole="Feat" />
+          <NavigationProperty Name="Save" Relationship="Self.FK_SaveRequired" FromRole="FeatRequiresSaveValues" ToRole="Save" />
+        </EntityType>
+        <EntityType Name="FeatRequiresSkillRank">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillID" Type="Int32" Nullable="false" />
+          <Property Name="FeatID" Type="Int32" Nullable="false" />
+          <Property Name="MinRanks" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Feat" Relationship="Self.FK_FeatRequiring" FromRole="FeatRequiresSkillRank" ToRole="Feat" />
+          <NavigationProperty Name="Skill" Relationship="Self.FK_SkillRequired" FromRole="FeatRequiresSkillRank" ToRole="Skill" />
+        </EntityType>
+        <EntityType Name="FeatRequiresStatValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AbilityStatID" Type="Int32" Nullable="false" />
+          <Property Name="FeatID" Type="Int32" Nullable="false" />
+          <Property Name="MinValue" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AbilityStat" Relationship="Self.FK_AbilityStatRequired" FromRole="FeatRequiresStatValues" ToRole="AbilityStat" />
+          <NavigationProperty Name="Feat" Relationship="Self.FK_FeatRequiringStat" FromRole="FeatRequiresStatValues" ToRole="Feat" />
+        </EntityType>
+        <EntityType Name="FeatVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FeatID" Type="Int32" Nullable="false" />
+          <Property Name="RuleBookID" Type="Int32" Nullable="false" />
+          <Property Name="PageNo" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RequiredCharacterLevel" Type="Int32" />
+          <Property Name="RequiredCharacterBAB" Type="Int32" />
+          <Property Name="RequiredCasterLevel" Type="Int32" />
+          <Property Name="RequiredArcaneCasterLevel" Type="Int32" />
+          <Property Name="RequiredDivineCasterLevel" Type="Int32" />
+          <Property Name="RequiredPatreonDeityID" Type="Int32" />
+          <NavigationProperty Name="Deity" Relationship="Self.FK_Patreon" FromRole="FeatVariant" ToRole="Deity" />
+          <NavigationProperty Name="Feat" Relationship="Self.FK_ReferredFeat" FromRole="FeatVariant" ToRole="Feat" />
+          <NavigationProperty Name="RuleBook" Relationship="Self.FK_FeatOriginRuleBook" FromRole="FeatVariant" ToRole="RuleBook" />
+          <NavigationProperty Name="Alignments" Relationship="Self.FeatRequiresAlignments" FromRole="FeatVariant" ToRole="Alignment" />
+          <NavigationProperty Name="Feats" Relationship="Self.FeatRequiresFeat" FromRole="FeatVariant" ToRole="Feat" />
+          <NavigationProperty Name="FeatCategories" Relationship="Self.FeatVariantToFeatCategory" FromRole="FeatVariant" ToRole="FeatCategory" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RaceVariants" Relationship="Self.RacialAutomaticLanguages" FromRole="Language" ToRole="RaceVariant" />
+          <NavigationProperty Name="RaceVariants1" Relationship="Self.RacialBonusLanguages" FromRole="Language" ToRole="RaceVariant" />
+        </EntityType>
+        <EntityType Name="MovementMode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RacialMovementModes" Relationship="Self.FK_MovementMode" FromRole="MovementMode" ToRole="RacialMovementModes" />
+        </EntityType>
+        <EntityType Name="Race">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RaceVariants" Relationship="Self.FK_RaceOfRaceVariant" FromRole="Race" ToRole="RaceVariant" />
+          <NavigationProperty Name="RaceVariants1" Relationship="Self.FK_SubraceOf" FromRole="Race" ToRole="RaceVariant" />
+        </EntityType>
+        <EntityType Name="RaceStatChanx">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaceID" Type="Int32" Nullable="false" />
+          <Property Name="AbilityStatID" Type="Int32" Nullable="false" />
+          <Property Name="Bonus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AbilityStat" Relationship="Self.FK_RacialStatChange" FromRole="RaceStatChanges" ToRole="AbilityStat" />
+          <NavigationProperty Name="RaceVariant" Relationship="Self.FK_RaceWithStatChange" FromRole="RaceStatChanges" ToRole="RaceVariant" />
+        </EntityType>
+        <EntityType Name="RaceVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaceID" Type="Int32" Nullable="false" />
+          <Property Name="RuleBookID" Type="Int32" Nullable="false" />
+          <Property Name="Page" Type="Int32" />
+          <Property Name="SubraceOfID" Type="Int32" />
+          <Property Name="CreatureTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FavouredClass" Type="Int32" />
+          <Property Name="CountRacialHitDice" Type="Int32" Nullable="false" />
+          <Property Name="SizeRacialHitDie" Type="Int32" />
+          <Property Name="LevelAdjustment" Type="Int32" />
+          <Property Name="Space" Type="Int32" />
+          <Property Name="Reach" Type="Int32" />
+          <Property Name="NaturalArmor" Type="Int32" />
+          <Property Name="Combat" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="BABType" Type="Decimal" />
+          <Property Name="FortType" Type="Decimal" />
+          <Property Name="RefType" Type="Decimal" />
+          <Property Name="WillType" Type="Decimal" />
+          <Property Name="BaseSkillPoints" Type="Int32" />
+          <NavigationProperty Name="CreatureType" Relationship="Self.FK_TypeOfCreature" FromRole="RaceVariant" ToRole="CreatureType" />
+          <NavigationProperty Name="Race" Relationship="Self.FK_RaceOfRaceVariant" FromRole="RaceVariant" ToRole="Race" />
+          <NavigationProperty Name="Race1" Relationship="Self.FK_SubraceOf" FromRole="RaceVariant" ToRole="Race" />
+          <NavigationProperty Name="RaceStatChanges" Relationship="Self.FK_RaceWithStatChange" FromRole="RaceVariant" ToRole="RaceStatChanges" />
+          <NavigationProperty Name="RacialMovementModes" Relationship="Self.FK_RaceWithMovementMode" FromRole="RaceVariant" ToRole="RacialMovementModes" />
+          <NavigationProperty Name="RacialSenses" Relationship="Self.FK_RaceWithSense" FromRole="RaceVariant" ToRole="RacialSenses" />
+          <NavigationProperty Name="RuleBook" Relationship="Self.FK_RuleBookOfRaceVariant" FromRole="RaceVariant" ToRole="RuleBook" />
+          <NavigationProperty Name="Languages" Relationship="Self.RacialAutomaticLanguages" FromRole="RaceVariant" ToRole="Language" />
+          <NavigationProperty Name="Languages1" Relationship="Self.RacialBonusLanguages" FromRole="RaceVariant" ToRole="Language" />
+          <NavigationProperty Name="SizeCategories" Relationship="Self.RacialSizeCategories" FromRole="RaceVariant" ToRole="SizeCategory" />
+        </EntityType>
+        <EntityType Name="RacialMovementMode">
+          <Key>
+            <PropertyRef Name="RaceID" />
+            <PropertyRef Name="MovementModeID" />
+          </Key>
+          <Property Name="RaceID" Type="Int32" Nullable="false" />
+          <Property Name="MovementModeID" Type="Int32" Nullable="false" />
+          <Property Name="Distance" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MovementMode" Relationship="Self.FK_MovementMode" FromRole="RacialMovementModes" ToRole="MovementMode" />
+          <NavigationProperty Name="RaceVariant" Relationship="Self.FK_RaceWithMovementMode" FromRole="RacialMovementModes" ToRole="RaceVariant" />
+        </EntityType>
+        <EntityType Name="RacialSens">
+          <Key>
+            <PropertyRef Name="RaceID" />
+            <PropertyRef Name="SenseID" />
+          </Key>
+          <Property Name="RaceID" Type="Int32" Nullable="false" />
+          <Property Name="SenseID" Type="Int32" Nullable="false" />
+          <Property Name="Distance" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RaceVariant" Relationship="Self.FK_RaceWithSense" FromRole="RacialSenses" ToRole="RaceVariant" />
+          <NavigationProperty Name="VisualSense" Relationship="Self.FK_Sense" FromRole="RacialSenses" ToRole="VisualSense" />
+        </EntityType>
+        <EntityType Name="RuleBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EditionID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Abbreviation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PublishedAt" Type="DateTime" />
+          <NavigationProperty Name="DomainVariants" Relationship="Self.FK_ContainedInRuleBook" FromRole="RuleBook" ToRole="DomainVariant" />
+          <NavigationProperty Name="Edition" Relationship="Self.FK_EditionOfRulebook" FromRole="RuleBook" ToRole="Edition" />
+          <NavigationProperty Name="FeatVariants" Relationship="Self.FK_FeatOriginRuleBook" FromRole="RuleBook" ToRole="FeatVariant" />
+          <NavigationProperty Name="RaceVariants" Relationship="Self.FK_RuleBookOfRaceVariant" FromRole="RuleBook" ToRole="RaceVariant" />
+          <NavigationProperty Name="SkillVariants" Relationship="Self.FK_RuleBook" FromRole="RuleBook" ToRole="SkillVariant" />
+          <NavigationProperty Name="SpellVariants" Relationship="Self.SpellVariant_ibfk_1" FromRole="RuleBook" ToRole="SpellVariant" />
+        </EntityType>
+        <EntityType Name="Save">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="31" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AllowedSpellSaves" Relationship="Self.FK_AllowedSpellSave_Saves" FromRole="Save" ToRole="AllowedSpellSave" />
+          <NavigationProperty Name="FeatRequiresSaveValues" Relationship="Self.FK_SaveRequired" FromRole="Save" ToRole="FeatRequiresSaveValues" />
+        </EntityType>
+        <EntityType Name="SaveType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AllowedSpellSaves" Relationship="Self.FK_AllowedSpellSave_SaveType" FromRole="SaveType" ToRole="AllowedSpellSave" />
+        </EntityType>
+        <EntityType Name="SizeCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AttackAndACMod" Type="Int32" Nullable="false" />
+          <Property Name="SpecialAttacksMod" Type="Int32" Nullable="false" />
+          <Property Name="HideMod" Type="Int32" Nullable="false" />
+          <Property Name="Space" Type="Decimal" Nullable="false" />
+          <Property Name="ReachTall" Type="Int32" Nullable="false" />
+          <Property Name="ReachLong" Type="Int32" Nullable="false" />
+          <Property Name="CarryingCapacitorModificatorBiped" Type="Decimal" Nullable="false" />
+          <Property Name="CarryingCapacitorModificatorQuadruped" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="RaceVariants" Relationship="Self.RacialSizeCategories" FromRole="SizeCategory" ToRole="RaceVariant" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AbilityStatID" Type="Int32" Nullable="false" />
+          <Property Name="TrainedOnly" Type="Boolean" Nullable="false" />
+          <Property Name="ArmorCheckPenaltyModifier" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AbilityStat" Relationship="Self.FK_AbilityStat" FromRole="Skill" ToRole="AbilityStat" />
+          <NavigationProperty Name="FeatRequiresSkillRanks" Relationship="Self.FK_SkillRequired" FromRole="Skill" ToRole="FeatRequiresSkillRank" />
+          <NavigationProperty Name="SkillVariants" Relationship="Self.FK_Skill" FromRole="Skill" ToRole="SkillVariant" />
+          <NavigationProperty Name="SkillVariants1" Relationship="Self.SkillSynergy" FromRole="Skill" ToRole="SkillVariant" />
+        </EntityType>
+        <EntityType Name="SkillVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillID" Type="Int32" Nullable="false" />
+          <Property Name="RuleBookID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Action" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="TryAgain" Type="Boolean" />
+          <Property Name="Special" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Untrained" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="Restrictions" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RuleBook" Relationship="Self.FK_RuleBook" FromRole="SkillVariant" ToRole="RuleBook" />
+          <NavigationProperty Name="Skill" Relationship="Self.FK_Skill" FromRole="SkillVariant" ToRole="Skill" />
+          <NavigationProperty Name="Skills" Relationship="Self.SkillSynergy" FromRole="SkillVariant" ToRole="Skill" />
+        </EntityType>
+        <EntityType Name="Spell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DomainSpells" Relationship="Self.DomainSpells_ibfk_1" FromRole="Spell" ToRole="DomainSpells" />
+          <NavigationProperty Name="SpellVariants" Relationship="Self.SpellVariant_ibfk_2" FromRole="Spell" ToRole="SpellVariant" />
+          <NavigationProperty Name="SpellDescriptors" Relationship="Self.SpellToSpellDescriptor" FromRole="Spell" ToRole="SpellDescriptor" />
+          <NavigationProperty Name="SpellSchools" Relationship="Self.SpellToSpellSchool" FromRole="Spell" ToRole="SpellSchool" />
+          <NavigationProperty Name="SpellSubSchools" Relationship="Self.SpellToSpellSubSchool" FromRole="Spell" ToRole="SpellSubSchool" />
+        </EntityType>
+        <EntityType Name="SpellDescriptor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Spells" Relationship="Self.SpellToSpellDescriptor" FromRole="SpellDescriptor" ToRole="Spell" />
+        </EntityType>
+        <EntityType Name="SpellSchool">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Spells" Relationship="Self.SpellToSpellSchool" FromRole="SpellSchool" ToRole="Spell" />
+        </EntityType>
+        <EntityType Name="SpellSubSchool">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Spells" Relationship="Self.SpellToSpellSubSchool" FromRole="SpellSubSchool" ToRole="Spell" />
+        </EntityType>
+        <EntityType Name="SpellVariant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SpellID" Type="Int32" Nullable="false" />
+          <Property Name="RuleBookID" Type="Int32" Nullable="false" />
+          <Property Name="Page" Type="Int32" />
+          <Property Name="HasVerbal" Type="Boolean" Nullable="false" />
+          <Property Name="HasSomatic" Type="Boolean" Nullable="false" />
+          <Property Name="Material" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="ArcaneFocus" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="DivineFocus" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="XPCost" Type="Int32" />
+          <Property Name="CastingTimeValue" Type="Int32" Nullable="false" />
+          <Property Name="CastingTimeIndicatorID" Type="Int32" Nullable="false" />
+          <Property Name="Range" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Target" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Effect" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Concentration" Type="Boolean" Nullable="false" />
+          <Property Name="Duration" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Harmless" Type="Boolean" Nullable="false" />
+          <Property Name="TargetsObject" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ActionTimeIndicator" Relationship="Self.SpellVariant_ibfk_3" FromRole="SpellVariant" ToRole="ActionTimeIndicator" />
+          <NavigationProperty Name="RuleBook" Relationship="Self.SpellVariant_ibfk_1" FromRole="SpellVariant" ToRole="RuleBook" />
+          <NavigationProperty Name="Spell" Relationship="Self.SpellVariant_ibfk_2" FromRole="SpellVariant" ToRole="Spell" />
+        </EntityType>
+        <EntityType Name="VisualSense">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RacialSenses" Relationship="Self.FK_Sense" FromRole="VisualSense" ToRole="RacialSenses" />
+        </EntityType>
+        <Association Name="FK_AbilityStat">
+          <End Role="AbilityStat" Type="Self.AbilityStat" Multiplicity="1" />
+          <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbilityStat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Skill">
+              <PropertyRef Name="AbilityStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AbilityStatRequired">
+          <End Role="AbilityStat" Type="Self.AbilityStat" Multiplicity="1" />
+          <End Role="FeatRequiresStatValues" Type="Self.FeatRequiresStatValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbilityStat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresStatValues">
+              <PropertyRef Name="AbilityStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RacialStatChange">
+          <End Role="AbilityStat" Type="Self.AbilityStat" Multiplicity="1" />
+          <End Role="RaceStatChanges" Type="Self.RaceStatChanx" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbilityStat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceStatChanges">
+              <PropertyRef Name="AbilityStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellVariant_ibfk_3">
+          <End Role="ActionTimeIndicator" Type="Self.ActionTimeIndicator" Multiplicity="1" />
+          <End Role="SpellVariant" Type="Self.SpellVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionTimeIndicator">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellVariant">
+              <PropertyRef Name="CastingTimeIndicatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AllowedSpellSave_Saves">
+          <End Role="Save" Type="Self.Save" Multiplicity="1" />
+          <End Role="AllowedSpellSave" Type="Self.AllowedSpellSave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Save">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AllowedSpellSave">
+              <PropertyRef Name="SaveStatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AllowedSpellSave_SaveType">
+          <End Role="SaveType" Type="Self.SaveType" Multiplicity="1" />
+          <End Role="AllowedSpellSave" Type="Self.AllowedSpellSave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaveType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AllowedSpellSave">
+              <PropertyRef Name="SaveTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeOfCreature">
+          <End Role="CreatureType" Type="Self.CreatureType" Multiplicity="1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreatureType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="CreatureTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patreon">
+          <End Role="Deity" Type="Self.Deity" Multiplicity="0..1" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deity">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariant">
+              <PropertyRef Name="RequiredPatreonDeityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VariantOfDomain">
+          <End Role="Domain" Type="Self.Domain" Multiplicity="1" />
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domain">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainVariant">
+              <PropertyRef Name="DomainID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DomainSpells_ibfk_1">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="1" />
+          <End Role="DomainSpells" Type="Self.DomainSpell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainSpells">
+              <PropertyRef Name="SpellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DomainSpells_ibfk_2">
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="1" />
+          <End Role="DomainSpells" Type="Self.DomainSpell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomainVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainSpells">
+              <PropertyRef Name="DomainVariantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContainedInRuleBook">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DomainVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EditionOfRulebook">
+          <End Role="Edition" Type="Self.Edition" Multiplicity="1" />
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Edition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RuleBook">
+              <PropertyRef Name="EditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatRequiring">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatRequiresSkillRank" Type="Self.FeatRequiresSkillRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSkillRank">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatRequiringSave">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatRequiresSaveValues" Type="Self.FeatRequiresSaveValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSaveValues">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatRequiringStat">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatRequiresStatValues" Type="Self.FeatRequiresStatValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresStatValues">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReferredFeat">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="1" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariant">
+              <PropertyRef Name="FeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaveRequired">
+          <End Role="Save" Type="Self.Save" Multiplicity="1" />
+          <End Role="FeatRequiresSaveValues" Type="Self.FeatRequiresSaveValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Save">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSaveValues">
+              <PropertyRef Name="SaveID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillRequired">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="FeatRequiresSkillRank" Type="Self.FeatRequiresSkillRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatRequiresSkillRank">
+              <PropertyRef Name="SkillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatOriginRuleBook">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FeatVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MovementMode">
+          <End Role="MovementMode" Type="Self.MovementMode" Multiplicity="1" />
+          <End Role="RacialMovementModes" Type="Self.RacialMovementMode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovementMode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialMovementModes">
+              <PropertyRef Name="MovementModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceOfRaceVariant">
+          <End Role="Race" Type="Self.Race" Multiplicity="1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubraceOf">
+          <End Role="Race" Type="Self.Race" Multiplicity="0..1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="SubraceOfID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithStatChange">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RaceStatChanges" Type="Self.RaceStatChanx" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceStatChanges">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithMovementMode">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RacialMovementModes" Type="Self.RacialMovementMode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialMovementModes">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RaceWithSense">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="1" />
+          <End Role="RacialSenses" Type="Self.RacialSens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceVariant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialSenses">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RuleBookOfRaceVariant">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RaceVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sense">
+          <End Role="VisualSense" Type="Self.VisualSense" Multiplicity="1" />
+          <End Role="RacialSenses" Type="Self.RacialSens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisualSense">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RacialSenses">
+              <PropertyRef Name="SenseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RuleBook">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="SkillVariant" Type="Self.SkillVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SkillVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellVariant_ibfk_1">
+          <End Role="RuleBook" Type="Self.RuleBook" Multiplicity="1" />
+          <End Role="SpellVariant" Type="Self.SpellVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RuleBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellVariant">
+              <PropertyRef Name="RuleBookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skill">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+          <End Role="SkillVariant" Type="Self.SkillVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SkillVariant">
+              <PropertyRef Name="SkillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SpellVariant_ibfk_2">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="1" />
+          <End Role="SpellVariant" Type="Self.SpellVariant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SpellVariant">
+              <PropertyRef Name="SpellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DeityClericAlignments">
+          <End Role="Deity" Type="Self.Deity" Multiplicity="*" />
+          <End Role="Alignment" Type="Self.Alignment" Multiplicity="*" />
+        </Association>
+        <Association Name="DomainVariantToDeity">
+          <End Role="Deity" Type="Self.Deity" Multiplicity="*" />
+          <End Role="DomainVariant" Type="Self.DomainVariant" Multiplicity="*" />
+        </Association>
+        <Association Name="FeatRequiresAlignments">
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+          <End Role="Alignment" Type="Self.Alignment" Multiplicity="*" />
+        </Association>
+        <Association Name="FeatRequiresFeat">
+          <End Role="Feat" Type="Self.Feat" Multiplicity="*" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+        </Association>
+        <Association Name="FeatVariantToFeatCategory">
+          <End Role="FeatCategory" Type="Self.FeatCategory" Multiplicity="*" />
+          <End Role="FeatVariant" Type="Self.FeatVariant" Multiplicity="*" />
+        </Association>
+        <Association Name="RacialAutomaticLanguages">
+          <End Role="Language" Type="Self.Language" Multiplicity="*" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+        </Association>
+        <Association Name="RacialBonusLanguages">
+          <End Role="Language" Type="Self.Language" Multiplicity="*" />
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+        </Association>
+        <Association Name="RacialSizeCategories">
+          <End Role="RaceVariant" Type="Self.RaceVariant" Multiplicity="*" />
+          <End Role="SizeCategory" Type="Self.SizeCategory" Multiplicity="*" />
+        </Association>
+        <Association Name="SkillSynergy">
+          <End Role="SkillVariant" Type="Self.SkillVariant" Multiplicity="*" />
+          <End Role="Skill" Type="Self.Skill" Multiplicity="*" />
+        </Association>
+        <Association Name="SpellToSpellDescriptor">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="*" />
+          <End Role="SpellDescriptor" Type="Self.SpellDescriptor" Multiplicity="*" />
+        </Association>
+        <Association Name="SpellToSpellSchool">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="*" />
+          <End Role="SpellSchool" Type="Self.SpellSchool" Multiplicity="*" />
+        </Association>
+        <Association Name="SpellToSpellSubSchool">
+          <End Role="Spell" Type="Self.Spell" Multiplicity="*" />
+          <End Role="SpellSubSchool" Type="Self.SpellSubSchool" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AbilityStats" EntityType="Self.AbilityStat" />
+          <EntitySet Name="ActionTimeIndicators" EntityType="Self.ActionTimeIndicator" />
+          <EntitySet Name="Alignments" EntityType="Self.Alignment" />
+          <EntitySet Name="AllowedSpellSaves" EntityType="Self.AllowedSpellSave" />
+          <EntitySet Name="Conditions" EntityType="Self.Condition" />
+          <EntitySet Name="CreatureSubTypes" EntityType="Self.CreatureSubType" />
+          <EntitySet Name="CreatureTypes" EntityType="Self.CreatureType" />
+          <EntitySet Name="Deities" EntityType="Self.Deity" />
+          <EntitySet Name="Domains" EntityType="Self.Domain" />
+          <EntitySet Name="DomainSpells" EntityType="Self.DomainSpell" />
+          <EntitySet Name="DomainVariants" EntityType="Self.DomainVariant" />
+          <EntitySet Name="Editions" EntityType="Self.Edition" />
+          <EntitySet Name="Feats" EntityType="Self.Feat" />
+          <EntitySet Name="FeatCategories" EntityType="Self.FeatCategory" />
+          <EntitySet Name="FeatRequiresSaveValues" EntityType="Self.FeatRequiresSaveValue" />
+          <EntitySet Name="FeatRequiresSkillRanks" EntityType="Self.FeatRequiresSkillRank" />
+          <EntitySet Name="FeatRequiresStatValues" EntityType="Self.FeatRequiresStatValue" />
+          <EntitySet Name="FeatVariants" EntityType="Self.FeatVariant" />
+          <EntitySet Name="Languages" EntityType="Self.Language" />
+          <EntitySet Name="MovementModes" EntityType="Self.MovementMode" />
+          <EntitySet Name="Races" EntityType="Self.Race" />
+          <EntitySet Name="RaceStatChanges" EntityType="Self.RaceStatChanx" />
+          <EntitySet Name="RaceVariants" EntityType="Self.RaceVariant" />
+          <EntitySet Name="RacialMovementModes" EntityType="Self.RacialMovementMode" />
+          <EntitySet Name="RacialSenses" EntityType="Self.RacialSens" />
+          <EntitySet Name="RuleBooks" EntityType="Self.RuleBook" />
+          <EntitySet Name="Saves" EntityType="Self.Save" />
+          <EntitySet Name="SaveTypes" EntityType="Self.SaveType" />
+          <EntitySet Name="SizeCategories" EntityType="Self.SizeCategory" />
+          <EntitySet Name="Skills" EntityType="Self.Skill" />
+          <EntitySet Name="SkillVariants" EntityType="Self.SkillVariant" />
+          <EntitySet Name="Spells" EntityType="Self.Spell" />
+          <EntitySet Name="SpellDescriptors" EntityType="Self.SpellDescriptor" />
+          <EntitySet Name="SpellSchools" EntityType="Self.SpellSchool" />
+          <EntitySet Name="SpellSubSchools" EntityType="Self.SpellSubSchool" />
+          <EntitySet Name="SpellVariants" EntityType="Self.SpellVariant" />
+          <EntitySet Name="VisualSenses" EntityType="Self.VisualSense" />
+          <AssociationSet Name="FK_AbilityStat" Association="Self.FK_AbilityStat">
+            <End Role="AbilityStat" EntitySet="AbilityStats" />
+            <End Role="Skill" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AbilityStatRequired" Association="Self.FK_AbilityStatRequired">
+            <End Role="AbilityStat" EntitySet="AbilityStats" />
+            <End Role="FeatRequiresStatValues" EntitySet="FeatRequiresStatValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RacialStatChange" Association="Self.FK_RacialStatChange">
+            <End Role="AbilityStat" EntitySet="AbilityStats" />
+            <End Role="RaceStatChanges" EntitySet="RaceStatChanges" />
+          </AssociationSet>
+          <AssociationSet Name="SpellVariant_ibfk_3" Association="Self.SpellVariant_ibfk_3">
+            <End Role="ActionTimeIndicator" EntitySet="ActionTimeIndicators" />
+            <End Role="SpellVariant" EntitySet="SpellVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AllowedSpellSave_Saves" Association="Self.FK_AllowedSpellSave_Saves">
+            <End Role="Save" EntitySet="Saves" />
+            <End Role="AllowedSpellSave" EntitySet="AllowedSpellSaves" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AllowedSpellSave_SaveType" Association="Self.FK_AllowedSpellSave_SaveType">
+            <End Role="SaveType" EntitySet="SaveTypes" />
+            <End Role="AllowedSpellSave" EntitySet="AllowedSpellSaves" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeOfCreature" Association="Self.FK_TypeOfCreature">
+            <End Role="CreatureType" EntitySet="CreatureTypes" />
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patreon" Association="Self.FK_Patreon">
+            <End Role="Deity" EntitySet="Deities" />
+            <End Role="FeatVariant" EntitySet="FeatVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VariantOfDomain" Association="Self.FK_VariantOfDomain">
+            <End Role="Domain" EntitySet="Domains" />
+            <End Role="DomainVariant" EntitySet="DomainVariants" />
+          </AssociationSet>
+          <AssociationSet Name="DomainSpells_ibfk_1" Association="Self.DomainSpells_ibfk_1">
+            <End Role="Spell" EntitySet="Spells" />
+            <End Role="DomainSpells" EntitySet="DomainSpells" />
+          </AssociationSet>
+          <AssociationSet Name="DomainSpells_ibfk_2" Association="Self.DomainSpells_ibfk_2">
+            <End Role="DomainVariant" EntitySet="DomainVariants" />
+            <End Role="DomainSpells" EntitySet="DomainSpells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContainedInRuleBook" Association="Self.FK_ContainedInRuleBook">
+            <End Role="RuleBook" EntitySet="RuleBooks" />
+            <End Role="DomainVariant" EntitySet="DomainVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EditionOfRulebook" Association="Self.FK_EditionOfRulebook">
+            <End Role="Edition" EntitySet="Editions" />
+            <End Role="RuleBook" EntitySet="RuleBooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatRequiring" Association="Self.FK_FeatRequiring">
+            <End Role="Feat" EntitySet="Feats" />
+            <End Role="FeatRequiresSkillRank" EntitySet="FeatRequiresSkillRanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatRequiringSave" Association="Self.FK_FeatRequiringSave">
+            <End Role="Feat" EntitySet="Feats" />
+            <End Role="FeatRequiresSaveValues" EntitySet="FeatRequiresSaveValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatRequiringStat" Association="Self.FK_FeatRequiringStat">
+            <End Role="Feat" EntitySet="Feats" />
+            <End Role="FeatRequiresStatValues" EntitySet="FeatRequiresStatValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReferredFeat" Association="Self.FK_ReferredFeat">
+            <End Role="Feat" EntitySet="Feats" />
+            <End Role="FeatVariant" EntitySet="FeatVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaveRequired" Association="Self.FK_SaveRequired">
+            <End Role="Save" EntitySet="Saves" />
+            <End Role="FeatRequiresSaveValues" EntitySet="FeatRequiresSaveValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillRequired" Association="Self.FK_SkillRequired">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="FeatRequiresSkillRank" EntitySet="FeatRequiresSkillRanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatOriginRuleBook" Association="Self.FK_FeatOriginRuleBook">
+            <End Role="RuleBook" EntitySet="RuleBooks" />
+            <End Role="FeatVariant" EntitySet="FeatVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MovementMode" Association="Self.FK_MovementMode">
+            <End Role="MovementMode" EntitySet="MovementModes" />
+            <End Role="RacialMovementModes" EntitySet="RacialMovementModes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceOfRaceVariant" Association="Self.FK_RaceOfRaceVariant">
+            <End Role="Race" EntitySet="Races" />
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubraceOf" Association="Self.FK_SubraceOf">
+            <End Role="Race" EntitySet="Races" />
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithStatChange" Association="Self.FK_RaceWithStatChange">
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+            <End Role="RaceStatChanges" EntitySet="RaceStatChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithMovementMode" Association="Self.FK_RaceWithMovementMode">
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+            <End Role="RacialMovementModes" EntitySet="RacialMovementModes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RaceWithSense" Association="Self.FK_RaceWithSense">
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+            <End Role="RacialSenses" EntitySet="RacialSenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RuleBookOfRaceVariant" Association="Self.FK_RuleBookOfRaceVariant">
+            <End Role="RuleBook" EntitySet="RuleBooks" />
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sense" Association="Self.FK_Sense">
+            <End Role="VisualSense" EntitySet="VisualSenses" />
+            <End Role="RacialSenses" EntitySet="RacialSenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RuleBook" Association="Self.FK_RuleBook">
+            <End Role="RuleBook" EntitySet="RuleBooks" />
+            <End Role="SkillVariant" EntitySet="SkillVariants" />
+          </AssociationSet>
+          <AssociationSet Name="SpellVariant_ibfk_1" Association="Self.SpellVariant_ibfk_1">
+            <End Role="RuleBook" EntitySet="RuleBooks" />
+            <End Role="SpellVariant" EntitySet="SpellVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skill" Association="Self.FK_Skill">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="SkillVariant" EntitySet="SkillVariants" />
+          </AssociationSet>
+          <AssociationSet Name="SpellVariant_ibfk_2" Association="Self.SpellVariant_ibfk_2">
+            <End Role="Spell" EntitySet="Spells" />
+            <End Role="SpellVariant" EntitySet="SpellVariants" />
+          </AssociationSet>
+          <AssociationSet Name="DeityClericAlignments" Association="Self.DeityClericAlignments">
+            <End Role="Deity" EntitySet="Deities" />
+            <End Role="Alignment" EntitySet="Alignments" />
+          </AssociationSet>
+          <AssociationSet Name="DomainVariantToDeity" Association="Self.DomainVariantToDeity">
+            <End Role="Deity" EntitySet="Deities" />
+            <End Role="DomainVariant" EntitySet="DomainVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FeatRequiresAlignments" Association="Self.FeatRequiresAlignments">
+            <End Role="FeatVariant" EntitySet="FeatVariants" />
+            <End Role="Alignment" EntitySet="Alignments" />
+          </AssociationSet>
+          <AssociationSet Name="FeatRequiresFeat" Association="Self.FeatRequiresFeat">
+            <End Role="Feat" EntitySet="Feats" />
+            <End Role="FeatVariant" EntitySet="FeatVariants" />
+          </AssociationSet>
+          <AssociationSet Name="FeatVariantToFeatCategory" Association="Self.FeatVariantToFeatCategory">
+            <End Role="FeatCategory" EntitySet="FeatCategories" />
+            <End Role="FeatVariant" EntitySet="FeatVariants" />
+          </AssociationSet>
+          <AssociationSet Name="RacialAutomaticLanguages" Association="Self.RacialAutomaticLanguages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+          </AssociationSet>
+          <AssociationSet Name="RacialBonusLanguages" Association="Self.RacialBonusLanguages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+          </AssociationSet>
+          <AssociationSet Name="RacialSizeCategories" Association="Self.RacialSizeCategories">
+            <End Role="RaceVariant" EntitySet="RaceVariants" />
+            <End Role="SizeCategory" EntitySet="SizeCategories" />
+          </AssociationSet>
+          <AssociationSet Name="SkillSynergy" Association="Self.SkillSynergy">
+            <End Role="SkillVariant" EntitySet="SkillVariants" />
+            <End Role="Skill" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellDescriptor" Association="Self.SpellToSpellDescriptor">
+            <End Role="Spell" EntitySet="Spells" />
+            <End Role="SpellDescriptor" EntitySet="SpellDescriptors" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellSchool" Association="Self.SpellToSpellSchool">
+            <End Role="Spell" EntitySet="Spells" />
+            <End Role="SpellSchool" EntitySet="SpellSchools" />
+          </AssociationSet>
+          <AssociationSet Name="SpellToSpellSubSchool" Association="Self.SpellToSpellSubSchool">
+            <End Role="Spell" EntitySet="Spells" />
+            <End Role="SpellSubSchool" EntitySet="SpellSubSchools" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DnDDatabaseModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="AbilityStats">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.AbilityStat">
+              <MappingFragment StoreEntitySet="AbilityStat">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActionTimeIndicators">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.ActionTimeIndicator">
+              <MappingFragment StoreEntitySet="ActionTimeIndicator">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alignments">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Alignment">
+              <MappingFragment StoreEntitySet="Alignment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllowedSpellSaves">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.AllowedSpellSave">
+              <MappingFragment StoreEntitySet="AllowedSpellSave">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SpellID" ColumnName="SpellID" />
+                <ScalarProperty Name="SaveStatID" ColumnName="SaveStatID" />
+                <ScalarProperty Name="SaveTypeID" ColumnName="SaveTypeID" />
+                <ScalarProperty Name="Extra" ColumnName="Extra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Conditions">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Condition">
+              <MappingFragment StoreEntitySet="Condition">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreatureSubTypes">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.CreatureSubType">
+              <MappingFragment StoreEntitySet="CreatureSubType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreatureTypes">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.CreatureType">
+              <MappingFragment StoreEntitySet="CreatureType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="HitDieSize" ColumnName="HitDieSize" />
+                <ScalarProperty Name="BABType" ColumnName="BABType" />
+                <ScalarProperty Name="FortType" ColumnName="FortType" />
+                <ScalarProperty Name="RefType" ColumnName="RefType" />
+                <ScalarProperty Name="WillType" ColumnName="WillType" />
+                <ScalarProperty Name="BaseSkillPoints" ColumnName="BaseSkillPoints" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deities">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Deity">
+              <MappingFragment StoreEntitySet="Deity">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Alignment" ColumnName="Alignment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domains">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Domain">
+              <MappingFragment StoreEntitySet="Domain">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomainSpells">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.DomainSpell">
+              <MappingFragment StoreEntitySet="DomainSpells">
+                <ScalarProperty Name="SpellID" ColumnName="SpellID" />
+                <ScalarProperty Name="DomainVariantID" ColumnName="DomainVariantID" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomainVariants">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.DomainVariant">
+              <MappingFragment StoreEntitySet="DomainVariant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="RuleBookID" ColumnName="RuleBookID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Editions">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Edition">
+              <MappingFragment StoreEntitySet="Edition">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="System" ColumnName="System" />
+                <ScalarProperty Name="Core" ColumnName="Core" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feats">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Feat">
+              <MappingFragment StoreEntitySet="Feat">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeatCategories">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.FeatCategory">
+              <MappingFragment StoreEntitySet="FeatCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeatRequiresSaveValues">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.FeatRequiresSaveValue">
+              <MappingFragment StoreEntitySet="FeatRequiresSaveValues">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SaveID" ColumnName="SaveID" />
+                <ScalarProperty Name="FeatID" ColumnName="FeatID" />
+                <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeatRequiresSkillRanks">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.FeatRequiresSkillRank">
+              <MappingFragment StoreEntitySet="FeatRequiresSkillRank">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="FeatID" ColumnName="FeatID" />
+                <ScalarProperty Name="MinRanks" ColumnName="MinRanks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeatRequiresStatValues">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.FeatRequiresStatValue">
+              <MappingFragment StoreEntitySet="FeatRequiresStatValues">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AbilityStatID" ColumnName="AbilityStatID" />
+                <ScalarProperty Name="FeatID" ColumnName="FeatID" />
+                <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeatVariants">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.FeatVariant">
+              <MappingFragment StoreEntitySet="FeatVariant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FeatID" ColumnName="FeatID" />
+                <ScalarProperty Name="RuleBookID" ColumnName="RuleBookID" />
+                <ScalarProperty Name="PageNo" ColumnName="PageNo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RequiredCharacterLevel" ColumnName="RequiredCharacterLevel" />
+                <ScalarProperty Name="RequiredCharacterBAB" ColumnName="RequiredCharacterBAB" />
+                <ScalarProperty Name="RequiredCasterLevel" ColumnName="RequiredCasterLevel" />
+                <ScalarProperty Name="RequiredArcaneCasterLevel" ColumnName="RequiredArcaneCasterLevel" />
+                <ScalarProperty Name="RequiredDivineCasterLevel" ColumnName="RequiredDivineCasterLevel" />
+                <ScalarProperty Name="RequiredPatreonDeityID" ColumnName="RequiredPatreonDeityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Language">
+              <MappingFragment StoreEntitySet="Language">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovementModes">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.MovementMode">
+              <MappingFragment StoreEntitySet="MovementMode">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Races">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Race">
+              <MappingFragment StoreEntitySet="Race">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RaceStatChanges">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.RaceStatChanx">
+              <MappingFragment StoreEntitySet="RaceStatChanges">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="AbilityStatID" ColumnName="AbilityStatID" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RaceVariants">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.RaceVariant">
+              <MappingFragment StoreEntitySet="RaceVariant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="RuleBookID" ColumnName="RuleBookID" />
+                <ScalarProperty Name="Page" ColumnName="Page" />
+                <ScalarProperty Name="SubraceOfID" ColumnName="SubraceOfID" />
+                <ScalarProperty Name="CreatureTypeID" ColumnName="CreatureTypeID" />
+                <ScalarProperty Name="FavouredClass" ColumnName="FavouredClass" />
+                <ScalarProperty Name="CountRacialHitDice" ColumnName="CountRacialHitDice" />
+                <ScalarProperty Name="SizeRacialHitDie" ColumnName="SizeRacialHitDie" />
+                <ScalarProperty Name="LevelAdjustment" ColumnName="LevelAdjustment" />
+                <ScalarProperty Name="Space" ColumnName="Space" />
+                <ScalarProperty Name="Reach" ColumnName="Reach" />
+                <ScalarProperty Name="NaturalArmor" ColumnName="NaturalArmor" />
+                <ScalarProperty Name="Combat" ColumnName="Combat" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BABType" ColumnName="BABType" />
+                <ScalarProperty Name="FortType" ColumnName="FortType" />
+                <ScalarProperty Name="RefType" ColumnName="RefType" />
+                <ScalarProperty Name="WillType" ColumnName="WillType" />
+                <ScalarProperty Name="BaseSkillPoints" ColumnName="BaseSkillPoints" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RacialMovementModes">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.RacialMovementMode">
+              <MappingFragment StoreEntitySet="RacialMovementModes">
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="MovementModeID" ColumnName="MovementModeID" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RacialSenses">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.RacialSens">
+              <MappingFragment StoreEntitySet="RacialSenses">
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="SenseID" ColumnName="SenseID" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RuleBooks">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.RuleBook">
+              <MappingFragment StoreEntitySet="RuleBook">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EditionID" ColumnName="EditionID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PublishedAt" ColumnName="PublishedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Saves">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Save">
+              <MappingFragment StoreEntitySet="Save">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaveTypes">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.SaveType">
+              <MappingFragment StoreEntitySet="SaveType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SizeCategories">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.SizeCategory">
+              <MappingFragment StoreEntitySet="SizeCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AttackAndACMod" ColumnName="AttackAndACMod" />
+                <ScalarProperty Name="SpecialAttacksMod" ColumnName="SpecialAttacksMod" />
+                <ScalarProperty Name="HideMod" ColumnName="HideMod" />
+                <ScalarProperty Name="Space" ColumnName="Space" />
+                <ScalarProperty Name="ReachTall" ColumnName="ReachTall" />
+                <ScalarProperty Name="ReachLong" ColumnName="ReachLong" />
+                <ScalarProperty Name="CarryingCapacitorModificatorBiped" ColumnName="CarryingCapacitorModificatorBiped" />
+                <ScalarProperty Name="CarryingCapacitorModificatorQuadruped" ColumnName="CarryingCapacitorModificatorQuadruped" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Skill">
+              <MappingFragment StoreEntitySet="Skill">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AbilityStatID" ColumnName="AbilityStatID" />
+                <ScalarProperty Name="TrainedOnly" ColumnName="TrainedOnly" />
+                <ScalarProperty Name="ArmorCheckPenaltyModifier" ColumnName="ArmorCheckPenaltyModifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkillVariants">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.SkillVariant">
+              <MappingFragment StoreEntitySet="SkillVariant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="RuleBookID" ColumnName="RuleBookID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="TryAgain" ColumnName="TryAgain" />
+                <ScalarProperty Name="Special" ColumnName="Special" />
+                <ScalarProperty Name="Untrained" ColumnName="Untrained" />
+                <ScalarProperty Name="Restrictions" ColumnName="Restrictions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spells">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.Spell">
+              <MappingFragment StoreEntitySet="Spell">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpellDescriptors">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.SpellDescriptor">
+              <MappingFragment StoreEntitySet="SpellDescriptor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpellSchools">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.SpellSchool">
+              <MappingFragment StoreEntitySet="SpellSchool">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpellSubSchools">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.SpellSubSchool">
+              <MappingFragment StoreEntitySet="SpellSubSchool">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpellVariants">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.SpellVariant">
+              <MappingFragment StoreEntitySet="SpellVariant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SpellID" ColumnName="SpellID" />
+                <ScalarProperty Name="RuleBookID" ColumnName="RuleBookID" />
+                <ScalarProperty Name="Page" ColumnName="Page" />
+                <ScalarProperty Name="HasVerbal" ColumnName="HasVerbal" />
+                <ScalarProperty Name="HasSomatic" ColumnName="HasSomatic" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="ArcaneFocus" ColumnName="ArcaneFocus" />
+                <ScalarProperty Name="DivineFocus" ColumnName="DivineFocus" />
+                <ScalarProperty Name="XPCost" ColumnName="XPCost" />
+                <ScalarProperty Name="CastingTimeValue" ColumnName="CastingTimeValue" />
+                <ScalarProperty Name="CastingTimeIndicatorID" ColumnName="CastingTimeIndicatorID" />
+                <ScalarProperty Name="Range" ColumnName="Range" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Effect" ColumnName="Effect" />
+                <ScalarProperty Name="Concentration" ColumnName="Concentration" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Harmless" ColumnName="Harmless" />
+                <ScalarProperty Name="TargetsObject" ColumnName="TargetsObject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisualSenses">
+            <EntityTypeMapping TypeName="DnDDatabaseModel.VisualSense">
+              <MappingFragment StoreEntitySet="VisualSense">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="DeityClericAlignments" TypeName="DnDDatabaseModel.DeityClericAlignments" StoreEntitySet="DeityClericAlignments">
+            <EndProperty Name="Deity">
+              <ScalarProperty Name="ID" ColumnName="DeityID" />
+            </EndProperty>
+            <EndProperty Name="Alignment">
+              <ScalarProperty Name="ID" ColumnName="AlignmentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DomainVariantToDeity" TypeName="DnDDatabaseModel.DomainVariantToDeity" StoreEntitySet="DomainVariantToDeity">
+            <EndProperty Name="Deity">
+              <ScalarProperty Name="ID" ColumnName="DeityID" />
+            </EndProperty>
+            <EndProperty Name="DomainVariant">
+              <ScalarProperty Name="ID" ColumnName="DomainVariantID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FeatRequiresAlignments" TypeName="DnDDatabaseModel.FeatRequiresAlignments" StoreEntitySet="FeatRequiresAlignments">
+            <EndProperty Name="FeatVariant">
+              <ScalarProperty Name="ID" ColumnName="FeatVariantID" />
+            </EndProperty>
+            <EndProperty Name="Alignment">
+              <ScalarProperty Name="ID" ColumnName="AlignmentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FeatRequiresFeat" TypeName="DnDDatabaseModel.FeatRequiresFeat" StoreEntitySet="FeatRequiresFeat">
+            <EndProperty Name="Feat">
+              <ScalarProperty Name="ID" ColumnName="RequiredFeatID" />
+            </EndProperty>
+            <EndProperty Name="FeatVariant">
+              <ScalarProperty Name="ID" ColumnName="RequiringFeatID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FeatVariantToFeatCategory" TypeName="DnDDatabaseModel.FeatVariantToFeatCategory" StoreEntitySet="FeatVariantToFeatCategory">
+            <EndProperty Name="FeatCategory">
+              <ScalarProperty Name="ID" ColumnName="FeatCategoryID" />
+            </EndProperty>
+            <EndProperty Name="FeatVariant">
+              <ScalarProperty Name="ID" ColumnName="FeatVariantID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RacialAutomaticLanguages" TypeName="DnDDatabaseModel.RacialAutomaticLanguages" StoreEntitySet="RacialAutomaticLanguages">
+            <EndProperty Name="Language">
+              <ScalarProperty Name="ID" ColumnName="LanguageID" />
+            </EndProperty>
+            <EndProperty Name="RaceVariant">
+              <ScalarProperty Name="ID" ColumnName="RaceID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RacialBonusLanguages" TypeName="DnDDatabaseModel.RacialBonusLanguages" StoreEntitySet="RacialBonusLanguages">
+            <EndProperty Name="Language">
+              <ScalarProperty Name="ID" ColumnName="LanguageID" />
+            </EndProperty>
+            <EndProperty Name="RaceVariant">
+              <ScalarProperty Name="ID" ColumnName="RaceID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RacialSizeCategories" TypeName="DnDDatabaseModel.RacialSizeCategories" StoreEntitySet="RacialSizeCategories">
+            <EndProperty Name="RaceVariant">
+              <ScalarProperty Name="ID" ColumnName="RaceID" />
+            </EndProperty>
+            <EndProperty Name="SizeCategory">
+              <ScalarProperty Name="ID" ColumnName="SizeCategoryID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="SkillSynergy" TypeName="DnDDatabaseModel.SkillSynergy" StoreEntitySet="SkillSynergy">
+            <EndProperty Name="SkillVariant">
+              <ScalarProperty Name="ID" ColumnName="SkillID" />
+            </EndProperty>
+            <EndProperty Name="Skill">
+              <ScalarProperty Name="ID" ColumnName="SynergizesWithID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="SpellToSpellDescriptor" TypeName="DnDDatabaseModel.SpellToSpellDescriptor" StoreEntitySet="SpellToSpellDescriptor">
+            <EndProperty Name="Spell">
+              <ScalarProperty Name="ID" ColumnName="SpellID" />
+            </EndProperty>
+            <EndProperty Name="SpellDescriptor">
+              <ScalarProperty Name="ID" ColumnName="DescriptorID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="SpellToSpellSchool" TypeName="DnDDatabaseModel.SpellToSpellSchool" StoreEntitySet="SpellToSpellSchool">
+            <EndProperty Name="Spell">
+              <ScalarProperty Name="ID" ColumnName="SpellID" />
+            </EndProperty>
+            <EndProperty Name="SpellSchool">
+              <ScalarProperty Name="ID" ColumnName="SchoolID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="SpellToSpellSubSchool" TypeName="DnDDatabaseModel.SpellToSpellSubSchool" StoreEntitySet="SpellToSpellSubSchool">
+            <EndProperty Name="Spell">
+              <ScalarProperty Name="ID" ColumnName="SpellID" />
+            </EndProperty>
+            <EndProperty Name="SpellSubSchool">
+              <ScalarProperty Name="ID" ColumnName="SubSchoolID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

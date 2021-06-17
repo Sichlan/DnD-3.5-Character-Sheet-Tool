@@ -342,7 +342,7 @@ namespace DnDCharacterSheetTool.Classes.DataModel
 		{
 			get
 			{
-				return new List<string>() { (HasVerbal ? "V" : ""), (HasSomatic ? "S" : ""), (HasMaterial ? "M" : ""), (HasArcaneFocus ? "AF" : ""), (DivineFocus ? "DF" : ""), (HasXpCost ? "XP" : ""), (String.IsNullOrEmpty(OtherComponents) ? "" : OtherComponents) };
+				return new List<string>() { (HasVerbal ? "V" : ""), (HasSomatic ? "S" : ""), (HasMaterial ? "M" : ""), (HasArcaneFocus ? "AF" : ""), (DivineFocus ? "DF" : ""), (HasXpCost ? "XP" : ""), (String.IsNullOrEmpty(OtherComponents) ? "" : OtherComponents) }.Where(x => !String.IsNullOrEmpty(x)).ToList();
 			}
 		}
 

@@ -3,6 +3,7 @@ using DnDCharacterSheetTool.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,18 @@ namespace DnDCharacterSheetTool.Classes.DataModel
         {
             string fullPath = BaseSavePath + SavePath;
 
+            Trace.WriteLine("Importing from " + fullPath);
+
+            if (!File.Exists(fullPath))
+            {
+                var writer = File.CreateText(fullPath);
+                writer.Write("[\n\n]");
+                writer.Dispose();
+            }
+
             List<T> elements = JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(fullPath)).ToList();
+
+            Trace.WriteLine("Imported " + elements.Count + " item(s)\n");
 
             return elements;
         }
@@ -33,7 +45,18 @@ namespace DnDCharacterSheetTool.Classes.DataModel
         {
             string fullPath = BaseSavePath + SavePath;
 
+            Trace.WriteLine("Saving to " + fullPath);
+
+            if (!File.Exists(fullPath))
+            {
+                var writer = File.CreateText(fullPath);
+                writer.Write("[\n\n]");
+                writer.Dispose();
+            }
+
             File.WriteAllText(fullPath, JsonConvert.SerializeObject(elements, settings));
+
+            Trace.WriteLine("Wrote " + elements.Count + " to file\n");
         }
     }
 }

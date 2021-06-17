@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "definitions": {
+    "SkillVariant": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Id": {
+          "type": "integer"
+        },
+        "SkillId": {
+          "type": "integer"
+        },
+        "RulebookId": {
+          "type": "integer"
+        },
+        "Description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Usages": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/Usage"
+          }
+        },
+        "Action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "TryAgain": {
+          "type": [ "boolean", "null" ]
+        },
+        "Special": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "SynergySkillIDs": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          }
+        },
+        "Untrained": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Restrictions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "Id",
+        "SkillId",
+        "RulebookId",
+        "Description",
+        "TryAgain"
+      ]
+    },
+    "Usage": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "DC": {
+          "type": "integer"
+        },
+        "Use": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "DC",
+        "Use"
+      ]
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/SkillVariant"
+  }
+}

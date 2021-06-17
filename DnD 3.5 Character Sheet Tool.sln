@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDCharacterSheetTool", "DnDCharacterSheetTool\DnDCharacterSheetTool.csproj", "{B95AC438-7B24-463E-A682-E1638F790BA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDCharacterSheetTool (OLD)", "DnDCharacterSheetTool\DnDCharacterSheetTool (OLD).csproj", "{B95AC438-7B24-463E-A682-E1638F790BA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionTest", "FunctionTest\FunctionTest.csproj", "{B5A81D99-8F1C-4DFC-BD75-73054D4C8F6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCreator", "CharacterCreator\CharacterCreator.csproj", "{E2E39F99-57F9-4A9A-9BFF-8463CC4AD15D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonCreator", "PoisonCreator\PoisonCreator.csproj", "{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{B5A81D99-8F1C-4DFC-BD75-73054D4C8F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5A81D99-8F1C-4DFC-BD75-73054D4C8F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5A81D99-8F1C-4DFC-BD75-73054D4C8F6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E39F99-57F9-4A9A-9BFF-8463CC4AD15D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E39F99-57F9-4A9A-9BFF-8463CC4AD15D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E39F99-57F9-4A9A-9BFF-8463CC4AD15D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E39F99-57F9-4A9A-9BFF-8463CC4AD15D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
