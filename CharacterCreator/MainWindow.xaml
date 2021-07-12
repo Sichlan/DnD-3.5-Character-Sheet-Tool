@@ -5,19 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterCreator"
         mc:Ignorable="d"
-        Title="MainWindow" d:DesignHeight="450" d:DesignWidth="800" WindowState="Maximized"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         TextElement.FontWeight="Regular"
-         TextElement.FontSize="13"
-         TextOptions.TextFormattingMode="Ideal"
-         TextOptions.TextRenderingMode="Auto"
-         Background="{DynamicResource MaterialDesignPaper}"
-         FontFamily="{DynamicResource MaterialDesignFont}">
-    <Window.DataContext>
-        <local:MainWindowModel/>
-    </Window.DataContext>
+        Title="MainWindow" d:DesignHeight="1080" d:DesignWidth="1920" WindowState="Maximized">
     <Grid>
-        <Frame x:Name="MainFrame"/>
+        
     </Grid>
 </Window>

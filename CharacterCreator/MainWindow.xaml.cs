@@ -1,5 +1,4 @@
-﻿using CharacterCreator.Classes.CharacterSheet;
-using CharacterCreator.DataModel;
+﻿using CharacterCreator.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +24,6 @@ namespace CharacterCreator
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new CharacterSheetView());
         }
     }
 }

@@ -315,7 +315,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EditionID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Abbreviation" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="text" Nullable="false" />
           <Property Name="PublishedAt" Type="datetime" Precision="0" />
@@ -1651,7 +1651,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="RaceVariants" Relationship="Self.FK_RaceOfRaceVariant" FromRole="Race" ToRole="RaceVariant" />
-          <NavigationProperty Name="RaceVariants1" Relationship="Self.FK_SubraceOf" FromRole="Race" ToRole="RaceVariant" />
+          <NavigationProperty Name="SubRaces" Relationship="Self.FK_SubraceOf" FromRole="Race" ToRole="RaceVariant" />
         </EntityType>
         <EntityType Name="RaceStatChanx">
           <Key>
@@ -1690,7 +1690,7 @@
           <Property Name="BaseSkillPoints" Type="Int32" />
           <NavigationProperty Name="CreatureType" Relationship="Self.FK_TypeOfCreature" FromRole="RaceVariant" ToRole="CreatureType" />
           <NavigationProperty Name="Race" Relationship="Self.FK_RaceOfRaceVariant" FromRole="RaceVariant" ToRole="Race" />
-          <NavigationProperty Name="Race1" Relationship="Self.FK_SubraceOf" FromRole="RaceVariant" ToRole="Race" />
+          <NavigationProperty Name="ParentRace" Relationship="Self.FK_SubraceOf" FromRole="RaceVariant" ToRole="Race" />
           <NavigationProperty Name="RaceStatChanges" Relationship="Self.FK_RaceWithStatChange" FromRole="RaceVariant" ToRole="RaceStatChanges" />
           <NavigationProperty Name="RacialMovementModes" Relationship="Self.FK_RaceWithMovementMode" FromRole="RaceVariant" ToRole="RacialMovementModes" />
           <NavigationProperty Name="RacialSenses" Relationship="Self.FK_RaceWithSense" FromRole="RaceVariant" ToRole="RacialSenses" />
@@ -1727,7 +1727,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EditionID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Abbreviation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PublishedAt" Type="DateTime" />

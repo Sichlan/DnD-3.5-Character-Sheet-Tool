@@ -48,7 +48,7 @@ namespace CharacterCreator.DataModel
     
         public virtual CreatureType CreatureType { get; set; }
         public virtual Race Race { get; set; }
-        public virtual Race Race1 { get; set; }
+        public virtual Race ParentRace { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RaceStatChanx> RaceStatChanges { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -361,11 +361,9 @@
     </None>
     <None Include="Saves\Character.json" />
     <None Include="Saves\Conditions.json" />
-    <None Include="Saves\CreatureTypes.json" />
     <None Include="Saves\Deities.json" />
     <None Include="Saves\Domains.json" />
     <None Include="Saves\DomainVariants.json" />
-    <None Include="Saves\Editions.json" />
     <None Include="Saves\FeatVariants.json" />
     <None Include="Saves\Feats.json" />
     <None Include="Saves\Languages.json" />
@@ -373,7 +371,6 @@
     <None Include="Saves\RaceVariants.json" />
     <None Include="Saves\Skills.json" />
     <None Include="Saves\SkillVariants.json" />
-    <None Include="Saves\SourceBooks.json" />
     <None Include="Saves\Spells - Old Data.json" />
     <None Include="Saves\Spells.json" />
     <None Include="Saves\SpellVariants.json" />
@@ -424,7 +421,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties saves_4skillvariants_1json__JsonSchema="..\JSONSchemas\SkillVariant-Schema.json" saves_4skills_1json__JsonSchema="..\JSONSchemas\Skill-Schema.json" saves_4creaturetypes_1json__JsonSchema="..\JSONSchemas\CreatureType-Schema.json" saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" saves_4conditions_1json__JsonSchema="..\JSONSchemas\Condition-Schema.json" />
+      <UserProperties saves_4conditions_1json__JsonSchema="..\JSONSchemas\Condition-Schema.json" saves_4languages_1json__JsonSchema="..\JSONSchemas\Language-Schema.json" saves_4feats_1json__JsonSchema="..\JSONSchemas\Feats-Schema.json" saves_4creaturetypes_1json__JsonSchema="..\JSONSchemas\CreatureType-Schema.json" saves_4skills_1json__JsonSchema="..\JSONSchemas\Skill-Schema.json" saves_4skillvariants_1json__JsonSchema="..\JSONSchemas\SkillVariant-Schema.json" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\Fody.6.5.1\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.1\build\Fody.targets')" />

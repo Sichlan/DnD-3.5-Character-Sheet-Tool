@@ -31,6 +31,17 @@ namespace FunctionTest
         }
 
         [TestMethod]
+        public void ImportJSONToDB()
+        {
+            using (var entities = new CharacterCreator.DataModel.Entities())
+            {
+                List<CharacterCreator.DataModel.CreatureType> editions = DataLoader.Load<CharacterCreator.DataModel.CreatureType>("CreatureTypes.json").OrderBy(x => x.ID).ToList();
+                entities.CreatureTypes.AddRange(editions);
+                entities.SaveChanges();
+            }
+        }
+
+        [TestMethod]
         public void GenerateJSONSchema()
         {
             JSchemaGenerator schemaGenerator = new JSchemaGenerator();

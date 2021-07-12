@@ -18,7 +18,7 @@ namespace CharacterCreator.DataModel
         public Race()
         {
             this.RaceVariants = new HashSet<RaceVariant>();
-            this.RaceVariants1 = new HashSet<RaceVariant>();
+            this.SubRaces = new HashSet<RaceVariant>();
         }
     
         public int ID { get; set; }
@@ -27,6 +27,6 @@ namespace CharacterCreator.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RaceVariant> RaceVariants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RaceVariant> RaceVariants1 { get; set; }
+        public virtual ICollection<RaceVariant> SubRaces { get; set; }
     }
 }
