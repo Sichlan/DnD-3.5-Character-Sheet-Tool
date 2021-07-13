@@ -1,5 +1,4 @@
-﻿using CharacterCreator.DataModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CharacterCreator
+namespace CharacterCreator.MVVM.View
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für ProfileView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProfileView : UserControl
     {
-        public MainWindow()
+        public ProfileView()
         {
             InitializeComponent();
-        }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
         }
     }
 }

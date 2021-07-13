@@ -3,10 +3,133 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CharacterCreator"
-        mc:Ignorable="d"
-        Title="MainWindow" d:DesignHeight="1080" d:DesignWidth="1920" WindowState="Maximized">
-    <Grid>
-        
+        xmlns:local="clr-namespace:CharacterCreator" 
+        xmlns:viewmodel="clr-namespace:CharacterCreator.MVVM.ViewModel"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="MainWindow" d:DesignHeight="1080" d:DesignWidth="1920" WindowState="{Binding CurrentWindowState, UpdateSourceTrigger=PropertyChanged}">
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+    <Grid Margin="7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#FF2E2E2E" MouseDown="Grid_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="Images/Logo-Small.png" Grid.Column="0" Margin="2"/>
+
+            <TextBlock Text="Placeholder Title" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Margin="5" FontSize="18"/>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style x:Key="ButtonCloseStyle" TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="Width" Value="30"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#ff3333"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style x:Key="ButtonResizeStyle" TargetType="{x:Type Button}">
+                        <Setter Property="Foreground" Value="LightGray"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="Width" Value="30"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+
+                <Button x:Name="btnMinimize" Style="{StaticResource ButtonResizeStyle}" Command="{Binding CommandMinimize}">
+                    <Canvas Height="30" Width="30" IsHitTestVisible="False">
+                        <Canvas.Style>
+                            <Style TargetType="Canvas">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Canvas.Style>
+                        <Line IsHitTestVisible="False" X1="5" X2="25" Y1="22.5" Y2="22.5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}" StrokeThickness="5"/>
+                    </Canvas>
+                </Button>
+                <Button x:Name="btnMaximize" Command="{Binding CommandMaximize}">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonResizeStyle}">
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Grid>
+                                        <Border x:Name="brdMaximizeForeground" BorderBrush="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}, Path=Foreground}" BorderThickness="5,5,5,5" />
+                                    </Grid>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=WindowState}" Value="{x:Static WindowState.Normal}">
+                                    <Setter Property="Content">
+                                        <Setter.Value>
+                                            <Border/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button x:Name="btnClose" Command="{Binding CommandClose}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" Style="{StaticResource ButtonCloseStyle}">
+                    <Canvas Width="30" Height="30" Background="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=Background}">
+                        <Line X1="2.5" X2="25" Y1="25" Y2="2.5" StrokeThickness="5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}"/>
+                        <Line X1="25" X2="2.5" Y1="25" Y2="2.5" StrokeThickness="5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}"/>
+                    </Canvas>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#ff3c3c3c">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Image Source="Images/Logo-Large.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+                <Expander Header="PLACEHOLDER Play" IsExpanded="True" ExpandDirection="Down">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton Content="PLACEHOLDER Charactersheet" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="PLACEHOLDER Character" IsExpanded="True" ExpandDirection="Down">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton Content="PLACEHOLDER Profile" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding ProfileVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+
+            <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
+        </Grid>
     </Grid>
 </Window>
