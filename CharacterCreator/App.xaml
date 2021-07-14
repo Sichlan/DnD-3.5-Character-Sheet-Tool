@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:CharacterCreator"
              xmlns:viewModel="clr-namespace:CharacterCreator.MVVM.ViewModel"
              xmlns:view="clr-namespace:CharacterCreator.MVVM.View"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainWindow.xaml"
+             Startup="Application_Startup">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

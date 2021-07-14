@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterCreator" 
+        xmlns:resx="clr-namespace:CharacterCreator.Properties"
         xmlns:viewmodel="clr-namespace:CharacterCreator.MVVM.ViewModel"
         mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        Title="MainWindow" d:DesignHeight="1080" d:DesignWidth="1920" WindowState="{Binding CurrentWindowState, UpdateSourceTrigger=PropertyChanged}">
+        Title="{x:Static resx:Resources.MainAppTitle}" d:DesignHeight="1080" d:DesignWidth="1920" WindowState="{Binding CurrentWindowState, UpdateSourceTrigger=PropertyChanged}">
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
@@ -16,7 +17,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#FF2E2E2E" MouseDown="Grid_MouseDown">
+        <Grid Background="{StaticResource MainColourDark}" MouseDown="Grid_MouseDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
@@ -25,7 +26,7 @@
 
             <Image Source="Images/Logo-Small.png" Grid.Column="0" Margin="2"/>
 
-            <TextBlock Text="Placeholder Title" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Margin="5" FontSize="18"/>
+            <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=Title, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Margin="5" FontSize="18"/>
 
             <StackPanel Grid.Column="2" Orientation="Horizontal">
                 <StackPanel.Resources>
@@ -103,7 +104,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1" Background="#ff3c3c3c">
+        <Grid Grid.Row="1" Background="{StaticResource MainColourLight}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -117,14 +118,14 @@
             <Image Source="Images/Logo-Large.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-                <Expander Header="PLACEHOLDER Play" IsExpanded="True" ExpandDirection="Down">
+                <Expander Header="{x:Static resx:Resources.MenuCategoryPlay}" IsExpanded="True" ExpandDirection="Down">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="PLACEHOLDER Charactersheet" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonCharactersheet}" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
-                <Expander Header="PLACEHOLDER Character" IsExpanded="True" ExpandDirection="Down">
+                <Expander Header="{x:Static resx:Resources.MenuCategoryCharacter}" IsExpanded="True" ExpandDirection="Down">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="PLACEHOLDER Profile" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding ProfileVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonProfile}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding ProfileVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
             </StackPanel>
