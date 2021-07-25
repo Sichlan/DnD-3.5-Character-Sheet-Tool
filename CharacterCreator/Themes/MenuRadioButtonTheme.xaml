@@ -16,11 +16,15 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Height" Value="50"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         </Style.Setters>
 
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="{StaticResource MainColourDark}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource HighlightColourDark}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

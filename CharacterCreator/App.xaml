@@ -24,7 +24,24 @@
             <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
                 <view:ProfileView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:JournalViewModel}">
+                <view:JournalView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:LoadCharacterViewModel}">
+                <view:LoadCharacterView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:NewCharacterViewModel}">
+                <view:NewCharacterView/>
+            </DataTemplate>
             <!--#endregion-->
         </ResourceDictionary>
     </Application.Resources>
+    <JumpList.JumpList>
+        <!--https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.jumplist?redirectedfrom=MSDN&view=net-5.0
+        Allows to show recent viewed files-->
+        <JumpList ShowRecentCategory="True" ShowFrequentCategory="True"/>
+    </JumpList.JumpList>
 </Application>

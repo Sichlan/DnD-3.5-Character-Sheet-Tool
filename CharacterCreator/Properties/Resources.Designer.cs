@@ -79,6 +79,15 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Journal ähnelt.
+        /// </summary>
+        public static string MenuButtonJournal {
+            get {
+                return ResourceManager.GetString("MenuButtonJournal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Profile ähnelt.
         /// </summary>
         public static string MenuButtonProfile {

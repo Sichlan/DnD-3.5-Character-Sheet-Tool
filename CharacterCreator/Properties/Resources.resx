@@ -120,6 +120,9 @@
   <data name="MenuButtonCharactersheet" xml:space="preserve">
     <value>Charactersheet</value>
   </data>
+  <data name="MenuButtonJournal" xml:space="preserve">
+    <value>Journal</value>
+  </data>
   <data name="MenuButtonProfile" xml:space="preserve">
     <value>Profile</value>
   </data>

@@ -8,5 +8,11 @@
     <Setting Name="StandardLocalization" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="SaveFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\DnDCharacterCreator\saves\</Value>
+    </Setting>
+    <Setting Name="RecentlyUsedListFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\DnDCharacterCreator\RecentlyUsedFiles.json</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

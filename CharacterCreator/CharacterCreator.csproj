@@ -149,6 +149,7 @@
     </Compile>
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Core\SaveLoadModel.cs" />
     <Compile Include="DataModel\AbilityStat.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -283,6 +284,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\JournalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\LoadCharacterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\NewCharacterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\ProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -299,11 +312,26 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Model\Character.cs" />
+    <Compile Include="MVVM\Model\Enums.cs" />
+    <Compile Include="MVVM\Model\RecentlyUsedCharacterModel.cs" />
     <Compile Include="MVVM\ViewModel\CharacterSheetViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\JournalViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\LoadCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\NewCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ProfileViewModel.cs" />
     <Compile Include="MVVM\View\CharactersheetView.xaml.cs">
       <DependentUpon>CharactersheetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\JournalView.xaml.cs">
+      <DependentUpon>JournalView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\LoadCharacterView.xaml.cs">
+      <DependentUpon>LoadCharacterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\NewCharacterView.xaml.cs">
+      <DependentUpon>NewCharacterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ProfileView.xaml.cs">
       <DependentUpon>ProfileView.xaml</DependentUpon>
@@ -336,7 +364,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
@@ -348,7 +376,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="MVVM\Model\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataModel\DatabaseModel.Context.tt">
@@ -361,6 +388,19 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\ExpanderButton.png" />
+    <Resource Include="Images\CloseButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\MaximizeButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\MinimizeButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\NormalizeButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Logo-Small.ico" />
     <Resource Include="Images\Logo-Large.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

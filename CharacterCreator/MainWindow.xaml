@@ -17,7 +17,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Background="{StaticResource MainColourDark}" MouseDown="Grid_MouseDown">
+        <Grid Background="{StaticResource MainColourDark}" MouseDown="Grid_MouseDown" MouseMove="Grid_MouseMove">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
@@ -36,19 +36,37 @@
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Height" Value="30"/>
                         <Setter Property="Width" Value="30"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="White"/>
                                 <Setter Property="Background" Value="#ff3333"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
+                    
                     <Style x:Key="ButtonResizeStyle" TargetType="{x:Type Button}">
                         <Setter Property="Foreground" Value="LightGray"/>
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Height" Value="30"/>
                         <Setter Property="Width" Value="30"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Foreground" Value="White"/>
@@ -59,35 +77,21 @@
                 </StackPanel.Resources>
 
                 <Button x:Name="btnMinimize" Style="{StaticResource ButtonResizeStyle}" Command="{Binding CommandMinimize}">
-                    <Canvas Height="30" Width="30" IsHitTestVisible="False">
-                        <Canvas.Style>
-                            <Style TargetType="Canvas">
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="Red"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Canvas.Style>
-                        <Line IsHitTestVisible="False" X1="5" X2="25" Y1="22.5" Y2="22.5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}" StrokeThickness="5"/>
-                    </Canvas>
+                    <Image Source="Images/MinimizeButton.png"/>
                 </Button>
                 <Button x:Name="btnMaximize" Command="{Binding CommandMaximize}">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonResizeStyle}">
                             <Setter Property="Content">
                                 <Setter.Value>
-                                    <Grid>
-                                        <Border x:Name="brdMaximizeForeground" BorderBrush="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}, Path=Foreground}" BorderThickness="5,5,5,5" />
-                                    </Grid>
+                                    <Image Source="Images/NormalizeButton.png"/>
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=WindowState}" Value="{x:Static WindowState.Normal}">
                                     <Setter Property="Content">
                                         <Setter.Value>
-                                            <Border/>
+                                            <Image Source="Images/MaximizeButton.png"/>
                                         </Setter.Value>
                                     </Setter>
                                 </DataTrigger>
@@ -96,10 +100,7 @@
                     </Button.Style>
                 </Button>
                 <Button x:Name="btnClose" Command="{Binding CommandClose}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" Style="{StaticResource ButtonCloseStyle}">
-                    <Canvas Width="30" Height="30" Background="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=Background}">
-                        <Line X1="2.5" X2="25" Y1="25" Y2="2.5" StrokeThickness="5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}"/>
-                        <Line X1="25" X2="2.5" Y1="25" Y2="2.5" StrokeThickness="5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}"/>
-                    </Canvas>
+                    <Image Source="Images/CloseButton.png"/>
                 </Button>
             </StackPanel>
         </Grid>
@@ -118,14 +119,21 @@
             <Image Source="Images/Logo-Large.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-                <Expander Header="{x:Static resx:Resources.MenuCategoryPlay}" IsExpanded="True" ExpandDirection="Down">
+                <Expander Header="PLACEHOLDER Files" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="{x:Static resx:Resources.MenuButtonCharactersheet}" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="PLACEHOLDER New" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding NewCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="PLACEHOLDER Load" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding LoadCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
-                <Expander Header="{x:Static resx:Resources.MenuCategoryCharacter}" IsExpanded="True" ExpandDirection="Down">
+                <Expander Header="{x:Static resx:Resources.MenuCategoryPlay}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonCharactersheet}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="{x:Static resx:Resources.MenuCategoryCharacter}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
                         <RadioButton Content="{x:Static resx:Resources.MenuButtonProfile}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding ProfileVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonJournal}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding JournalVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
             </StackPanel>

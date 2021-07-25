@@ -27,13 +27,15 @@ namespace CharacterCreator.MVVM.ViewModel
         public RelayCommand CommandMinimize { get; set; }
         public RelayCommand CommandMaximize { get; set; }
         public RelayCommand CommandClose { get; set; }
-
         public RelayCommand CommandSwitchView { get; set; }
         #endregion Commands
 
         #region ViewModels
         public CharacterSheetViewModel CharacterSheetVM { get; set; }
         public ProfileViewModel ProfileVM { get; set; }
+        public JournalViewModel JournalVM { get; set; }
+        public NewCharacterViewModel NewCharacterVM { get; set; }
+        public LoadCharacterViewModel LoadCharacterVM { get; set; }
         #endregion ViewModels
 
         public MainViewModel()
@@ -63,12 +65,15 @@ namespace CharacterCreator.MVVM.ViewModel
             #region VMs
             CharacterSheetVM = new CharacterSheetViewModel();
             ProfileVM = new ProfileViewModel();
+            JournalVM = new JournalViewModel();
+            NewCharacterVM = new NewCharacterViewModel();
+            LoadCharacterVM = new LoadCharacterViewModel();
             #endregion VMs
 
             #region InitProperties
             CurrentWindowState = WindowState.Maximized;
 
-            CurrentView = CharacterSheetVM;
+            CurrentView = LoadCharacterVM;
             #endregion InitProperties
         }
     }

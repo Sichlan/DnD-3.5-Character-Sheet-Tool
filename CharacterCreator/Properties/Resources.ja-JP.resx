@@ -123,6 +123,9 @@
   <data name="MenuButtonCharactersheet" xml:space="preserve">
     <value>キャラクターシート</value>
   </data>
+  <data name="MenuButtonJournal" xml:space="preserve">
+    <value>ノート</value>
+  </data>
   <data name="MenuButtonProfile" xml:space="preserve">
     <value>プロフィール</value>
   </data>

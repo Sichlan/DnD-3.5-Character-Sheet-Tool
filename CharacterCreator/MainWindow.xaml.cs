@@ -30,5 +30,25 @@ namespace CharacterCreator
         {
             this.DragMove();
         }
+
+        private void Grid_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(Mouse.LeftButton == MouseButtonState.Pressed && this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine((sender as Button).Background);
+            Console.WriteLine((sender as Button).IsMouseOver);
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine((sender as Button).Background);
+            Console.WriteLine((sender as Button).IsMouseOver);
+        }
     }
 }

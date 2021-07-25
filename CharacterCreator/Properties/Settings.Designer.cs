@@ -13,7 +13,7 @@ namespace CharacterCreator.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
@@ -44,6 +44,24 @@ namespace CharacterCreator.Properties {
             }
             set {
                 this["StandardLocalization"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\DnDCharacterCreator\\saves\\")]
+        public string SaveFolder {
+            get {
+                return ((string)(this["SaveFolder"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\DnDCharacterCreator\\RecentlyUsedFiles.json")]
+        public string RecentlyUsedListFile {
+            get {
+                return ((string)(this["RecentlyUsedListFile"]));
             }
         }
     }

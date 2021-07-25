@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCreator", "Charact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonCreator", "PoisonCreator\PoisonCreator.csproj", "{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCreatorTests", "CharacterCreatorTests\CharacterCreatorTests.csproj", "{D9C879C1-9FF7-44C8-826A-9588F80CBD67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,12 +35,16 @@ Global
 		{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD5E9039-8A26-4EE8-A8D0-B4A9A965A768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9C879C1-9FF7-44C8-826A-9588F80CBD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C879C1-9FF7-44C8-826A-9588F80CBD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C879C1-9FF7-44C8-826A-9588F80CBD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C879C1-9FF7-44C8-826A-9588F80CBD67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_SortFileContentOnSave = True
 		SolutionGuid = {EB85A03F-CFD1-4336-B614-23B275178E41}
+		RESX_SortFileContentOnSave = True
 	EndGlobalSection
 EndGlobal
