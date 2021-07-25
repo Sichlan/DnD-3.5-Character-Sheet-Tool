@@ -31,6 +31,43 @@ namespace FunctionTest
         }
 
         [TestMethod]
+        public void ReadFileNames()
+        {
+            string path = "D:\\Dateien\\Fesdtplarre Flo\\Rollenspiel\\# D&D\\Wizards of the Coast\\Englisch";
+            var help = Directory.GetFiles(path);
+            List<string> strings = new List<string>();
+            List<SourceBook> sourceBooks = new List<SourceBook>();
+            foreach (string item in help)
+            {
+                string temp = item.Remove(item.Length - 4, 4).Remove(0, path.Length + 1);
+                
+                List<string> a = temp.Split(' ').ToList();
+                SourceBook sb = new SourceBook();
+                sb.Category = a.FirstOrDefault() == "DARK" ? a[0] + " " + a[1] : a[0];
+                if(a.FirstOrDefault() == "DARK") 
+                { 
+                    a.RemoveAt(0); 
+                    a.RemoveAt(0); 
+                } 
+                else 
+                    a.RemoveAt(0);
+
+                sb.Edition = a.FirstOrDefault();
+                a.RemoveAt(0);
+                temp = String.Join(" ", a);
+
+                List<string> x = temp.Split('-').ToList();
+                x.RemoveAt(0);
+                temp = String.Join("", x).Trim("(°)".ToCharArray()).Trim();
+                sb.Name = temp;
+                strings.Add(temp);
+                sourceBooks.Add(sb);
+            }
+            DataLoader.Save<SourceBook>(sourceBooks.OrderBy(x => x.Edition).ThenBy(X => X.Name).ToList(), "SourceBooks.json");
+            string output = String.Join(",\n", strings.OrderBy(x => x).Distinct());
+        }
+
+        [TestMethod]
         public void ImportJSONToDB()
         {
             using (var entities = new CharacterCreator.DataModel.Entities())

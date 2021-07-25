@@ -1,0 +1,892 @@
+{
+  "definitions": {
+    "Race": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Name": {
+          "description": "The races name",
+          "type": "string"
+        },
+        "Source": {
+          "description": "The title of the source the race was added in",
+          "type": [
+            "object",
+            "null"
+          ],
+          "enum": [
+            null,
+            {
+              "Name": "Arms and Equipment Guide",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Book of Challenges",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Book of Vile Darkness",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Dark Sun Campaign Setting",
+              "Edition": "3.0",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Defenders of the Faith",
+              "Edition": "3.0",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Deities and Demigods",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Dungeon Master's Guide",
+              "Edition": "3.0",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Enemies and Allies",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Epic Level Handbook",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Faith and Pantheons",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Forgotten Realms Campaign Setting",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Ghostwalk Campaign Option",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Hero Builder's Guide",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Living Greyhawk Gazetteer",
+              "Edition": "3.0",
+              "Category": "GREYHAWK"
+            },
+            {
+              "Name": "Lords of Darkness",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Magic of Faerûn",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Manual of the Planes",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Masters of the Wild",
+              "Edition": "3.0",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Monster Manual I",
+              "Edition": "3.0",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Monster Manual II",
+              "Edition": "3.0",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Monsters of Faerûn",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Oriental Adventures",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Player's Handbook",
+              "Edition": "3.0",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Psionics Handbook",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Races of Faerûn",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Savage Species",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Silver Marches",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Song and Silence",
+              "Edition": "3.0",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Stronghold Builder's Guidebook",
+              "Edition": "3.0",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Sword and Fist",
+              "Edition": "3.0",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Tome and Blood",
+              "Edition": "3.0",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Unapproachable East",
+              "Edition": "3.0",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Athasian Dragons",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Athasian Emporium",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Avangion",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Bastards and Bloodline",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Bestiary of Krynn",
+              "Edition": "3.5",
+              "Category": "DRAGONLANCE"
+            },
+            {
+              "Name": "Book of Exalted Deeds",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Champion of Rajaat",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Champions Of Ruin",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Champions of Valor",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "City of Stormreach",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Cityscape",
+              "Edition": "3.5",
+              "Category": "ENVIRONMENT"
+            },
+            {
+              "Name": "CityState of Draj",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Complete Adventurer",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Complete Arcane",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Complete Champion",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Complete Divine",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Complete Mage",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Complete Psionic",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Complete Scoundrel",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Complete Warrior",
+              "Edition": "3.5",
+              "Category": "CLASS"
+            },
+            {
+              "Name": "Dark Sun Campaign Setting",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Draconomicon",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Dragon Compendium",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Dragon Magic",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Dragonlance Campaign Setting",
+              "Edition": "3.5",
+              "Category": "DRAGONLANCE"
+            },
+            {
+              "Name": "Dragonmarked",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Dragons Of Eberron",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Dragons of Faerûn",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Drow of the Underdark",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Dungeon Master's Guide I",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Dungeon Master's Guide II",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Dungeonscape",
+              "Edition": "3.5",
+              "Category": "ENVIRONMENT"
+            },
+            {
+              "Name": "Eberron Campaign Setting",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Elder Evils",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Exemplars of Evil",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Expanded Psionics Handbook",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Explorer's Handbook",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Faiths of Eberron",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Fiend Folio",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Fiendish Codex  I  Hordes of the abyss",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Fiendish Codex II  Tyrants of the nine hells",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Five Nations",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Frostburn",
+              "Edition": "3.5",
+              "Category": "ENVIRONMENT"
+            },
+            {
+              "Name": "Grand History of the Realms",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Heroes of Battle",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Heroes of Horror",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Legends of Athas",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Libris Mortis",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "LifeShaping Handook",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Lords of Madness",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Lost Empires of Faerûn",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Magic Item Compendium",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Magic of Eberron",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Magic of Incarnum",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Miniatures Handbook",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Monster Manual I",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Monster Manual II",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Monster Manual III",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Monster Manual IV",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Monster Manual V",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Mysteries of the Moonsea",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Planar Handbook",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Planescape Campaign Setting",
+              "Edition": "3.5",
+              "Category": "PLANESCAPE"
+            },
+            {
+              "Name": "Player's Guide to Eberron",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Player's Guide to Faerûn",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Player's Handbook  I",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Player's Handbook II",
+              "Edition": "3.5",
+              "Category": "CORE"
+            },
+            {
+              "Name": "Power of Faerûn",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Prestige Classes 1",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Prestige Classes 2",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Races of Destiny",
+              "Edition": "3.5",
+              "Category": "RACES"
+            },
+            {
+              "Name": "Races of Eberron",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Races of Stone",
+              "Edition": "3.5",
+              "Category": "RACES"
+            },
+            {
+              "Name": "Races of the Dragon",
+              "Edition": "3.5",
+              "Category": "RACES"
+            },
+            {
+              "Name": "Races of the Wild",
+              "Edition": "3.5",
+              "Category": "RACES"
+            },
+            {
+              "Name": "Rules Compendium",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Sandstorm",
+              "Edition": "3.5",
+              "Category": "ENVIRONMENT"
+            },
+            {
+              "Name": "Secrets Of Sarlona",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Secrets of Xen'drik",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Serpent Kingdoms",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Sharn, City of Towers",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Shining South",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Spell Compendium",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Stormwrack",
+              "Edition": "3.5",
+              "Category": "ENVIRONMENT"
+            },
+            {
+              "Name": "Terrors of the Dead Lands",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Terrors off Athas",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "The Forge of War",
+              "Edition": "3.5",
+              "Category": "EBERRON"
+            },
+            {
+              "Name": "Tome of Battle  The book of nine swords",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Tome of Magic  Pact, shadow, and truename magic",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Trade Lords",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            },
+            {
+              "Name": "Ultimate Prestige Classes Vol 1",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Underdark",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Unearthed Arcana",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Waterdeep, City of Splendors",
+              "Edition": "3.5",
+              "Category": "REALMS"
+            },
+            {
+              "Name": "Weapons of Legacy",
+              "Edition": "3.5",
+              "Category": "GENERIC"
+            },
+            {
+              "Name": "Wisdom of the Drylanders",
+              "Edition": "3.5",
+              "Category": "DARK SUN"
+            }
+          ]
+        },
+        "Page": {
+          "description": "The page the race can be found on in the source",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "Link": {
+          "description": "The link to dndtools.net for the race as a reference",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "SubraceOf": {
+          "description": "The direct race this race was derived from.\nFor Example: a Lesser Dark Elf is a Subrace of Dark Elf, which is a subrace of Elf.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Description": {
+          "description": "Just a short description for the race, should not be more than a paragraph",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Type": {
+          "description": "The races type.\n0 - Aberration\n1 - Animal\n2 - Celestial\n3 - Construct\n4 - Dragon\n5 - Elemental\n6 - Fey\n7 - Fiend\n8 - Giant\n9 - Humanoid\n10 - Magical_Beast\n11 - Monstrous_Humanoid\n12 - Ooze\n13 - Outsider\n14 - Plant\n15 - Undead\n16 - Vermin",
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        "SubTypes": {
+          "description": "The races subtype(s), if any.\n0 - Air\n1 - Angel\n2 - Aquatic\n3 - Archon\n4 - Augmented\n5 - Chaotic\n6 - Cold\n7 - Demon\n8 - Devil\n9 - Dwarf\n10 - Earth\n11 - Elf\n12 - Evil\n13 - Extraplanar\n14 - Fire\n15 - Good\n16 - Gnoll\n17 - Gnome\n18 - Goblinoid\n19 - Halfling\n20 - Human\n21 - Incorporeal\n22 - Lawful\n23 - Native\n24 - Orc\n25 - Psionic\n26 - Reptilian\n27 - Shapechanger\n28 - Swarm\n29 - Water",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ]
+          }
+        },
+        "FavoredClass": {
+          "description": "The races favored class(es), if any\nIf the race has 'Any' as it's favored class, this field has to be NULL!",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "CountHitDice": {
+          "description": "The number of racial hitdice",
+          "type": "integer"
+        },
+        "SizeHitDice": {
+          "description": "The type of racial hitdie.\nFor example a 'd8' is simply noted as '8'",
+          "type": "integer"
+        },
+        "LevelAdjustment": {
+          "description": "The races LA",
+          "type": "integer"
+        },
+        "SizeCategory": {
+          "description": "The races default sizeCategory.\nMULTI-SIZED RACES HAVE TO BE NOTED IN THE COMMENT ABOVE SIZECATEGORY IN RACE.CS!\n-4 - Fine\n-3 - Diminutive\n-2 - Tiny\n-1 - Small\n0 - Medium\n1 - Large\n2 - Huge\n3 - Gargantuan\n4 - Colossal\n5 - BiggerThanColossal",
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            -4,
+            -3,
+            -2,
+            -1
+          ]
+        },
+        "Movement": {
+          "description": "The races movement modes.\nUse the name of the movement as Key and the range as value.\nFor Example: Flyspeed 30ft. = \"Fly\": \"30\"\nKeys derived from 'Enums.cs/MovementModes'",
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        "Senses": {
+          "description": "The races senses like low-light vision, blindsight, etc.\nIf the sense is limited to a static range (opposed by senses like low light vision, hich just double the standard vision range) enter the range in feet as an int, otherwise enter 'NULL'.\nAn exception is 'Improved Low-Light Vision', to insert this you set 'Low-light Vision' as key and set its value to '2' (aka '2' * LLV Range)'\nKey derived from Enums.cs/Sense.",
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "StatChanges": {
+          "description": "The Races StatChanges",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/StatChange"
+          }
+        },
+        "RaceFeatures": {
+          "description": "The races Race Features",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [ "object", "string" ]
+          }
+        }
+      },
+      "required": [
+        "Name",
+        "Source",
+        "Description",
+        "Type",
+        "FavoredClass",
+        "CountHitDice",
+        "SizeHitDice",
+        "SizeCategory",
+        "Movement"
+      ]
+    },
+    "StatChange": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Stat": {
+          "description": "The stat that is changed.\n1 - Strength\n2 - Dexterity\n3 - Constitution\n4 - Intelligence\n5 - Wisdom\n6 - Charisma",
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "Value": {
+          "description": "The value of the change",
+          "type": "integer"
+        },
+        "OnlyIf": {
+          "description": "The requirements for this change to apply. Set to null if always active/no requirement attached.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Source": {
+          "description": "The source of the Statchange, for Example 'Racial' or 'Magical Item'",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Stat",
+        "Value",
+        "Source"
+      ]
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Race"
+  }
+}
