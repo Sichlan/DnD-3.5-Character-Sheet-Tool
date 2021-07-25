@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:CharacterCreator"
              xmlns:viewModel="clr-namespace:CharacterCreator.MVVM.ViewModel"
              xmlns:view="clr-namespace:CharacterCreator.MVVM.View"
+             xmlns:model="clr-namespace:CharacterCreator.MVVM.Model"
+             xmlns:controls="clr-namespace:CharacterCreator.Controls"
              StartupUri="MainWindow.xaml"
              Startup="Application_Startup">
     <Application.Resources>
@@ -35,6 +37,10 @@
 
             <DataTemplate DataType="{x:Type viewModel:NewCharacterViewModel}">
                 <view:NewCharacterView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type model:RecentlyUsedCharacterEntry}">
+                <controls:RecentlyUsedCharacterEntryControl/>
             </DataTemplate>
             <!--#endregion-->
         </ResourceDictionary>

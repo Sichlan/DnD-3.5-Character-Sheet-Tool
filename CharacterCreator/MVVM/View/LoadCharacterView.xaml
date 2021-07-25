@@ -4,9 +4,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CharacterCreator.MVVM.View"
+             xmlns:resx="clr-namespace:CharacterCreator.Properties" xmlns:viewmodel="clr-namespace:CharacterCreator.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:LoadCharacterViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        
-    </Grid>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="{x:Static resx:Resources.LastLoadedCharacter}" Foreground="White" FontSize="28" HorizontalAlignment="Left" Margin="0,0,0,20"/>
+
+            <ContentControl Grid.Row="1" Height="200" Width="400" Content="{Binding MostRecentUsed}" HorizontalAlignment="Left" Margin="10,0"/>
+
+            <TextBlock Grid.Row="2" Text="{x:Static resx:Resources.LoadedCharacterHistory}" Foreground="White" FontSize="28" HorizontalAlignment="Left" Margin="0,50,0,20"/>
+
+            <ItemsControl Grid.Row="3" ItemsSource="{Binding CharacterHistory, UpdateSourceTrigger=PropertyChanged}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ContentControl Height="200" Width="400" Margin="10,0,10,20" Content="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </ScrollViewer>    
 </UserControl>

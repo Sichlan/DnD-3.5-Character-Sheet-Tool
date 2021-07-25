@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AllFilesFileType" xml:space="preserve">
+    <value>全ファイル</value>
+  </data>
+  <data name="CharacterSheetFileType" xml:space="preserve">
+    <value>キャラクターシート</value>
+  </data>
+  <data name="LoadCharacterCancelledMessage" xml:space="preserve">
+    <value>ファイルをロードがユーザーによってキャンセルされた場合.</value>
+  </data>
+  <data name="LoadCharacterDialogTitle" xml:space="preserve">
+    <value>ファイルをロードする...</value>
+  </data>
+  <data name="LoadCharacterExceptionMessage" xml:space="preserve">
+    <value>キャラクターの読み込み時に予期せぬエラーが発生する.</value>
+  </data>
   <data name="MainAppTitle" xml:space="preserve">
     <value>D&amp;D 3.5のキャラクタークリエーター</value>
   </data>
@@ -134,5 +149,11 @@
   </data>
   <data name="MenuCategoryPlay" xml:space="preserve">
     <value>プレイ</value>
+  </data>
+  <data name="SaveCharacterCancelledMessage" xml:space="preserve">
+    <value>キャラクターの保存がユーザーによってキャンセルされた。</value>
+  </data>
+  <data name="SaveCharacterDialogTitle" xml:space="preserve">
+    <value>キャラクターを保存...</value>
   </data>
 </root>

@@ -61,6 +61,69 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die All files ähnelt.
+        /// </summary>
+        public static string AllFilesFileType {
+            get {
+                return ResourceManager.GetString("AllFilesFileType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Character sheet ähnelt.
+        /// </summary>
+        public static string CharacterSheetFileType {
+            get {
+                return ResourceManager.GetString("CharacterSheetFileType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Last loaded character ähnelt.
+        /// </summary>
+        public static string LastLoadedCharacter {
+            get {
+                return ResourceManager.GetString("LastLoadedCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Load character has been canceled by the user. ähnelt.
+        /// </summary>
+        public static string LoadCharacterCancelledMessage {
+            get {
+                return ResourceManager.GetString("LoadCharacterCancelledMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Load character... ähnelt.
+        /// </summary>
+        public static string LoadCharacterDialogTitle {
+            get {
+                return ResourceManager.GetString("LoadCharacterDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Unexpected error while loading character. ähnelt.
+        /// </summary>
+        public static string LoadCharacterExceptionMessage {
+            get {
+                return ResourceManager.GetString("LoadCharacterExceptionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Character history ähnelt.
+        /// </summary>
+        public static string LoadedCharacterHistory {
+            get {
+                return ResourceManager.GetString("LoadedCharacterHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die D&amp;D 3.5 character creator ähnelt.
         /// </summary>
         public static string MainAppTitle {
@@ -88,6 +151,24 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Load character ähnelt.
+        /// </summary>
+        public static string MenuButtonLoadCharacter {
+            get {
+                return ResourceManager.GetString("MenuButtonLoadCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New character ähnelt.
+        /// </summary>
+        public static string MenuButtonNewCharacter {
+            get {
+                return ResourceManager.GetString("MenuButtonNewCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Profile ähnelt.
         /// </summary>
         public static string MenuButtonProfile {
@@ -106,11 +187,38 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die FILES ähnelt.
+        /// </summary>
+        public static string MenuCategoryFiles {
+            get {
+                return ResourceManager.GetString("MenuCategoryFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die PLAY ähnelt.
         /// </summary>
         public static string MenuCategoryPlay {
             get {
                 return ResourceManager.GetString("MenuCategoryPlay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save character has been canceled by the user. ähnelt.
+        /// </summary>
+        public static string SaveCharacterCancelledMessage {
+            get {
+                return ResourceManager.GetString("SaveCharacterCancelledMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save character... ähnelt.
+        /// </summary>
+        public static string SaveCharacterDialogTitle {
+            get {
+                return ResourceManager.GetString("SaveCharacterDialogTitle", resourceCulture);
             }
         }
     }

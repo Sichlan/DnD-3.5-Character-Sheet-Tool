@@ -1,6 +1,6 @@
 ﻿namespace CharacterCreator.MVVM.Model
 {
-    class Enums
+    public class Enums
     {
         public enum CreedAlignment
         {

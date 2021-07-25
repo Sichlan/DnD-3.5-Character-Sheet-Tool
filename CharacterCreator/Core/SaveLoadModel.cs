@@ -20,19 +20,26 @@ namespace CharacterCreator.Core
 
         public static T Load<T>(string folderPath, string fileName) where T : new()
         {
-            //Ensure the directory to save the object in exists:
-            if (!Directory.Exists(folderPath))
+            try
             {
-                Directory.CreateDirectory(folderPath);
-            }
+                //Ensure the directory to save the object in exists:
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
 
-            //Ensure the file exists:
-            if(!File.Exists(folderPath + fileName))
+                //Ensure the file exists:
+                if (!File.Exists(folderPath + fileName))
+                {
+                    File.WriteAllText(folderPath + fileName, JsonConvert.SerializeObject(new T(), serializerSettings));
+                }
+
+                return JsonConvert.DeserializeObject<T>(File.ReadAllText(folderPath + fileName), serializerSettings);
+            }
+            catch (Exception ex)
             {
-                File.WriteAllText(folderPath + fileName, JsonConvert.SerializeObject(new T(), serializerSettings));
+                throw ex;
             }
-
-            return JsonConvert.DeserializeObject<T>(File.ReadAllText(folderPath + fileName), serializerSettings);
         }
 
         public static void Save<T>(string folderPath, string fileName, T objectToSave) where T : new()

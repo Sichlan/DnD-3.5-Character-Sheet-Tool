@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
+using System.Windows.Media;
 
 namespace CharacterCreatorTests
 {
@@ -17,26 +19,34 @@ namespace CharacterCreatorTests
             RecentlyUsedCharacterModel testModel = new RecentlyUsedCharacterModel();
             string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + CharacterCreator.Properties.Settings.Default.SaveFolder;
 
-            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEnty()
+            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
             {
                 Name = "Test1",
                 FolderPath = folderPath,
                 FileName = "TestChar1.json",
-                PreviewInfo = "TestRace Wiz 5 / Sor 3 / UltMag 5"
+                PreviewInfo = "TestRace Wiz 5 / Sor 3 / UltMag 5",
+                LastUpdate = DateTime.Now,
+                LeftColor = Brushes.DodgerBlue.Color
             });
-            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEnty()
+            Thread.Sleep(1);
+            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
             {
                 Name = "Test2",
                 FolderPath = folderPath,
                 FileName = "BarbLoL.json",
-                PreviewInfo = "TestRage Fig 5 / Bar 3 / FreBer 5"
+                PreviewInfo = "TestRage Fig 5 / Bar 3 / FreBer 5",
+                LastUpdate = DateTime.Now,
+                LeftColor = Brushes.Crimson.Color
             });
-            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEnty()
+            Thread.Sleep(1);
+            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
             {
-                Name = "Test1",
+                Name = "Test3",
                 FolderPath = folderPath,
                 FileName = "Fighter.json",
-                PreviewInfo = "Human Fig 20"
+                PreviewInfo = "Human Fig 20",
+                LastUpdate = DateTime.Now,
+                LeftColor = Brushes.Beige.Color
             });
 
 

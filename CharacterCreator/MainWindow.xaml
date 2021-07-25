@@ -119,13 +119,13 @@
             <Image Source="Images/Logo-Large.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-                <Expander Header="PLACEHOLDER Files" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
+                <Expander Header="{x:Static resx:Resources.MenuCategoryFiles}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="PLACEHOLDER New" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding NewCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
-                        <RadioButton Content="PLACEHOLDER Load" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding LoadCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonNewCharacter}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding NewCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonLoadCharacter}" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding LoadCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
-                <Expander Header="{x:Static resx:Resources.MenuCategoryPlay}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
+                <Expander Header="{x:Static resx:Resources.MenuCategoryPlay}" IsExpanded="False" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
                         <RadioButton Content="{x:Static resx:Resources.MenuButtonCharactersheet}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>

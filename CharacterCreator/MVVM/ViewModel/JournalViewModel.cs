@@ -11,7 +11,7 @@ namespace CharacterCreator.MVVM.ViewModel
     {
         public JournalViewModel()
         {
-            Character character = Character.GetActiveCharacter();
+
         }
     }
 }

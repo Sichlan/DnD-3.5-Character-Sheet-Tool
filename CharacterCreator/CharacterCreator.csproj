@@ -139,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\RecentlyUsedCharacterEntryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -147,9 +151,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\RecentlyUsedCharacterEntryControl.xaml.cs">
+      <DependentUpon>RecentlyUsedCharacterEntryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DebugLogger.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\SaveLoadModel.cs" />
+    <Compile Include="Core\StaticRandomizer.cs" />
     <Compile Include="DataModel\AbilityStat.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -314,6 +323,7 @@
   <ItemGroup>
     <Compile Include="MVVM\Model\Character.cs" />
     <Compile Include="MVVM\Model\Enums.cs" />
+    <Compile Include="MVVM\Model\RecentlyUsedCharacterEntry.cs" />
     <Compile Include="MVVM\Model\RecentlyUsedCharacterModel.cs" />
     <Compile Include="MVVM\ViewModel\CharacterSheetViewModel.cs" />
     <Compile Include="MVVM\ViewModel\JournalViewModel.cs" />
