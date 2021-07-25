@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using DnD_3._5_Character_Sheet_Tool.Classes.DataModel;
+using DnDCharacterSheetTool.Classes.DataModel;
+using DnDCharacterSheetTool.Classes.EFModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using Newtonsoft.Json.Schema.Generation;
 
@@ -23,12 +22,11 @@ namespace FunctionTest
         }
 
         [TestMethod]
-        public void ReWrite()
+        public void TestModel()
         {
-            string help = "";
-            for (int i = 0; i < 6; i++)
+            using (var entities = new CharacterCreator.DataModel.Entities())
             {
-                help += $"{i} - {(Attributes)i}\n";
+                Trace.WriteLine(entities.Spells.First().Name);
             }
         }
 
@@ -70,114 +68,95 @@ namespace FunctionTest
         }
 
         [TestMethod]
-        public void GenerateJSONSchema()
+        public void ImportJSONToDB()
         {
-            JSchemaGenerator schemaGenerator = new JSchemaGenerator();
-            JSchema schema = schemaGenerator.Generate(typeof(List<Race>));
-            string help = schema.ToString();
+            using (var entities = new CharacterCreator.DataModel.Entities())
+            {
+                List<CharacterCreator.DataModel.CreatureType> editions = DataLoader.Load<CharacterCreator.DataModel.CreatureType>("CreatureTypes.json").OrderBy(x => x.ID).ToList();
+                entities.CreatureTypes.AddRange(editions);
+                entities.SaveChanges();
+            }
         }
 
         [TestMethod]
-        public void ReWriteRaceTemp()
+        public void GenerateJSONSchema()
         {
-            var help = DataLoader.Load<object>("RaceTEMP.json");
-            List<Race> races = new List<Race>();
-            List<PropertyInfo> properties = typeof(Race).GetProperties().ToList();
+            JSchemaGenerator schemaGenerator = new JSchemaGenerator();
+            JSchema schema = schemaGenerator.Generate(typeof(List<SkillVariant>));
+            string help = schema.ToString();
+            //string temp = JsonConvert.SerializeObject(new SkillVariant()
+            //{
+            //    Action = "1 Standard Action",
+            //    Description = "Test",
+            //    ID = 111,
+            //    Restrictions = "Test",
+            //    RulebookID = 1,
+            //    SkillID = 9,
+            //    Special = "a",
+                
+            //}, Formatting.Indented);
+            Trace.WriteLine(help);
+            //Trace.WriteLine(temp);
+        }
 
-            foreach (JObject tempRace in help)
+        [TestMethod]
+        public void GetRuleBookIDs()
+        {
+            //Trace.WriteLine(String.Join("\n", Model.GetInstance().SourceBooks.Select(x => x.ID.ToString("000") + " - " + x.Name)));
+        }
+
+        [TestMethod]
+        public void ExportToMTGCardSet()
+        {
+            List<DnDCharacterSheetTool.Classes.DataModel.Spell> spells = DataLoader.Load<DnDCharacterSheetTool.Classes.DataModel.Spell>("Spells - Old Data.json");
+
+            StreamWriter fileStream = File.CreateText("c:\\Users\\hysch\\Desktop\\set");
+            fileStream.WriteLine(@"mse version: 0.3.8
+game: magic
+stylesheet: m15-altered
+set info:
+	symbol: 
+	masterpiece symbol: 
+styling:
+	magic-m15-altered:
+		text box mana symbols: magic-mana-small.mse-symbol-font
+		overlay: ");
+
+            foreach (var spell in spells.Take(100))
             {
-                Race race = new Race()
-                {
-                    Type = CreatureType.Humanoid
-                };
-                foreach (JProperty property in tempRace.Properties())
-                {
-                    switch (property.Name)
-                    {
-                        case "Name":
-                            race.Name = property.Value.ToString();
-                            break;
-                        case "BasedOn":
-                            race.SubraceOf = property.Value.ToString();
-                            break;
-                        case "Subtype":
-                            List<CreatureSubTypes> subTypes = new List<CreatureSubTypes>();
-                            List<string> typesToConvert = (property.Value as JArray).ToObject<List<string>>();
-                            typesToConvert.ForEach(x =>
-                            {
-                                if(x.ToLower() != "humanoid")
-                                {
-                                    if(Enum.TryParse(x, out CreatureSubTypes creatureSubTypes))
-                                    {
-                                        subTypes.Add(creatureSubTypes);
-                                    }
-                                    else
-                                    {
-                                        System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");
-                                    }
-                                }
-                            });
-                            race.SubTypes = subTypes;
-                            break;
-                        case "HD":
-                            if (int.TryParse(property.Value.ToString(), out int i))
-                                race.CountHitDice = i;
-                            else
-                                System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");
-                            break;
-                        case "LA":
-                            if (int.TryParse(property.Value.ToString(), out int j))
-                                race.LevelAdjustment = j;
-                            else
-                                System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");
-                            break;
-                        case "FavouredClass":
-                            if (property.Value.ToString().ToLower() != "any")
-                                race.FavoredClass = property.Value.ToString();
-                            else
-                                race.FavoredClass = null;
-                            break;
-                        case "Size":
-                            if (Enum.TryParse(property.Value.ToString(), out SizeCategory category))
-                                race.SizeCategory = category;
-                            else
-                                System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");
-                            break;
-                        case "Movement":
-                            if (int.TryParse(property.Value.ToString(), out int k))
-                                race.Movement = new Dictionary<MovementMode, int>() { { MovementMode.Ground, k } };
-                            else
-                                System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");
-                            break;
-                        case "Vision":
-                            string vision = property.Value.ToString().ToLower();
-                            int trimIndex;
-                            if (vision == "low-light")
-                                race.Senses = new Dictionary<Sense, int?>() { { Sense.Low_Light, null } };
-                            else if(vision.StartsWith("darkvision"))
-                            {
-                                trimIndex = vision.IndexOf(" ") + 1;
-                                int? range = int.TryParse(vision.Substring(trimIndex), out int m) ? (int?)m : null;
-                                race.Senses = new Dictionary<Sense, int?>() { { Sense.Darkvision, range } };
-                            }
-                            else
-                                System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");
-                            break;
-                        case "StatChanges":
-                            race.StatChanges = (property.Value as JArray).ToObject<List<StatChange>>();
-                            break;
-                        case "RaceFeatures":
-                            race.RaceFeatures = (property.Value as JArray).ToObject<List<object>>();
-                            break;
-                        default:
-                            System.Diagnostics.Trace.WriteLine($"- Skipped {property.Name} '{property.Value}' of object {race.Name}, index {races.Count()}");
-                            break;
-                    }
-                }
-                races.Add(race);
+                fileStream.WriteLine($@"card:
+	has styling: false
+	notes: 
+	time created: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}
+	time modified: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}
+	card color: multicolor
+	name: {spell.Name}
+	casting cost: {spell.LevelPerClass.First().Value}
+	image: 
+	super type: <word-list-type>{String.Join("/", spell.Schools)}{String.Join("/", spell.SubSchools)}{String.Join("/", spell.Descriptor)}</word-list-type>
+	sub type: {spell.LevelPerClass.First().Key}
+	rule text:
+		Casting Time: {spell.CastingTimeValue + " " + spell.CastingTimeIndicator.ToString()}
+		Components: {String.Join(", ", spell.Components)}
+		Range: {spell.Range}{(!String.IsNullOrEmpty(spell.Target) ? "\n\t\tTarget: " + spell.Target : "") + (!String.IsNullOrEmpty(spell.Area) ? "\n\t\tArea: " + spell.Area : "") + (!String.IsNullOrEmpty(spell.Effect) ? "\n\t\tEffect: " + spell.Effect : "")}
+		Duration: {spell.Duration}
+		Saving Throw: {(spell.SavingThrow ? spell.Saves : "none")}
+        Spell Resistance: {(spell.SpellResistance ? "Yes" : "No")}
+	flavor text: <i-flavor></i-flavor>
+	card code text: 
+	copyright: 
+	image 2: 
+	copyright 2: 
+	copyright 3: 
+	mainframe image: 
+	mainframe image 2: ");
             }
 
-            DataLoader.Save<Race>(races, "Races.json");
+            fileStream.WriteLine(@"version control:
+	type: none
+apprentice code: ");
+
+            fileStream.Close();
         }
     }
 }

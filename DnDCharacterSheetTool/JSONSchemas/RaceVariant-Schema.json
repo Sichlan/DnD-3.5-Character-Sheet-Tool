@@ -1,0 +1,248 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "definitions": {
+    "RaceVariant": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Id": {
+          "type": "integer"
+        },
+        "RaceId": {
+          "type": "integer"
+        },
+        "RulebookId": {
+          "type": "integer"
+        },
+        "Page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "SubraceOf": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "CreatureTypeId": {
+          "type": "integer"
+        },
+        "CreatureSubTypes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ]
+          }
+        },
+        "FavouredClassID": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "CountRacialHitDie": {
+          "type": "integer"
+        },
+        "SizeRacialHitDie": {
+          "type": "integer"
+        },
+        "HasRacialHitDie": {
+          "type": "integer"
+        },
+        "LevelAdjustment": {
+          "type": "integer"
+        },
+        "Space": {
+          "type": "integer"
+        },
+        "Reach": {
+          "type": "integer"
+        },
+        "NaturalArmor": {
+          "type": "integer"
+        },
+        "Combat": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "BABType": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "FortType": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "RefType": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "WillType": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "BaseSkillPoints": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "SizeCategories": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {}
+        },
+        "MovementModes": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        "Senses": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "StatChanges": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/StatChange"
+          }
+        },
+        "AutomaticLanguagesIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          }
+        },
+        "BonusLanguagesIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "required": [
+        "Id",
+        "RaceId",
+        "RulebookId",
+        "Page",
+        "SubraceOf",
+        "CreatureTypeId",
+        "CreatureSubTypes",
+        "FavouredClassID",
+        "CountRacialHitDie",
+        "SizeRacialHitDie",
+        "HasRacialHitDie",
+        "LevelAdjustment",
+        "Space",
+        "Reach",
+        "NaturalArmor",
+        "Combat",
+        "Description",
+        "BABType",
+        "FortType",
+        "RefType",
+        "WillType",
+        "BaseSkillPoints",
+        "SizeCategories",
+        "MovementModes",
+        "Senses",
+        "StatChanges",
+        "AutomaticLanguagesIds",
+        "BonusLanguagesIds"
+      ]
+    },
+    "StatChange": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Value": {
+          "type": "integer"
+        },
+        "Stat": {},
+        "AppliesOnlyIf": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "Value",
+        "Stat",
+        "AppliesOnlyIf"
+      ]
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/RaceVariant"
+  }
+}

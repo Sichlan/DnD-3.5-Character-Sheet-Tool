@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Feat"
+  },
+
+  "definitions": {
+    "PrerequisiteSkillrank": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "Subcategory": {
+          "type": "string"
+        },
+        "Ranks": {
+          "type": "integer"
+        }
+      },
+      "required": ["ID", "Ranks"]
+    },
+    "PrerequisiteStat": {
+      "type": "object",
+      "properties": {
+        "Stat": {
+          "description": "The stat that is changed.\n1 - Strength\n2 - Dexterity\n3 - Constitution\n4 - Intelligence\n5 - Wisdom\n6 - Charisma",
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "Value": {
+          "description": "The value of the change",
+          "type": "integer"
+        }
+      },
+      "required": [ "Stat", "Value" ]
+    },
+    
+    
+    "Feat": {
+      "properties": {
+        "Name": {
+          "type": "string",
+          "description": "The name of the feat"
+        },
+        "ID": {
+          "type": "integer"
+        },
+        "FirstLevelOnly": {
+          "type": "boolean"
+        },
+        "Type": {
+          "description": "The type(s) of the feat",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Aberrant",
+              "Abyssal Heritor",
+              "Ambush",
+              "Ancestor",
+              "Background",
+              "Bardic",
+              "Bloodgift",
+              "Bloodline",
+              "Breath",
+              "Ceremony",
+              "Combat Form",
+              "Corrupter",
+              "Creature",
+              "Deformity",
+              "Devil-Touched",
+              "Divine",
+              "Domain",
+              "Dominator",
+              "Draconic",
+              "Dreamtouched",
+              "Epic",
+              "Exalted",
+              "Faith",
+              "Fighter Bonus Feat",
+              "General",
+              "Ghost",
+              "Haunt",
+              "Heritage",
+              "Host",
+              "Incarnum",
+              "Initiate",
+              "Interaction",
+              "Item Creation",
+              "Leader",
+              "Legacy",
+              "Luck",
+              "Manipulation",
+              "Mental",
+              "Metabreath",
+              "Metamagic",
+              "Metapsionic",
+              "Metashadow",
+              "Monster",
+              "Monstrous",
+              "Movement",
+              "Node Magic",
+              "Poltergeist",
+              "Psionic",
+              "Racial",
+              "Regional",
+              "Reserve",
+              "Shaper",
+              "Shifter",
+              "Special",
+              "Spelltouched",
+              "Style",
+              "Tactical",
+              "Tainted",
+              "Trait",
+              "Traveler",
+              "Vile",
+              "Warforged",
+              "Wild"
+            ]
+          },
+          "type": [ "array" ]
+        },
+        "Source": {
+          "description": "The title of the source the race was added in",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Page": {
+          "description": "The page the race can be found on in the source",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "Link": {
+          "description": "The link to dndtools.net for the race as a reference",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "Prerequisite": {
+          "description": "The feat's prerequisits",
+          "type": [ "array" ],
+          "items": {
+            "oneOf": [
+              { "$ref": "#/definitions/Feat" },
+              { "$ref": "#/definitions/PrerequisiteSkillrank" },
+              { "$ref": "#/definitions/PrerequisiteStat" }
+            ]
+          }
+        }
+      },
+      "required": ["ID", "Name", "Source", "Page", "Link", "Type"]
+    }
+  }
+}

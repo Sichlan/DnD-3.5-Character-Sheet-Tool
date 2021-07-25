@@ -1,0 +1,208 @@
+[
+  {
+    "Name": "Ichi Mitsu",
+    "Nickname": "Ichi",
+    "Player Name": "Amalia",
+    "ExpTotal": null,
+    "Race": {
+      "Name": "Human",
+      "Source": null,
+      "Page": null,
+      "Link": null,
+      "SubraceOf": null,
+      "Type": 9,
+      "SubTypes": [],
+      "FavoredClass": null,
+      "CountHitDice": 0,
+      "SizeHitDice": 0,
+      "LevelAdjustment": 0,
+      "SizeCategory": 0,
+      "Movement": {
+        "Ground": 30
+      },
+      "Senses": null,
+      "StatChanges": [],
+      "RaceFeatures": [
+        "bounus feat",
+        "1 bounus skill point each level",
+        "4 bounus skill points level 1"
+      ]
+    },
+    "Templates": [
+      {
+        "Name": "Magic Blooded",
+        "Addition": "Magic blooded",
+        "Level Adjustment": 0,
+        "Skills": [
+          {
+            "Name": "Spellcraft",
+            "Bonus": 2,
+            "AlwaysInclass": true
+          },
+          {
+            "Name": "Knowledge (Arcane)",
+            "Bonus": 2,
+            "AlwaysInclass": true
+          }
+        ],
+        "StatChanges": [
+          {
+            "Stat": 6,
+            "Source": "Template",
+            "Value": 2
+          },
+          {
+            "Stat": 5,
+            "Source": "Template",
+            "Value": -2
+          }
+        ],
+        "Abilities": [
+          {
+            "UsesPerDay": 1,
+            "Replicates": {
+              "Area": "Cone-shaped emanation",
+              "CastingTimeIndicator": "Standard",
+              "CastingTimeValue": 1,
+              "Concentration": true,
+              "Description": "You detect magical auras. The amount of information revealed depends on how long you study a particular area or subject.\n**1st Round:** Presence or absence of magical auras.\n**2nd Round:** Number of different magical auras and the power of the most potent aura.\n**3rd Round:** The strength and location of each aura. If the items or creatures bearing the auras are in  line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 + spell level, or 15 + half caster level for a nonspell effect).\nMagical areas, multiple types of magic, or strong local magical emanations may distort or conceal weaker auras.\n**Aura Strength:** An aura's power depends on a spell's functioning spell level or an item's caster level. If an aura falls into more than one category, detect magic indicates the stronger of the two. \n<table><tr><th colspan=\"1\"></th><th style=\"text-align:center;\" colspan=\"4\">Aura Power </th></tr><tr><th>Spell or Object </th><th>Faint </th><th>Moderate </th><th>Strong </th><th>Overwhelming </th></tr><tr><td> Functioning spell (spell level) </td><td> 3rd or lower </td><td> 4th-6th </td><td> 7th-9th </td><td> 10th+ (deity level) </td></tr><tr><td> Magic Item (caster level) </td><td> 5th or lower </td><td> 6th-11th </td><td> 12th-20th </td><td> 21st+ (artifact) </td></tr></table>Lingering Aura: A magical aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If detect magic is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:\n<table><tr><th>Original Strength </th><th>Duration of Lingering Aura </th></tr><tr><td> Faint</td><td> 1d6 rounds </td></tr><tr><td> Moderate</td><td> 1d6 minutes </td></tr><tr><td> Strong</td><td> 1d6×10 minutes </td></tr><tr><td> Overwhelming</td><td> 1d6 days </td></tr></table>Outsiders and elementals are not magical in themselves, but if they are summoned, the conjuration spell registers.\nEach round, you can turn to detect magic in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.\nDetect magic can be made permanent with a permanency spell.",
+              "Descriptor": [],
+              "DivineFocus": false,
+              "Duration": "Up to 1 min./level (D)",
+              "Harmless": false,
+              "HasArcaneFocus": false,
+              "HasMaterial": false,
+              "HasSomatic": true,
+              "HasVerbal": true,
+              "HasXpCost": false,
+              "Link": "https://dndtools.net/spells/players-handbook-v35--6/detect-magic--2489/",
+              "Name": "Detect Magic",
+              "Range": "60 ft.",
+              "Saves": "None",
+              "SavingThrow": false,
+              "Schools": [
+                "Divination"
+              ],
+              "Source": "Player's Handbook v.3.5",
+              "SpellResistance": false,
+              "SubSchools": [],
+              "TargetsObject": false
+            }
+          },
+          {
+            "UsesPerDay": 1,
+            "Replicates": {
+              "Name": "Read Magic",
+              "Link": "https://dndtools.net/spells/players-handbook-v35--6/read-magic--2511/",
+              "Source": "Player's Handbook v.3.5",
+              "Schools": [
+                "Divination"
+              ],
+              "SubSchools": [],
+              "Descriptor": [],
+              "HasVerbal": true,
+              "HasSomatic": true,
+              "HasMaterial": false,
+              "HasArcaneFocus": false,
+              "DivineFocus": false,
+              "HasXpCost": false,
+              "XPCost": null,
+              "OtherComponents": null,
+              "CastingTimeValue": 1,
+              "CastingTimeIndicator": "Standard",
+              "Range": "Personal",
+              "Target": "You",
+              "Area": null,
+              "Effect": null,
+              "Concentration": false,
+              "Duration": "10 min./level",
+              "SavingThrow": false,
+              "Saves": null,
+              "SpellResistance": false,
+              "Harmless": false,
+              "TargetsObject": false,
+              "Description": "By means of read magic, you can decipher magical inscriptions on objects&#8212;books, scrolls, weapons, and the like&#8212;that would otherwise be unintelligible.\nThis deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed scroll.\nFurthermore, once the spell is cast and you have read the magical inscription, you are thereafter able to read that particular writing without recourse to the use of read magic.\nYou can read at the rate of one page (250 words) per minute.\nThe spell allows you to identify a glyph of warding with a DC 13 Spellcraft check, a greater glyph of warding with a DC 16 Spellcraft check, or any symbol spell with a Spellcraft check (DC 10 + spell level).\nRead magic can be made permanent with a permanency spell."
+            }
+          },
+          {
+            "UsesPerDay": 1,
+            "Replicates": {
+              "Name": "Nystul's Magic Aura",
+              "Link": "https://dndtools.net/spells/players-handbook-v35--6/nystuls-magic-aura--2688/",
+              "Source": "Player's Handbook v.3.5",
+              "Schools": [
+                "Illusion"
+              ],
+              "SubSchools": [
+                "Glamer"
+              ],
+              "Descriptor": [],
+              "HasVerbal": true,
+              "HasSomatic": true,
+              "HasMaterial": false,
+              "HasArcaneFocus": false,
+              "DivineFocus": false,
+              "HasXpCost": false,
+              "CastingTimeValue": 1,
+              "CastingTimeIndicator": "Standard",
+              "Range": "Touch",
+              "Target": "One touched object weighing up to 5 lb./level",
+              "Concentration": false,
+              "Duration": "One day/level (D)",
+              "SavingThrow": true,
+              "Saves": "None; see text",
+              "SpellResistance": false,
+              "Harmless": false,
+              "TargetsObject": false,
+              "Description": "You alter an item's aura so that it registers to detect spells (and spells with similar capabilities) as though it were nonmagical, or a magic item of a kind you specify, or the subject of a spell you specify.\nYou could make an ordinary sword register as a +2 vorpal sword as far as magical detection is concerned or make a +2 vorpal sword register as if it were a +1 sword or even a nonmagical sword.\nIf the object bearing Nystul's magic aura has identify cast on it or is similarly examined, the examiner recognizes that the aura is false and detects the object's actual qualities if he succeeds on a Will save.\nOtherwise, he believes the aura and no amount of testing reveals what the true magic is.\nIf the targeted item's own aura is exceptionally powerful (if it is an artifact, for instance), Nystul's magic aura doesn't work.\n**Note:** A magic weapon, shield, or suit of armor must be a masterwork item, so a sword of average make, for example, looks suspicious if it has a magical aura."
+            }
+          },
+          {
+            "UsesPerDay": 1,
+            "Replicates": {
+              "Name": "Nystul's Undetectable Aura",
+              "Link": null,
+              "Source": "Player's Handbook v.3.5",
+              "Schools": [
+                "Illusion"
+              ],
+              "SubSchools": [
+                "Glamer"
+              ],
+              "HasVerbal": true,
+              "HasSomatic": true,
+              "HasMaterial": false,
+              "HasArcaneFocus": false,
+              "DivineFocus": false,
+              "HasXpCost": false,
+              "CastingTimeValue": 1,
+              "CastingTimeIndicator": "Standard",
+              "Range": "T",
+              "Target": "One touched object weighing up to 5 lb./level",
+              "Duration": "1 day/level",
+              "SavingThrow": false,
+              "Saves": "None; see text",
+              "SpellResistance": false,
+              "Description": "The spell allows you to mask a magic item's aura from detection. If the object bearing Nystul's undetectable aura has identify cast on it or is similarly examined, the examiner recognizes that the aura is false and detect the object's actual qualities if he succeeds at a Will save."
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Blooded One",
+        "Addition": ", the blooded one",
+        "Alignment": {
+          "Preferred Alignment": {
+            "GNEAlignment": "Evil"
+          }
+        },
+        "Challenge Rating": 1,
+        "Feats": [
+          {
+            "Name": ""
+          }
+        ]
+      }
+    ]
+  }
+]

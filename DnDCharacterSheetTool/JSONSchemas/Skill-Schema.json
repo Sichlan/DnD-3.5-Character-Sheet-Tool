@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+
+
+  "Debugablaufverfolgung": {
+    "type": "array",
+    "items": {
+      "$ref": ""
+    },
+
+    "definitions": {
+      "Skill": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "Id": {
+            "type": "integer"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "AbilityStat": {
+            "type": "string",
+            "enum": [
+              "STR",
+              "DEX",
+              "CON",
+              "INT",
+              "WIS",
+              "CHA"
+            ]
+          },
+          "TrainedOnly": {
+            "type": "boolean"
+          },
+          "ArmorCheckPenaltyModifier": {
+            "description": "The modifier with which AP is applied. Mostly 0 (not applied) or 1 (simply applied). Some cases like swim demand 2 (double penalty)",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Id",
+          "Name",
+          "AbilityStat",
+          "TrainedOnly",
+          "ArmorCheckPenaltyModifier"
+        ]
+      }
+    }
+  }
+}

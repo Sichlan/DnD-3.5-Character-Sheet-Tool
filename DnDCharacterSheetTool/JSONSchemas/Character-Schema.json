@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Character"
+  },
+
+  "definitions": {
+    "Character": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Nickname": {
+          "type": "string",
+          "description": "Short name of the character to be displayed"
+        },
+        "Player Name": {
+          "type": "string",
+          "description": "The player playing this character"
+        },
+        "ExpTotal": {
+          "type": [ "integer", "null" ],
+          "description": "The total exp the character has accumulated. Leave empty if playing with milestones"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "LNCAlignment": {
+          "type": [ "string" ],
+          "enum": [
+            "Lawful",
+            "Neutral",
+            "Chaotic"
+          ]
+        },
+        "GNEAlignment": {
+          "type": [ "string" ],
+          "enum": [
+            "Good",
+            "Neutral",
+            "Evil"
+          ]
+        },
+        "Age": {
+          "type": "integer"
+        },
+        "Height": {
+          "type": "number"
+        },
+        "Weight": {
+          "type": "number"
+        },
+        "EyeColor": {
+          "type": "string"
+        },
+        "HairColor": {
+          "type": "string"
+        },
+        "Notes": {
+          "type": "string"
+        },
+
+        "Templates": {
+          "type": "array",
+          "items": {
+            "$ref": "Templates-Schema.json#/definitions/Template"
+          }
+        },
+        "Race": {
+          "type": "object",
+          "$ref": "Race-Schema.json#/definitions/Race"
+        },
+        "Feats": {
+          "type": "array",
+          "items": {
+            "$ref": "Feats-Schema.json#/definitions/Feat"
+          }
+        }
+      },
+      "required": [ "Name", "Race" ]
+    }
+  },
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "This shows up in tooltips for the 'name' property."
+    },
+    "versions": {
+      "type": "array",
+      "description": "An array of version numbers.",
+      "minItems": 1,
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

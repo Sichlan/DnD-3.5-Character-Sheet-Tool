@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Template"
+  },
+
+  "definitions": {
+    "Template": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Addition": {
+          "type": "string"
+        },
+        "StatChanges": {
+          "type": "array",
+          "items": {
+            "$ref": "StatChange-Schema.json#"
+          }
+        },
+        "Abilities": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "Abilities-Schema.json#/definitions/Spell-like%20Ability"
+              }
+            ]
+          }
+        },
+        "Feats": {
+          "type": "array",
+          "items": {
+            "$ref": "Feats-Schema.json#/definitions/Feat"
+          }
+        },
+        "Skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "AlwaysInclass": {
+                "type": "boolean"
+              },
+              "Name": {
+                "type": "string"
+              },
+              "Bonus": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "Challenge Rating": {
+          "type": [ "integer", "null" ]
+        },
+        "Level Adjustment": {
+          "type": [ "integer", "null" ]
+        },
+        "Alignment": {
+          "type": "object",
+          "properties": {
+            "Preferred Alignment": {
+              "type": "object",
+              "properties": {
+                "LNCAlignment": {
+                  "type": [ "string", "null" ],
+                  "enum": [
+                    "Lawful",
+                    "Neutral",
+                    "Chaotic"
+                  ]
+                },
+                "GNEAlignment": {
+                  "type": [ "string", "null" ],
+                  "enum": [
+                    "Good",
+                    "Neutral",
+                    "Evil"
+                  ]
+                }
+              }
+            },
+            "Forced Alignment": {
+              "type": "object",
+              "properties": {
+                "LNCAlignment": {
+                  "type": [ "integer", "null" ]
+                },
+                "GNEAlignment": {
+                  "type": [ "integer", "null" ]
+                }
+              }
+            }
+          }
+        },
+        "Notes": {
+          "type": "string"
+        }
+      },
+      "required": ["Name", "Addition"]
+    }
+  }
+}

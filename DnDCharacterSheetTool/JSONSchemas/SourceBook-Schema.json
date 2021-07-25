@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/SourceBook"
+  },
+
+  "definitions": {
+    "SourceBook": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Id": {
+          "type": "integer"
+        },
+        "EditionId": {
+          "type": "integer"
+        },
+        "Name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Abbreviation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "PublishingDate": {
+          "type": [ "string", "null" ],
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "Id",
+        "EditionId",
+        "Name",
+        "Abbreviation",
+        "Description",
+        "PublishingDate"
+      ]
+    }
+  }
+}

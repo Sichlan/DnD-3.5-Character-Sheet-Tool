@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "object",
+  "properties": {
+    "Stat": {
+      "description": "The stat that is changed.\n1 - Strength\n2 - Dexterity\n3 - Constitution\n4 - Intelligence\n5 - Wisdom\n6 - Charisma",
+      "type": "integer",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "Value": {
+      "description": "The value of the change",
+      "type": "integer"
+    },
+    "OnlyIf": {
+      "description": "The requirements for this change to apply. Set to null if always active/no requirement attached.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Source": {
+      "description": "The source of the Statchange, for Example 'Racial' or 'Magical Item'",
+      "type": "string"
+    }
+  },
+  "required": [
+    "Stat",
+    "Value",
+    "Source"
+  ]
+}

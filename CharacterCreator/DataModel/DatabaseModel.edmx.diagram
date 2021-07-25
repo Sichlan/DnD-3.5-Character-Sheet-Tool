@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5f46c9fcd5047d58589da7cc008b0e5" Name="Diagram1">
+        <EntityTypeShape EntityType="DnDDatabaseModel.AbilityStat" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.ActionTimeIndicator" Width="1.5" PointX="15.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Alignment" Width="1.5" PointX="15.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.AllowedSpellSave" Width="1.5" PointX="10" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Condition" Width="1.5" PointX="12.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.CreatureSubType" Width="1.5" PointX="12.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.CreatureType" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Deity" Width="1.5" PointX="10.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Domain" Width="1.5" PointX="10.5" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.DomainSpell" Width="1.5" PointX="15" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.DomainVariant" Width="1.5" PointX="12.75" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Edition" Width="1.5" PointX="1.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Feat" Width="1.5" PointX="7.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.FeatCategory" Width="1.5" PointX="10.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.FeatRequiresSaveValue" Width="1.5" PointX="10" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.FeatRequiresSkillRank" Width="1.5" PointX="10" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.FeatRequiresStatValue" Width="1.5" PointX="10" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.FeatVariant" Width="1.5" PointX="13" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Language" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.MovementMode" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Race" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.RaceStatChanx" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.RaceVariant" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.RacialMovementMode" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.RacialSens" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.RuleBook" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Save" Width="1.5" PointX="7.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.SaveType" Width="1.5" PointX="7.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.SizeCategory" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Skill" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.SkillVariant" Width="1.5" PointX="5.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.Spell" Width="1.5" PointX="12.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.SpellDescriptor" Width="1.5" PointX="15" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.SpellSchool" Width="1.5" PointX="15" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.SpellSubSchool" Width="1.5" PointX="15" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.SpellVariant" Width="1.5" PointX="18" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDDatabaseModel.VisualSense" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_AbilityStat" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_AbilityStatRequired" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_RacialStatChange" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.SpellVariant_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_AllowedSpellSave_Saves" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_AllowedSpellSave_SaveType" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_TypeOfCreature" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_Patreon" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_VariantOfDomain" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.DomainSpells_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.DomainSpells_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_ContainedInRuleBook" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_EditionOfRulebook" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_FeatRequiring" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_FeatRequiringSave" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_FeatRequiringStat" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_ReferredFeat" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_SaveRequired" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_SkillRequired" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_FeatOriginRuleBook" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_MovementMode" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_RaceOfRaceVariant" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_SubraceOf" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_RaceWithStatChange" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_RaceWithMovementMode" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_RaceWithSense" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_RuleBookOfRaceVariant" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_Sense" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_RuleBook" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.SpellVariant_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FK_Skill" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.SpellVariant_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.DeityClericAlignments" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.DomainVariantToDeity" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FeatRequiresAlignments" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FeatRequiresFeat" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.FeatVariantToFeatCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.RacialAutomaticLanguages" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.RacialBonusLanguages" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.RacialSizeCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.SkillSynergy" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.SpellToSpellDescriptor" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.SpellToSpellSchool" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDDatabaseModel.SpellToSpellSubSchool" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

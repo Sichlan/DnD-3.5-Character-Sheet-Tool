@@ -1,0 +1,53 @@
+﻿<Application x:Class="CharacterCreator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CharacterCreator"
+             xmlns:viewModel="clr-namespace:CharacterCreator.MVVM.ViewModel"
+             xmlns:view="clr-namespace:CharacterCreator.MVVM.View"
+             xmlns:model="clr-namespace:CharacterCreator.MVVM.Model"
+             xmlns:controls="clr-namespace:CharacterCreator.Controls"
+             StartupUri="MainWindow.xaml"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                </ResourceDictionary>
+                <ResourceDictionary Source="Themes/Colours.xaml"/>
+                <ResourceDictionary Source="Themes/MenuExpanderHeaderTheme.xaml"/>
+                <ResourceDictionary Source="Themes/MenuRadioButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--#region DataTemplates-->
+            <DataTemplate DataType="{x:Type viewModel:CharacterSheetViewModel}">
+                <view:CharactersheetView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
+                <view:ProfileView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:JournalViewModel}">
+                <view:JournalView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:LoadCharacterViewModel}">
+                <view:LoadCharacterView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:NewCharacterViewModel}">
+                <view:NewCharacterView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type model:RecentlyUsedCharacterEntry}">
+                <controls:RecentlyUsedCharacterEntryControl/>
+            </DataTemplate>
+            <!--#endregion-->
+        </ResourceDictionary>
+    </Application.Resources>
+    <JumpList.JumpList>
+        <!--https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.jumplist?redirectedfrom=MSDN&view=net-5.0
+        Allows to show recent viewed files-->
+        <JumpList ShowRecentCategory="True" ShowFrequentCategory="True"/>
+    </JumpList.JumpList>
+</Application>

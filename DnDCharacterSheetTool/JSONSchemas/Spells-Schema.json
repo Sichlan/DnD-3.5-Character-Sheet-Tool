@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Spell"
+  },
+
+  "definitions": {
+    "Spell": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Link": {
+          "type": [ "string", "null" ]
+        },
+        "Source": {
+          "type": "string"
+        },
+        "Schools": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": [
+                "Abjuration",
+                "Alteration",
+                "Conjuration",
+                "Divination",
+                "Enchantment",
+                "Evocation",
+                "Illusion",
+                "Necromancy",
+                "Transmutation",
+                "Universal"
+              ]
+            }
+          ]
+        },
+        "SubSchools": {
+          "type": [ "array", "null" ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "Calling",
+              "Creation",
+              "Healing",
+              "Summoning",
+              "Teleportation",
+              "Scrying",
+              "Charm",
+              "Compulsion",
+              "Figment",
+              "Glamer",
+              "Pattern",
+              "Phantasm",
+              "Shadow"
+            ]
+          }
+        },
+        "Descriptor": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Acid",
+              "Air",
+              "Chaotic",
+              "Cold",
+              "Darkness",
+              "Death",
+              "Earth",
+              "Electricity",
+              "Evil",
+              "Fear",
+              "Fire",
+              "Force",
+              "Good",
+              "Language_dependent",
+              "Lawful",
+              "Light",
+              "Mind_affecting",
+              "Sonic",
+              "Water"
+            ]
+          }
+        },
+        "LevelPerClass": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        "HasVerbal": {
+          "type": "boolean"
+        },
+        "HasSomatic": {
+          "type": "boolean"
+        },
+        "HasMaterial": {
+          "type": "boolean"
+        },
+        "MaterialComponents": {
+          "type": [ "string", "null" ]
+        },
+        "HasArcaneFocus": {
+          "type": "boolean"
+        },
+        "ArcaneFocus": {
+          "type": [ "string", "null" ]
+        },
+        "DivineFocus": {
+          "type": "boolean"
+        },
+        "HasXpCost": {
+          "type": "boolean"
+        },
+        "XPCost": {
+          "type": [ "integer", "null" ]
+        },
+        "CastingTimeValue": {
+          "type": "integer"
+        },
+        "CastingTimeIndicator": {
+          "type": "string",
+          "enum": [
+            "Immediate",
+            "Swift",
+            "Free",
+            "Standard",
+            "Round",
+            "Minute",
+            "Hour",
+            "Day"
+          ]
+        },
+        "Range": {
+          "type": "string"
+        },
+        "Target": {
+          "type": [ "string", "null" ]
+        },
+        "Area": {
+          "type": [ "string", "null" ]
+        },
+        "Effect": {
+          "type": [ "string", "null" ]
+        },
+        "Concentration": {
+          "type": "boolean"
+        },
+        "Duration": {
+          "type": "string"
+        },
+        "SavingThrow": {
+          "type": "boolean"
+        },
+        "Saves": {
+          "type": [ "string", "null" ]
+        },
+        "SpellResistance": {
+          "type": "boolean"
+        },
+        "Harmless": {
+          "type": "boolean"
+        },
+        "TargetsObject": {
+          "type": "boolean"
+        },
+        "Description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Link",
+        "Source",
+        "Schools",
+        "HasVerbal",
+        "HasSomatic",
+        "HasMaterial",
+        "HasArcaneFocus",
+        "DivineFocus",
+        "HasXpCost",
+        "Description"
+      ]
+    }
+  }
+}

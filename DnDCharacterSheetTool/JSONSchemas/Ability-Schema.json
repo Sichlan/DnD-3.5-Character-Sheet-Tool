@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "JSON Schema for my JSON file format",
+
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Ability"
+  },
+
+  "definitions": {
+    "Spell-like Ability": {
+      "type": "object",
+      "properties": {
+        "UsesPerDay": {
+          "type": [ "integer", "null" ]
+        },
+        "Replicates": {
+          "$ref": "Spells-Schema.json#/definitions/Spell"
+        }
+      }
+    },
+
+    "Ability": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string",
+          "enum": [
+            "Extraoridinary",
+            "Supernatural",
+            "Spell-like",
+            "Psi-like",
+
+            "Undefined"
+          ]
+        },
+        "IsActive": {
+          "type": "boolean"
+        },
+        "Activation": {
+          "type": [ "string", "null" ]
+        },
+        "Effect": {
+          "type": "string"
+        },
+        "UsesPerDay": {
+          "type": [ "integer", "null" ]
+        }
+      }
+    }
+  }
+}
