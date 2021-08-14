@@ -120,6 +120,21 @@
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>Character sheet</value>
   </data>
+  <data name="ErrorNoCharacterName" xml:space="preserve">
+    <value>No character name given</value>
+  </data>
+  <data name="ErrorNoCreedAlignment" xml:space="preserve">
+    <value>No creed alignment given</value>
+  </data>
+  <data name="ErrorNoPlayerName" xml:space="preserve">
+    <value>No player name is given</value>
+  </data>
+  <data name="ErrorNoProfilePicture" xml:space="preserve">
+    <value>No profile picture selected</value>
+  </data>
+  <data name="ErrorNoSocialAlignment" xml:space="preserve">
+    <value>No social alignment given</value>
+  </data>
   <data name="GroupBoxHeaderGeneralInfos" xml:space="preserve">
     <value>General infos</value>
   </data>
@@ -133,10 +148,10 @@
     <value>Profile picture</value>
   </data>
   <data name="LabelAlignmentCreed" xml:space="preserve">
-    <value>Alignment 1</value>
+    <value>Creed</value>
   </data>
   <data name="LabelAlignmentSocial" xml:space="preserve">
-    <value>Alignment 2</value>
+    <value>Social</value>
   </data>
   <data name="LabelCharacterName" xml:space="preserve">
     <value>Character name</value>

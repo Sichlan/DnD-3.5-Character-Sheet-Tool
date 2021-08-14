@@ -123,6 +123,21 @@
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>Charakterbogen</value>
   </data>
+  <data name="ErrorNoCharacterName" xml:space="preserve">
+    <value>Kein Charaktername angegeben</value>
+  </data>
+  <data name="ErrorNoCreedAlignment" xml:space="preserve">
+    <value>Keine Kredo-Gesinnung angegeben</value>
+  </data>
+  <data name="ErrorNoPlayerName" xml:space="preserve">
+    <value>Kein Spielername angegeben</value>
+  </data>
+  <data name="ErrorNoProfilePicture" xml:space="preserve">
+    <value>Kein Profilbild angegeben</value>
+  </data>
+  <data name="ErrorNoSocialAlignment" xml:space="preserve">
+    <value>Keine soziale Gesinnung angegeben</value>
+  </data>
   <data name="GroupBoxHeaderGeneralInfos" xml:space="preserve">
     <value>Allgemeine Informationen</value>
   </data>
@@ -136,10 +151,10 @@
     <value>Charakterbild</value>
   </data>
   <data name="LabelAlignmentCreed" xml:space="preserve">
-    <value>Gesinnung 1</value>
+    <value>Kredo</value>
   </data>
   <data name="LabelAlignmentSocial" xml:space="preserve">
-    <value>Gesinnug 2</value>
+    <value>Sozial</value>
   </data>
   <data name="LabelCharacterName" xml:space="preserve">
     <value>Charaktername</value>

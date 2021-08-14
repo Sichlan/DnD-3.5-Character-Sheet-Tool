@@ -20,6 +20,7 @@
                 <ResourceDictionary Source="Themes/GroupBorderTheme.xaml"/>
                 <ResourceDictionary Source="Themes/ScrollViewerTheme.xaml"/>
                 <ResourceDictionary Source="Themes/GroupBoxMainTheme.xaml"/>
+                <ResourceDictionary Source="Themes/InfoListViewStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!--#region DataTemplates-->
@@ -60,7 +61,6 @@
                 </ObjectDataProvider.MethodParameters>
             </ObjectDataProvider>
 
-            <converter:IsViewModelSelectedConverter x:Key="IsViewModelSelectedConverter"/>
             <converter:ImageToBitmapConverter x:Key="ImageToBitmapConverter"/>
         </ResourceDictionary>
     </Application.Resources>

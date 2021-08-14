@@ -29,6 +29,7 @@ namespace CharacterCreator.MVVM.ViewModel
         public RelayCommand CommandMaximize { get; set; }
         public RelayCommand CommandClose { get; set; }
         public RelayCommand CommandSwitchView { get; set; }
+        public RelayCommand CommandSaveCharacter { get; set; }
         #endregion Commands
 
         #region ViewModels
@@ -51,6 +52,7 @@ namespace CharacterCreator.MVVM.ViewModel
             CommandMaximize = new RelayCommand(o => MaximizeWindow(o));
             CommandClose = new RelayCommand(o => CloseWindow(o));
             CommandSwitchView = new RelayCommand(o => SwitchView(o));
+            CommandSaveCharacter = new RelayCommand(o => SaveCharacter(o), o => CanSaveCharacter(o));
 
             DebugLogger.WriteLog("Finished initializing commands.", DebugLogger.LogLevel.INFO);
             #endregion initCommands
@@ -76,6 +78,16 @@ namespace CharacterCreator.MVVM.ViewModel
             #endregion InitProperties
 
             DebugLogger.WriteLog("Finished initializing main view model.", DebugLogger.LogLevel.INFO);
+        }
+
+        private bool CanSaveCharacter(object o)
+        {
+            return Character.GetActiveCharacter()?.HasChanges == true;
+        }
+
+        private void SaveCharacter(object o)
+        {
+            Character.GetActiveCharacter().SaveCharacter();
         }
 
         private void SelectCharacter(object o)

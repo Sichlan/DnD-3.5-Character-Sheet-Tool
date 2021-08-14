@@ -1,4 +1,5 @@
 ﻿using CharacterCreator.Core;
+using CharacterCreator.Core.Converter;
 using Newtonsoft.Json;
 using PropertyChanged;
 using System;
@@ -7,11 +8,12 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace CharacterCreator.MVVM.Model
 {
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    public class RecentlyUsedCharacterEntry
+    public class RecentlyUsedCharacterEntry : ObservableObject
     {
         public string FolderPath { get; set; }
         public string FileName { get; set; }
@@ -20,6 +22,10 @@ namespace CharacterCreator.MVVM.Model
         public DateTime LastUpdate { get; set; }
         public Color LeftColor { get; set; }
         public Color? RightColor { get; set; }
+        public Guid? ID { get; set; }
+
+        [JsonConverter(typeof(JsonImageConverter))]
+        public System.Drawing.Image ProfilePicture { get; set; }
 
         [JsonIgnore]
         public RelayCommand LoadSelectedCharacter
@@ -28,7 +34,12 @@ namespace CharacterCreator.MVVM.Model
             {
                 RelayCommand relayCommand = new RelayCommand(x =>
                     {
-                        Character.SetActiveCharacter(FolderPath, FileName);
+                        if (ID == null)
+                            ID = Guid.NewGuid();
+
+                        Console.WriteLine(ID);
+
+                        Character.SetActiveCharacter(FolderPath, FileName, ID.Value);
 
                         CharacterSelectedCommand?.Execute(x);
                     });

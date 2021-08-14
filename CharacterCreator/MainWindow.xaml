@@ -118,6 +118,10 @@
 
             <Image Source="Images/Logo-Large.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
 
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                <Button x:Name="btnSaveCharacter" Content="PLACEHOLDER" Command="{Binding CommandSaveCharacter}"/>
+            </StackPanel>
+
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
                 <Expander Header="{x:Static resx:Resources.MenuCategoryFiles}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">

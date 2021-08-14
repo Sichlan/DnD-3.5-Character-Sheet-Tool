@@ -18,15 +18,12 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Ellipse Width="130" Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Ellipse.Fill>
-                    <ImageBrush>
-                        <ImageBrush.ImageSource>
-                            <BitmapImage DecodePixelWidth="130" DecodePixelHeight="130" UriSource="pack://application:,,,/../../Images/Logo-Small.png"/>
-                        </ImageBrush.ImageSource>
-                    </ImageBrush>
-                </Ellipse.Fill>
-            </Ellipse>
+            <Border Width="130" Height="130" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="65" RadiusY="65" Rect="0,0,130,130"/>
+                </Border.Clip>
+                <Image Source="{Binding Path=ProfilePicture, Converter={StaticResource ImageToBitmapConverter}, TargetNullValue='pack://application:,,,/../../Images/Logo-Small.png'}"/>
+            </Border>
 
             <TextBlock Grid.Row="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, TargetNullValue='Name'}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBlock Grid.Row="2" Text="{Binding PreviewInfo, UpdateSourceTrigger=PropertyChanged, TargetNullValue='Preview Info'}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>

@@ -79,6 +79,51 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No character name given ähnelt.
+        /// </summary>
+        public static string ErrorNoCharacterName {
+            get {
+                return ResourceManager.GetString("ErrorNoCharacterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No creed alignment given ähnelt.
+        /// </summary>
+        public static string ErrorNoCreedAlignment {
+            get {
+                return ResourceManager.GetString("ErrorNoCreedAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No player name is given ähnelt.
+        /// </summary>
+        public static string ErrorNoPlayerName {
+            get {
+                return ResourceManager.GetString("ErrorNoPlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No profile picture selected ähnelt.
+        /// </summary>
+        public static string ErrorNoProfilePicture {
+            get {
+                return ResourceManager.GetString("ErrorNoProfilePicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No social alignment given ähnelt.
+        /// </summary>
+        public static string ErrorNoSocialAlignment {
+            get {
+                return ResourceManager.GetString("ErrorNoSocialAlignment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die General infos ähnelt.
         /// </summary>
         public static string GroupBoxHeaderGeneralInfos {
@@ -115,7 +160,7 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Alignment 1 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Creed ähnelt.
         /// </summary>
         public static string LabelAlignmentCreed {
             get {
@@ -124,7 +169,7 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Alignment 2 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Social ähnelt.
         /// </summary>
         public static string LabelAlignmentSocial {
             get {

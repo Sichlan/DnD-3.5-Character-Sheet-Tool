@@ -171,7 +171,6 @@
     </Compile>
     <Compile Include="Core\BaseViewModel.cs" />
     <Compile Include="Core\Converter\ImageToBitmapConverter.cs" />
-    <Compile Include="Core\Converter\IsViewModelSelectedConverter.cs" />
     <Compile Include="Core\Converter\JsonImageConverter.cs" />
     <Compile Include="Core\DataErrorInfoContainer.cs" />
     <Compile Include="Core\DebugLogger.cs" />
@@ -329,6 +328,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\ButtonThemes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Colours.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -338,6 +341,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\GroupBorderTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\InfoListViewStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

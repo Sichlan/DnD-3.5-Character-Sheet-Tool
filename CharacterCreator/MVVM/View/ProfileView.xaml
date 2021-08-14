@@ -9,7 +9,7 @@
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance viewmodel:ProfileViewModel, IsDesignTimeCreatable=True}"
              d:DesignHeight="450" d:DesignWidth="800">
-    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}" VerticalScrollBarVisibility="Hidden">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
@@ -24,18 +24,23 @@
             <!--#region User Informations -> Warnings etc.-->
             <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
                 <GroupBox.Header>
-                    <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderGeneralInfos}" Style="{StaticResource GroupBoxHeaderTheme}"/>
+                    <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderMessages}" Style="{StaticResource GroupBoxHeaderTheme}"/>
                 </GroupBox.Header>
-                <TextBlock Text="{Binding Character.MessagesToUser}"/>
+                <ListView ItemsSource="{Binding Path=Character.ProfileErrors}" Style="{StaticResource InfoListViewStyle}"/>
             </GroupBox>
             <!--#endregion-->
             
             <!--#region -->
-            <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="0" Grid.Row="1" Width="800" Height="450">
+            <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="0" Grid.Row="1" MaxWidth="800" MaxHeight="475">
                 <GroupBox.Header>
                     <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderProfilePicture}" Style="{StaticResource GroupBoxHeaderTheme}"/>
                 </GroupBox.Header>
-                <Image Source="{Binding Path=Character.ProfilePicture, TargetNullValue='pack://application:,,,/../../Images/Logo-Small.png'}"/>
+                <Grid>
+                    <Grid.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding ChangePicture}"/>
+                    </Grid.InputBindings>
+                    <Image Source="{Binding Path=Character.ProfilePicture, Converter={StaticResource ImageToBitmapConverter}, TargetNullValue='pack://application:,,,/../../Images/Logo-Small.png'}"/>
+                </Grid>
             </GroupBox>
 
             <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="1" Grid.Row="1">

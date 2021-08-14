@@ -10,6 +10,12 @@ namespace CharacterCreator.Core
     {
         public DataErrorType ErrorType { get; set; }
         public string DisplayMessage { get; set; }
+
+        public DataErrorInfoContainer(DataErrorType dataErrorType, string displayMessage)
+        {
+            ErrorType = dataErrorType;
+            DisplayMessage = displayMessage;
+        }
     }
 
     public enum DataErrorType

@@ -7,7 +7,7 @@
     <SolidColorBrush Color="#FF3c3c3c" x:Key="MainColourLight"/>
     <SolidColorBrush Color="#ffeeeeee" x:Key="LightGrayBrush"/>
     <SolidColorBrush Color="#bb555555" x:Key="GrayOverlay"/>
-    <SolidColorBrush Color="#bb115599" x:Key="BlueOverlay"/>
+    <SolidColorBrush Color="#ff21272c" x:Key="BlueOverlay"/>
     <!--#endregion-->
 
 </ResourceDictionary>
