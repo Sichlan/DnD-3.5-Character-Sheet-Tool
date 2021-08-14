@@ -19,7 +19,7 @@ namespace CharacterCreator
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            string localization = "en-US";
+            string localization = "de-DE";
 #if (DEBUG == false)
             if (String.IsNullOrEmpty(CharacterCreator.Properties.Settings.Default.StandardLocalization))
             {

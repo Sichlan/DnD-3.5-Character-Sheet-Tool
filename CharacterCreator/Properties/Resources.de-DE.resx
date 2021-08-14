@@ -123,6 +123,33 @@
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>Charakterbogen</value>
   </data>
+  <data name="GroupBoxHeaderGeneralInfos" xml:space="preserve">
+    <value>Allgemeine Informationen</value>
+  </data>
+  <data name="GroupBoxHeaderMessages" xml:space="preserve">
+    <value>Systemmeldungen</value>
+  </data>
+  <data name="GroupBoxHeaderNotes" xml:space="preserve">
+    <value>Raum für Notizen</value>
+  </data>
+  <data name="GroupBoxHeaderProfilePicture" xml:space="preserve">
+    <value>Charakterbild</value>
+  </data>
+  <data name="LabelAlignmentCreed" xml:space="preserve">
+    <value>Gesinnung 1</value>
+  </data>
+  <data name="LabelAlignmentSocial" xml:space="preserve">
+    <value>Gesinnug 2</value>
+  </data>
+  <data name="LabelCharacterName" xml:space="preserve">
+    <value>Charaktername</value>
+  </data>
+  <data name="LabelDisplayName" xml:space="preserve">
+    <value>Anzeigename</value>
+  </data>
+  <data name="LabelPlayerName" xml:space="preserve">
+    <value>Spielername</value>
+  </data>
   <data name="LastLoadedCharacter" xml:space="preserve">
     <value>Letzter geladener Charakter</value>
   </data>

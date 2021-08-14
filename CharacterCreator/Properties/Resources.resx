@@ -120,6 +120,33 @@
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>Character sheet</value>
   </data>
+  <data name="GroupBoxHeaderGeneralInfos" xml:space="preserve">
+    <value>General infos</value>
+  </data>
+  <data name="GroupBoxHeaderMessages" xml:space="preserve">
+    <value>System infos</value>
+  </data>
+  <data name="GroupBoxHeaderNotes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="GroupBoxHeaderProfilePicture" xml:space="preserve">
+    <value>Profile picture</value>
+  </data>
+  <data name="LabelAlignmentCreed" xml:space="preserve">
+    <value>Alignment 1</value>
+  </data>
+  <data name="LabelAlignmentSocial" xml:space="preserve">
+    <value>Alignment 2</value>
+  </data>
+  <data name="LabelCharacterName" xml:space="preserve">
+    <value>Character name</value>
+  </data>
+  <data name="LabelDisplayName" xml:space="preserve">
+    <value>Display name</value>
+  </data>
+  <data name="LabelPlayerName" xml:space="preserve">
+    <value>Player name</value>
+  </data>
   <data name="LastLoadedCharacter" xml:space="preserve">
     <value>Last loaded character</value>
   </data>

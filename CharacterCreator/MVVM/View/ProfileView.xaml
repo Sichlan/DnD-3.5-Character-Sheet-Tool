@@ -3,10 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CharacterCreator.MVVM.View"
-             mc:Ignorable="d" 
+        xmlns:resx="clr-namespace:CharacterCreator.Properties"
+             xmlns:local="clr-namespace:CharacterCreator.MVVM.View" xmlns:viewmodel="clr-namespace:CharacterCreator.MVVM.ViewModel"
+             xmlns:model="clr-namespace:CharacterCreator.MVVM.Model"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewmodel:ProfileViewModel, IsDesignTimeCreatable=True}"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Purple">
+    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             
-    </Grid>
+            <!--#region User Informations -> Warnings etc.-->
+            <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                <GroupBox.Header>
+                    <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderGeneralInfos}" Style="{StaticResource GroupBoxHeaderTheme}"/>
+                </GroupBox.Header>
+                <TextBlock Text="{Binding Character.MessagesToUser}"/>
+            </GroupBox>
+            <!--#endregion-->
+            
+            <!--#region -->
+            <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="0" Grid.Row="1" Width="800" Height="450">
+                <GroupBox.Header>
+                    <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderProfilePicture}" Style="{StaticResource GroupBoxHeaderTheme}"/>
+                </GroupBox.Header>
+                <Image Source="{Binding Path=Character.ProfilePicture, TargetNullValue='pack://application:,,,/../../Images/Logo-Small.png'}"/>
+            </GroupBox>
+
+            <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="1" Grid.Row="1">
+                <GroupBox.Header>
+                    <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderGeneralInfos}" Style="{StaticResource GroupBoxHeaderTheme}"/>
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static resx:Resources.LabelCharacterName}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static resx:Resources.LabelDisplayName}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static resx:Resources.LabelPlayerName}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static resx:Resources.LabelAlignmentCreed}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static resx:Resources.LabelAlignmentSocial}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
+
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Character.CharacterName}" Margin="5" MinWidth="100"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Character.DisplayName}" Margin="5" MinWidth="100"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Character.PlayerName}" Margin="5" MinWidth="100"/>
+                    <ComboBox Grid.Row="3" Grid.Column="1" SelectedItem="{Binding Character.Creed, UpdateSourceTrigger=PropertyChanged}" Margin="5" MinWidth="100" ItemsSource="{Binding Source={StaticResource CreedEnumValues}}"/>
+                    <ComboBox Grid.Row="4" Grid.Column="1" SelectedItem="{Binding Character.Social, UpdateSourceTrigger=PropertyChanged}" Margin="5" MinWidth="100" ItemsSource="{Binding Source={StaticResource SocialEnumValues}}"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource GroupBoxMainTheme}">
+                <GroupBox.Header>
+                    <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderNotes}" Style="{StaticResource GroupBoxHeaderTheme}"/>
+                </GroupBox.Header>
+                <TextBox Text="{Binding Character.Notes}" AcceptsReturn="True" AcceptsTab="True" Margin="5"/>
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

@@ -121,24 +121,24 @@
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
                 <Expander Header="{x:Static resx:Resources.MenuCategoryFiles}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="{x:Static resx:Resources.MenuButtonNewCharacter}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding NewCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
-                        <RadioButton Content="{x:Static resx:Resources.MenuButtonLoadCharacter}" IsChecked="True" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding LoadCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonNewCharacter}" IsChecked="{Binding NewCharacterVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding NewCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonLoadCharacter}" IsChecked="{Binding LoadCharacterVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding LoadCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
-                <Expander Header="{x:Static resx:Resources.MenuCategoryPlay}" IsExpanded="False" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
+                <Expander Header="{x:Static resx:Resources.MenuCategoryPlay}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="{x:Static resx:Resources.MenuButtonCharactersheet}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonCharactersheet}" IsChecked="{Binding CharacterSheetVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding CharacterSheetVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
                 <Expander Header="{x:Static resx:Resources.MenuCategoryCharacter}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="{x:Static resx:Resources.MenuButtonProfile}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding ProfileVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
-                        <RadioButton Content="{x:Static resx:Resources.MenuButtonJournal}" IsChecked="False" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding JournalVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonProfile}" IsChecked="{Binding ProfileVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding ProfileVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonJournal}" IsChecked="{Binding JournalVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding JournalVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
             </StackPanel>
 
-            <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
+            <ContentControl Grid.Row="1" Grid.Column="1" Margin="0" Content="{Binding CurrentView}"/>
         </Grid>
     </Grid>
 </Window>

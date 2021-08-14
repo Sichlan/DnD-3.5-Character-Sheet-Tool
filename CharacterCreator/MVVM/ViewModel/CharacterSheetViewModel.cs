@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCreator.MVVM.ViewModel
 {
-    class CharacterSheetViewModel : ObservableObject
+    class CharacterSheetViewModel : BaseViewModel
     {
     }
 }

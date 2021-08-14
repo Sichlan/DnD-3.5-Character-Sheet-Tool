@@ -123,6 +123,12 @@
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>キャラクターシート</value>
   </data>
+  <data name="GroupBoxHeaderNotes" xml:space="preserve">
+    <value>ノート</value>
+  </data>
+  <data name="LabelCharacterName" xml:space="preserve">
+    <value>キャラクターの名前</value>
+  </data>
   <data name="LoadCharacterCancelledMessage" xml:space="preserve">
     <value>ファイルをロードがユーザーによってキャンセルされた場合.</value>
   </data>

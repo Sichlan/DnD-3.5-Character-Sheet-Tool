@@ -79,6 +79,87 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die General infos ähnelt.
+        /// </summary>
+        public static string GroupBoxHeaderGeneralInfos {
+            get {
+                return ResourceManager.GetString("GroupBoxHeaderGeneralInfos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die System infos ähnelt.
+        /// </summary>
+        public static string GroupBoxHeaderMessages {
+            get {
+                return ResourceManager.GetString("GroupBoxHeaderMessages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Notes ähnelt.
+        /// </summary>
+        public static string GroupBoxHeaderNotes {
+            get {
+                return ResourceManager.GetString("GroupBoxHeaderNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Profile picture ähnelt.
+        /// </summary>
+        public static string GroupBoxHeaderProfilePicture {
+            get {
+                return ResourceManager.GetString("GroupBoxHeaderProfilePicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Alignment 1 ähnelt.
+        /// </summary>
+        public static string LabelAlignmentCreed {
+            get {
+                return ResourceManager.GetString("LabelAlignmentCreed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Alignment 2 ähnelt.
+        /// </summary>
+        public static string LabelAlignmentSocial {
+            get {
+                return ResourceManager.GetString("LabelAlignmentSocial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Character name ähnelt.
+        /// </summary>
+        public static string LabelCharacterName {
+            get {
+                return ResourceManager.GetString("LabelCharacterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Display name ähnelt.
+        /// </summary>
+        public static string LabelDisplayName {
+            get {
+                return ResourceManager.GetString("LabelDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Player name ähnelt.
+        /// </summary>
+        public static string LabelPlayerName {
+            get {
+                return ResourceManager.GetString("LabelPlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Last loaded character ähnelt.
         /// </summary>
         public static string LastLoadedCharacter {

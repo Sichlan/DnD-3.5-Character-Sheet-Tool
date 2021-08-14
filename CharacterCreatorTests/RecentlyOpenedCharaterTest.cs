@@ -19,7 +19,7 @@ namespace CharacterCreatorTests
             RecentlyUsedCharacterModel testModel = new RecentlyUsedCharacterModel();
             string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + CharacterCreator.Properties.Settings.Default.SaveFolder;
 
-            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
+            testModel.RecentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
             {
                 Name = "Test1",
                 FolderPath = folderPath,
@@ -29,7 +29,7 @@ namespace CharacterCreatorTests
                 LeftColor = Brushes.DodgerBlue.Color
             });
             Thread.Sleep(1);
-            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
+            testModel.RecentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
             {
                 Name = "Test2",
                 FolderPath = folderPath,
@@ -39,7 +39,7 @@ namespace CharacterCreatorTests
                 LeftColor = Brushes.Crimson.Color
             });
             Thread.Sleep(1);
-            testModel.recentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
+            testModel.RecentlyUsedCharacter.Add(new RecentlyUsedCharacterEntry()
             {
                 Name = "Test3",
                 FolderPath = folderPath,
@@ -58,7 +58,7 @@ namespace CharacterCreatorTests
             Trace.WriteLine(newModel.ToString());
 
             //find elements from test model not included in new model
-            string excepts = JsonConvert.SerializeObject(testModel.recentlyUsedCharacter.Except(testModel.recentlyUsedCharacter), Formatting.Indented);
+            string excepts = JsonConvert.SerializeObject(testModel.RecentlyUsedCharacter.Except(testModel.RecentlyUsedCharacter), Formatting.Indented);
             Trace.WriteLine(excepts);
 
             //if every element of test model had been included in the new model the excepts should look like "[]" as JSON, thus valöidating this test

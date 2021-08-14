@@ -15,17 +15,17 @@ namespace CharacterCreator.MVVM.Model
         [JsonIgnore]
         public static readonly string RUSavePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + Properties.Settings.Default.RecentlyUsedListFile;
         private DateTime lastUpdate;
-        public ObservableCollection<RecentlyUsedCharacterEntry> recentlyUsedCharacter { get; private set; }
+        public ObservableCollection<RecentlyUsedCharacterEntry> RecentlyUsedCharacter { get; private set; }
 
         [JsonIgnore]
         private static RecentlyUsedCharacterModel recently;
 
         public RecentlyUsedCharacterModel()
         {
-            recentlyUsedCharacter = new ObservableCollection<RecentlyUsedCharacterEntry>();
+            RecentlyUsedCharacter = new ObservableCollection<RecentlyUsedCharacterEntry>();
         }
 
-        public static RecentlyUsedCharacterModel GetRecentlyUsedCharacterModel()
+        public static RecentlyUsedCharacterModel GetRecentlyUsedCharacterModel(RelayCommand characterSelected)
         {
             if(recently == null)
             {
@@ -33,9 +33,21 @@ namespace CharacterCreator.MVVM.Model
                     fileName = RUSavePath.Substring(RUSavePath.LastIndexOf("\\") + 1);
 
                 recently = SaveLoadModel.Load<RecentlyUsedCharacterModel>(folderPath, fileName);
+                recently.SetCharacterSelectedCommand(characterSelected);
             }
 
             return recently;
+        }
+
+        private void SetCharacterSelectedCommand(RelayCommand characterSelected)
+        {
+            if (this.RecentlyUsedCharacter == null)
+                return;
+
+            foreach (var entry in RecentlyUsedCharacter)
+            {
+                entry.CharacterSelectedCommand = characterSelected;
+            }
         }
 
         public void SaveRecentlyUsedCharacterModel()

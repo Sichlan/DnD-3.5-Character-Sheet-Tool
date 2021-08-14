@@ -10,18 +10,16 @@ using System.Threading.Tasks;
 
 namespace CharacterCreator.MVVM.ViewModel
 {
-    public class LoadCharacterViewModel : ObservableObject
+    public class LoadCharacterViewModel : BaseViewModel
     {
+        public RelayCommand CharacterSelected { get; set; }
+
         private ObservableCollection<RecentlyUsedCharacterEntry> _characterHistory;
         public ObservableCollection<RecentlyUsedCharacterEntry> CharacterHistory
         {
             get
             {
-                if(_characterHistory == null)
-                {
-                    RecentlyUsedCharacterModel model = RecentlyUsedCharacterModel.GetRecentlyUsedCharacterModel();
-                    _characterHistory = new ObservableCollection<RecentlyUsedCharacterEntry>(model.recentlyUsedCharacter.OrderByDescending(x => x.LastUpdate).ToList());
-                }
+                InitHistoryIfNull();
 
                 return _characterHistory;
             }
@@ -31,14 +29,24 @@ namespace CharacterCreator.MVVM.ViewModel
         {
             get
             {
-                if (_characterHistory == null)
-                {
-                    RecentlyUsedCharacterModel model = RecentlyUsedCharacterModel.GetRecentlyUsedCharacterModel();
-                    _characterHistory = new ObservableCollection<RecentlyUsedCharacterEntry>(model.recentlyUsedCharacter.OrderByDescending(x => x.LastUpdate).ToList());
-                }
+                InitHistoryIfNull();
 
                 return _characterHistory.Aggregate((x, y) => x.LastUpdate > y.LastUpdate ? x : y);
             }
+        }
+
+        public void InitHistoryIfNull()
+        {
+            if (_characterHistory == null)
+            {
+                RecentlyUsedCharacterModel model = RecentlyUsedCharacterModel.GetRecentlyUsedCharacterModel(CharacterSelected);
+                _characterHistory = new ObservableCollection<RecentlyUsedCharacterEntry>(model.RecentlyUsedCharacter.OrderByDescending(x => x.LastUpdate).ToList());
+            }
+        }
+
+        public LoadCharacterViewModel(RelayCommand characterSelected)
+        {
+            CharacterSelected = characterSelected;
         }
     }
 }

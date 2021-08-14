@@ -1,19 +1,16 @@
 ﻿namespace CharacterCreator.MVVM.Model
 {
-    public class Enums
+    public enum CreedAlignment
     {
-        public enum CreedAlignment
-        {
-            Lawful,
-            Neutral,
-            Evil
-        }
+        Lawful,
+        Neutral,
+        Chaotic
+    }
 
-        public enum SocialAlignment
-        {
-            Good,
-            Neutral,
-            Evil
-        }
+    public enum SocialAlignment
+    {
+        Good,
+        Neutral,
+        Evil
     }
 }

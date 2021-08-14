@@ -1,4 +1,5 @@
-﻿using CharacterCreator.MVVM.Model;
+﻿using CharacterCreator.Core;
+using CharacterCreator.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCreator.MVVM.ViewModel
 {
-    class JournalViewModel
+    class JournalViewModel : BaseViewModel
     {
         public JournalViewModel()
         {

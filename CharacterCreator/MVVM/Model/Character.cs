@@ -1,4 +1,5 @@
 ﻿using CharacterCreator.Core;
+using CharacterCreator.Core.Converter;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace CharacterCreator.MVVM.Model
 {
@@ -17,42 +19,48 @@ namespace CharacterCreator.MVVM.Model
         public static event Action ActiveCharacterChanged;
         public string FileName { get; set; }
         public string FolderPath { get; set; }
+        public RecentlyUsedCharacterEntry CharacterEntry
+        {
+            get
+            {
+                var temp = RecentlyUsedCharacterModel.GetRecentlyUsedCharacterModel(null).RecentlyUsedCharacter.FirstOrDefault(x => x.FileName == FileName && x.FolderPath == FolderPath);
+                return temp;
+            }
+        }
+        [JsonIgnore]
+        public string MessagesToUser { get => GetWarningsAndErrors(); }
         #endregion BackendStuff
+
 
         #region Profile
         public string CharacterName { get; set; }
         public string DisplayName { get; set; }
         public string PlayerName { get; set; }
-        public Enums.CreedAlignment? Creed { get; set; }
-        public Enums.SocialAlignment? Social { get; set; }
+        public CreedAlignment? Creed { get; set; }
+        public SocialAlignment? Social { get; set; }
+        [JsonConverter(typeof(JsonImageConverter))]
+        public BitmapImage ProfilePicture { get; set; }
+        public string Notes { get; set; }
         #endregion Profile
+
 
         [JsonIgnore]
         private static Character _character;
 
+
         #region Methods
         public static Character GetActiveCharacter()
         {
-            if(_character == null)
-            {
-                SetActiveCharacter(true);
-            }
-
             return _character;
         }
 
         public static void SetActiveCharacter(bool loadFromDirectory = false)
         {
-            Character character = null;
+            Character character = new Character();
 
             if(loadFromDirectory)
             {
                 character = LoadCharacter();
-            }
-
-            if (character == null)
-            {
-                character = new Character();
             }
 
             _character = character;
@@ -131,8 +139,14 @@ namespace CharacterCreator.MVVM.Model
             catch (Exception ex)
             {
                 MessageBox.Show(Properties.Resources.LoadCharacterExceptionMessage, Properties.Resources.LoadCharacterDialogTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+                DebugLogger.WriteLog(ex.Message, DebugLogger.LogLevel.ERROR);
                 return null;
             }
+        }
+
+        private string GetWarningsAndErrors()
+        {
+            return "Nothing to see here yet...";
         }
         #endregion Methods
     }

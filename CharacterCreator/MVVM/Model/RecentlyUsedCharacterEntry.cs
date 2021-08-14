@@ -29,6 +29,8 @@ namespace CharacterCreator.MVVM.Model
                 RelayCommand relayCommand = new RelayCommand(x =>
                     {
                         Character.SetActiveCharacter(FolderPath, FileName);
+
+                        CharacterSelectedCommand?.Execute(x);
                     });
 
                 return relayCommand;
@@ -52,6 +54,9 @@ namespace CharacterCreator.MVVM.Model
                 return output;
             }
         }
+
+        [JsonIgnore]
+        public RelayCommand CharacterSelectedCommand { get; set; }
 
         public RecentlyUsedCharacterEntry()
         {
