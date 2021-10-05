@@ -117,11 +117,71 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbilityCharisma" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
+  <data name="AbilityCharismaShort" xml:space="preserve">
+    <value>CHA</value>
+  </data>
+  <data name="AbilityConstitution" xml:space="preserve">
+    <value>Konstitution</value>
+  </data>
+  <data name="AbilityConstitutionShort" xml:space="preserve">
+    <value>KON</value>
+  </data>
+  <data name="AbilityDexterity" xml:space="preserve">
+    <value>Geschicklichkeit</value>
+  </data>
+  <data name="AbilityDexterityShort" xml:space="preserve">
+    <value>GES</value>
+  </data>
+  <data name="AbilityIntelligence" xml:space="preserve">
+    <value>Intelligenz</value>
+  </data>
+  <data name="AbilityIntelligenceShort" xml:space="preserve">
+    <value>INT</value>
+  </data>
+  <data name="AbilityStrength" xml:space="preserve">
+    <value>Stärke</value>
+  </data>
+  <data name="AbilityStrengthShort" xml:space="preserve">
+    <value>STÄ</value>
+  </data>
+  <data name="AbilityWisdom" xml:space="preserve">
+    <value>Weisheit</value>
+  </data>
+  <data name="AbilityWisdomShort" xml:space="preserve">
+    <value>WEI</value>
+  </data>
   <data name="AllFilesFileType" xml:space="preserve">
     <value>Alle Dateien</value>
   </data>
+  <data name="ButtonSaveContentNoUnsavedChanges" xml:space="preserve">
+    <value>Charakter gespeichert</value>
+  </data>
+  <data name="ButtonSaveContentUnsavedChanges" xml:space="preserve">
+    <value>Charakter speichern</value>
+  </data>
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>Charakterbogen</value>
+  </data>
+  <data name="ClickToCreateNewCharacter" xml:space="preserve">
+    <value>Klicken um einen neuen Charakter zu erstellen</value>
+  </data>
+  <data name="ColumnHeaderAbilityScoreAdvancement" xml:space="preserve">
+    <value>Durch Lvl-Aufstieg</value>
+  </data>
+  <data name="ColumnHeaderAbilityScoreBaseValue" xml:space="preserve">
+    <value>Grundwert</value>
+  </data>
+  <data name="ColumnHeaderAbilityScoreName" xml:space="preserve">
+    <value>Fähigkeitswert</value>
+  </data>
+  <data name="CreateNewCharacter" xml:space="preserve">
+    <value>Neuer Charakter</value>
+  </data>
+  <data name="CreateNewCharacterWindowTitle" xml:space="preserve">
+    <value>Neuer Charakter</value>
   </data>
   <data name="ErrorNoCharacterName" xml:space="preserve">
     <value>Kein Charaktername angegeben</value>
@@ -138,6 +198,9 @@
   <data name="ErrorNoSocialAlignment" xml:space="preserve">
     <value>Keine soziale Gesinnung angegeben</value>
   </data>
+  <data name="GroupBoxHeaderAbilityScores" xml:space="preserve">
+    <value>Fähigkeitswerte</value>
+  </data>
   <data name="GroupBoxHeaderGeneralInfos" xml:space="preserve">
     <value>Allgemeine Informationen</value>
   </data>
@@ -149,6 +212,9 @@
   </data>
   <data name="GroupBoxHeaderProfilePicture" xml:space="preserve">
     <value>Charakterbild</value>
+  </data>
+  <data name="LabelAlignment" xml:space="preserve">
+    <value>Gesinnung</value>
   </data>
   <data name="LabelAlignmentCreed" xml:space="preserve">
     <value>Kredo</value>
@@ -183,6 +249,9 @@
   <data name="MainAppTitle" xml:space="preserve">
     <value>D&amp;D 3.5 Charakterersteller</value>
   </data>
+  <data name="MenuButtonAbilityScores" xml:space="preserve">
+    <value>Fähigkeitswerte</value>
+  </data>
   <data name="MenuButtonCharactersheet" xml:space="preserve">
     <value>Charakterbogen</value>
   </data>
@@ -198,6 +267,9 @@
   <data name="MenuButtonProfile" xml:space="preserve">
     <value>Profil</value>
   </data>
+  <data name="MenuCategoryAbilities" xml:space="preserve">
+    <value>FÄHIGKEITEN</value>
+  </data>
   <data name="MenuCategoryCharacter" xml:space="preserve">
     <value>CHARAKTER</value>
   </data>
@@ -207,10 +279,19 @@
   <data name="MenuCategoryPlay" xml:space="preserve">
     <value>SPIELEN</value>
   </data>
+  <data name="NoWarningToDisplay" xml:space="preserve">
+    <value>Keine Warnungen anzuzeigen.</value>
+  </data>
   <data name="SaveCharacterCancelledMessage" xml:space="preserve">
     <value>Speichern des Characters wurde durch den Benutzer abgebrochen.</value>
   </data>
   <data name="SaveCharacterDialogTitle" xml:space="preserve">
     <value>Charakter speichern...</value>
+  </data>
+  <data name="WarningAbilityScoreIsZeroOrBelow" xml:space="preserve">
+    <value>Wert gleich oder kleiner null kann bedeuten, dass der Charakter tot oder handlungsunfähig ist.</value>
+  </data>
+  <data name="WarningCharacterHasUnsavedChanges" xml:space="preserve">
+    <value>Aktiver Charakter brinhaltet ungespeicherte Änderungen. Speichern?</value>
   </data>
 </root>

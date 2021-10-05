@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace CharacterCreator.MVVM.ViewModel
 {
-    class MainViewModel : ObservableObject
+    class MainViewModel : BaseViewModel
     {
         private BaseViewModel _currentView;
         public BaseViewModel CurrentView
@@ -39,6 +39,7 @@ namespace CharacterCreator.MVVM.ViewModel
         public JournalViewModel JournalVM { get; set; }
         public NewCharacterViewModel NewCharacterVM { get; set; }
         public LoadCharacterViewModel LoadCharacterVM { get; set; }
+        public AbilityScoresViewModel AbilityScoresVM { get; set; }
         #endregion ViewModels
 
         public MainViewModel()
@@ -51,7 +52,7 @@ namespace CharacterCreator.MVVM.ViewModel
             CommandMinimize = new RelayCommand(o => MinimizeWindow(o));
             CommandMaximize = new RelayCommand(o => MaximizeWindow(o));
             CommandClose = new RelayCommand(o => CloseWindow(o));
-            CommandSwitchView = new RelayCommand(o => SwitchView(o));
+            CommandSwitchView = new RelayCommand(o => SwitchView(o), o => CanSwitchCharacterView(o));
             CommandSaveCharacter = new RelayCommand(o => SaveCharacter(o), o => CanSaveCharacter(o));
 
             DebugLogger.WriteLog("Finished initializing commands.", DebugLogger.LogLevel.INFO);
@@ -65,6 +66,7 @@ namespace CharacterCreator.MVVM.ViewModel
             SubViewModels.Add(JournalVM = new JournalViewModel());
             SubViewModels.Add(NewCharacterVM = new NewCharacterViewModel());
             SubViewModels.Add(LoadCharacterVM = new LoadCharacterViewModel(new RelayCommand(o => SelectCharacter(o))));
+            SubViewModels.Add(AbilityScoresVM = new AbilityScoresViewModel());
 
             DebugLogger.WriteLog("Finished initializing view models.", DebugLogger.LogLevel.INFO);
             #endregion VMs
@@ -73,7 +75,7 @@ namespace CharacterCreator.MVVM.ViewModel
             DebugLogger.WriteLog("Initializing properties...", DebugLogger.LogLevel.INFO);
             CurrentWindowState = WindowState.Maximized;
 
-            CurrentView = LoadCharacterVM;
+            SwitchView(LoadCharacterVM);
             DebugLogger.WriteLog("Finished initializing properties.", DebugLogger.LogLevel.INFO);
             #endregion InitProperties
 
@@ -82,12 +84,12 @@ namespace CharacterCreator.MVVM.ViewModel
 
         private bool CanSaveCharacter(object o)
         {
-            return Character.GetActiveCharacter()?.HasChanges == true;
+            return Character?.HasChanges == true;
         }
 
         private void SaveCharacter(object o)
         {
-            Character.GetActiveCharacter().SaveCharacter();
+            Character?.SaveCharacter();
         }
 
         private void SelectCharacter(object o)
@@ -95,6 +97,7 @@ namespace CharacterCreator.MVVM.ViewModel
             if(Character.GetActiveCharacter() != null)
             {
                 SwitchView(ProfileVM);
+                OnPropertyChanged(nameof(Character));
             }
         }
 
@@ -107,13 +110,37 @@ namespace CharacterCreator.MVVM.ViewModel
             if(o is BaseViewModel baseView)
             {
                 //Setting IsSelected of the previous view to false
-                CurrentView.IsSelected = false;
+                if (CurrentView != null)
+                    CurrentView.DeselectViewModel();
 
                 //Setting the new view
                 CurrentView = baseView;
 
                 //Setting IsSelected of the new view to true
-                CurrentView.IsSelected = true;
+                CurrentView.SelectViewModel();
+
+                //Execute any action necessary when selecting a certain page
+                HandlePageSelectionEvents(CurrentView);
+            }
+        }
+
+        private bool CanSwitchCharacterView(object o)
+        {
+            if (!(o is BaseViewModel viewModel))
+                return false;
+            else if (o is NewCharacterViewModel || o is LoadCharacterViewModel)
+                return true;
+            else if (Character != null)
+                return true;
+            else
+                return false;
+        }
+
+        private void HandlePageSelectionEvents(BaseViewModel currentView)
+        {
+            if(currentView == NewCharacterVM)
+            {
+                Character.SetActiveCharacter();
             }
         }
 

@@ -21,10 +21,13 @@
 
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="{StaticResource MainColourDark}"/>
+                <Setter Property="Background" Value="{StaticResource HighlightColourDark}"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource HighlightColourDark}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="LightGray"/>
             </Trigger>
         </Style.Triggers>
     </Style>

@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:CharacterCreator" 
         xmlns:resx="clr-namespace:CharacterCreator.Properties"
         xmlns:viewmodel="clr-namespace:CharacterCreator.MVVM.ViewModel"
-        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        Title="{x:Static resx:Resources.MainAppTitle}" d:DesignHeight="1080" d:DesignWidth="1920" WindowState="{Binding CurrentWindowState, UpdateSourceTrigger=PropertyChanged}">
+        mc:Ignorable="d"
+        Style="{StaticResource MainWindowStyle}"
+        d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel, IsDesignTimeCreatable=True}"
+        Title="{x:Static resx:Resources.MainAppTitle}" d:DesignHeight="1080" d:DesignWidth="1920" WindowState="{Binding CurrentWindowState, UpdateSourceTrigger=PropertyChanged, TargetNullValue={x:Static WindowState.Normal}}">
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
@@ -15,67 +17,22 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="{StaticResource MainColourDark}" MouseDown="Grid_MouseDown" MouseMove="Grid_MouseMove">
+        <Grid Background="{StaticResource HighlightColourDark}" MouseDown="Grid_MouseDown" MouseMove="Grid_MouseMove">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
+
             <Image Source="Images/Logo-Small.png" Grid.Column="0" Margin="2"/>
 
             <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=Title, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Margin="5" FontSize="18"/>
 
             <StackPanel Grid.Column="2" Orientation="Horizontal">
-                <StackPanel.Resources>
-                    <Style x:Key="ButtonCloseStyle" TargetType="{x:Type Button}">
-                        <Setter Property="Foreground" Value="LightGray"/>
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="Height" Value="30"/>
-                        <Setter Property="Width" Value="30"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="Transparent">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#ff3333"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                    
-                    <Style x:Key="ButtonResizeStyle" TargetType="{x:Type Button}">
-                        <Setter Property="Foreground" Value="LightGray"/>
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="Height" Value="30"/>
-                        <Setter Property="Width" Value="30"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="Transparent">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="Background" Value="LightGray"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </StackPanel.Resources>
-
                 <Button x:Name="btnMinimize" Style="{StaticResource ButtonResizeStyle}" Command="{Binding CommandMinimize}">
                     <Image Source="Images/MinimizeButton.png"/>
                 </Button>
@@ -113,19 +70,24 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+
+            <Canvas Background="{StaticResource MainColourDark}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="99" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            
             <Image Source="Images/Logo-Large.png" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
 
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
-                <Button x:Name="btnSaveCharacter" Content="PLACEHOLDER" Command="{Binding CommandSaveCharacter}"/>
+                <Button x:Name="btnSaveCharacter" Command="{Binding CommandSaveCharacter}" Style="{StaticResource SaveButtonStyle}" Tag="{Binding Character}"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <Separator Grid.Row="1" Background="{StaticResource HighlightColourDark}"/>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
                 <Expander Header="{x:Static resx:Resources.MenuCategoryFiles}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton Content="{x:Static resx:Resources.MenuButtonNewCharacter}" IsChecked="{Binding NewCharacterVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding NewCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                         <RadioButton Content="{x:Static resx:Resources.MenuButtonLoadCharacter}" IsChecked="{Binding LoadCharacterVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding LoadCharacterVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
@@ -140,9 +102,27 @@
                         <RadioButton Content="{x:Static resx:Resources.MenuButtonJournal}" IsChecked="{Binding JournalVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding JournalVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
                     </StackPanel>
                 </Expander>
+                <Expander Header="{x:Static resx:Resources.MenuCategoryAbilities}" IsExpanded="True" ExpandDirection="Down" Style="{StaticResource MenuHeaderExpanderTheme}">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton Content="{x:Static resx:Resources.MenuButtonAbilityScores}" IsChecked="{Binding AbilityScoresVM.IsSelected, UpdateSourceTrigger=PropertyChanged}" GroupName="RBMenu" Command="{Binding CommandSwitchView}" CommandParameter="{Binding AbilityScoresVM}" Style="{StaticResource MenuRadioButtonTheme}"/>
+                    </StackPanel>
+                </Expander>
             </StackPanel>
 
-            <ContentControl Grid.Row="1" Grid.Column="1" Margin="0" Content="{Binding CurrentView}"/>
+            <ContentControl Grid.Row="2" Grid.Column="1" Margin="10,0" Content="{Binding CurrentView}"/>
+        </Grid>
+
+        <Grid Background="{StaticResource HighlightColourDark}" Grid.Column="0" Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="White" FontWeight="Medium">
+                    <Run Text="PATH:   "/>
+                    <Run Text="{Binding Character.FolderPath}"/>
+                    <Run Text="{Binding Character.FileName}"/>
+                    <Run Text="       Recent PATH:   "/>
+                    <Run Text="{Binding Character.CharacterEntry.FolderPath}"/>
+                    <Run Text="{Binding Character.CharacterEntry.FileName}"/>
+                </TextBlock>
+            </StackPanel> 
         </Grid>
     </Grid>
 </Window>

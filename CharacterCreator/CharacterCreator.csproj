@@ -154,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\CreateNewCharacterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\RecentlyUsedCharacterEntryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +170,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\CreateNewCharacterWindow.xaml.cs">
+      <DependentUpon>CreateNewCharacterWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RecentlyUsedCharacterEntryControl.xaml.cs">
       <DependentUpon>RecentlyUsedCharacterEntryControl.xaml</DependentUpon>
     </Compile>
@@ -174,6 +181,7 @@
     <Compile Include="Core\Converter\JsonImageConverter.cs" />
     <Compile Include="Core\DataErrorInfoContainer.cs" />
     <Compile Include="Core\DebugLogger.cs" />
+    <Compile Include="Core\Dice.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\SaveLoadModel.cs" />
@@ -308,6 +316,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\View\AbilityScoresView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\CharactersheetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -358,6 +370,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\TextBoxThemes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\WindowThemes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\Model\Character.cs" />
@@ -365,12 +385,17 @@
     <Compile Include="MVVM\Model\Enums.cs" />
     <Compile Include="MVVM\Model\RecentlyUsedCharacterEntry.cs" />
     <Compile Include="MVVM\Model\RecentlyUsedCharacterModel.cs" />
+    <Compile Include="MVVM\ViewModel\AbilityScoresViewModel.cs" />
     <Compile Include="MVVM\ViewModel\CharacterSheetViewModel.cs" />
     <Compile Include="MVVM\ViewModel\JournalViewModel.cs" />
     <Compile Include="MVVM\ViewModel\LoadCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\NewCharacterViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\NewCharacterWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ProfileViewModel.cs" />
+    <Compile Include="MVVM\View\AbilityScoresView.xaml.cs">
+      <DependentUpon>AbilityScoresView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\CharactersheetView.xaml.cs">
       <DependentUpon>CharactersheetView.xaml</DependentUpon>
     </Compile>
@@ -404,6 +429,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EntityDeploy Include="DataModel\DatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -439,6 +465,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\AddButton.png" />
     <Resource Include="Images\ExpanderButton.png" />
     <Resource Include="Images\CloseButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

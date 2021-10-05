@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,16 +112,83 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbilityCharisma" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
+  <data name="AbilityCharismaShort" xml:space="preserve">
+    <value>CHA</value>
+  </data>
+  <data name="AbilityConstitution" xml:space="preserve">
+    <value>Constitution</value>
+  </data>
+  <data name="AbilityConstitutionShort" xml:space="preserve">
+    <value>CON</value>
+  </data>
+  <data name="AbilityDexterity" xml:space="preserve">
+    <value>Dexterity</value>
+  </data>
+  <data name="AbilityDexterityShort" xml:space="preserve">
+    <value>DEX</value>
+  </data>
+  <data name="AbilityIntelligence" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="AbilityIntelligenceShort" xml:space="preserve">
+    <value>INT</value>
+  </data>
+  <data name="AbilityStrength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="AbilityStrengthShort" xml:space="preserve">
+    <value>STR</value>
+  </data>
+  <data name="AbilityWisdom" xml:space="preserve">
+    <value>Wisdom</value>
+  </data>
+  <data name="AbilityWisdomShort" xml:space="preserve">
+    <value>WIS</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AddButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\AddButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AllFilesFileType" xml:space="preserve">
     <value>All files</value>
   </data>
+  <data name="ButtonSaveContentNoUnsavedChanges" xml:space="preserve">
+    <value>Character saved</value>
+  </data>
+  <data name="ButtonSaveContentUnsavedChanges" xml:space="preserve">
+    <value>Save character</value>
+  </data>
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>Character sheet</value>
+  </data>
+  <data name="ClickToCreateNewCharacter" xml:space="preserve">
+    <value>Click to create a new character</value>
+  </data>
+  <data name="CloseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColumnHeaderAbilityScoreAdvancement" xml:space="preserve">
+    <value>Level advancement</value>
+  </data>
+  <data name="ColumnHeaderAbilityScoreBaseValue" xml:space="preserve">
+    <value>Base value</value>
+  </data>
+  <data name="ColumnHeaderAbilityScoreName" xml:space="preserve">
+    <value>Ability score</value>
+  </data>
+  <data name="CreateNewCharacter" xml:space="preserve">
+    <value>New Character</value>
+  </data>
+  <data name="CreateNewCharacterWindowTitle" xml:space="preserve">
+    <value>New Character</value>
   </data>
   <data name="ErrorNoCharacterName" xml:space="preserve">
     <value>No character name given</value>
@@ -135,6 +205,12 @@
   <data name="ErrorNoSocialAlignment" xml:space="preserve">
     <value>No social alignment given</value>
   </data>
+  <data name="ExpanderButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ExpanderButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupBoxHeaderAbilityScores" xml:space="preserve">
+    <value>Ability scores</value>
+  </data>
   <data name="GroupBoxHeaderGeneralInfos" xml:space="preserve">
     <value>General infos</value>
   </data>
@@ -146,6 +222,9 @@
   </data>
   <data name="GroupBoxHeaderProfilePicture" xml:space="preserve">
     <value>Profile picture</value>
+  </data>
+  <data name="LabelAlignment" xml:space="preserve">
+    <value>Alignment</value>
   </data>
   <data name="LabelAlignmentCreed" xml:space="preserve">
     <value>Creed</value>
@@ -177,8 +256,20 @@
   <data name="LoadedCharacterHistory" xml:space="preserve">
     <value>Character history</value>
   </data>
+  <data name="Logo_Large" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Logo-Large.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Logo-Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MainAppTitle" xml:space="preserve">
     <value>D&amp;D 3.5 character creator</value>
+  </data>
+  <data name="MaximizeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MaximizeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuButtonAbilityScores" xml:space="preserve">
+    <value>Ability scores</value>
   </data>
   <data name="MenuButtonCharactersheet" xml:space="preserve">
     <value>Charactersheet</value>
@@ -195,6 +286,9 @@
   <data name="MenuButtonProfile" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="MenuCategoryAbilities" xml:space="preserve">
+    <value>ABILITIES</value>
+  </data>
   <data name="MenuCategoryCharacter" xml:space="preserve">
     <value>CHARACTER</value>
   </data>
@@ -204,10 +298,25 @@
   <data name="MenuCategoryPlay" xml:space="preserve">
     <value>PLAY</value>
   </data>
+  <data name="MinimizeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MinimizeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NormalizeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NormalizeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoWarningToDisplay" xml:space="preserve">
+    <value>No warnings to display.</value>
+  </data>
   <data name="SaveCharacterCancelledMessage" xml:space="preserve">
     <value>Save character has been canceled by the user.</value>
   </data>
   <data name="SaveCharacterDialogTitle" xml:space="preserve">
     <value>Save character...</value>
+  </data>
+  <data name="WarningAbilityScoreIsZeroOrBelow" xml:space="preserve">
+    <value>Value less than or equal to zero may mean you are dead or unable to act.</value>
+  </data>
+  <data name="WarningCharacterHasUnsavedChanges" xml:space="preserve">
+    <value>Active character has unsaved changes. Save?</value>
   </data>
 </root>

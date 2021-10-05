@@ -11,9 +11,6 @@
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Expander, Mode=FindAncestor}, Path=IsExpanded}" Value="True">
-                                        <Setter Property="Background" Value="{StaticResource MainColourDark}"/>
-                                    </DataTrigger>
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter Property="Background" Value="{StaticResource HighlightColourDark}"/>
                                     </Trigger>
@@ -27,16 +24,16 @@
                             </Grid.ColumnDefinitions>
                             <ContentPresenter Grid.Column="0" HorizontalAlignment="Left" Margin="15,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
                             <Grid Grid.Column="1">
-                                <Canvas Name="rtf" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" Background="Transparent">
+                                <Canvas Name="rtf" RenderTransformOrigin="0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <Path Fill="{StaticResource LightGrayBrush}">
                                         <Path.Style>
                                             <Style TargetType="Path">
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ToggleButton, Mode=FindAncestor}, Path=IsChecked}" Value="True">
-                                                        <Setter Property="Data" Value="M 40,35 L 25,15 L 10,35"/>
+                                                        <Setter Property="Data" Value="M 4,3 L 0,-3 L -4,3"/>
                                                     </DataTrigger>
                                                 </Style.Triggers>
-                                                <Setter Property="Data" Value="M 10,15 L 25,35 L 40,15"/>
+                                                <Setter Property="Data" Value="M -4,-3 L 0,3 L 4,-3"/>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                                                 <Setter Property="VerticalAlignment" Value="Center"/>
                                                 <Setter Property="StrokeThickness" Value="2"/>

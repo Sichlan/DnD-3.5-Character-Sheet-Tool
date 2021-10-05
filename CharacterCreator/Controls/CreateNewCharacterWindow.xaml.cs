@@ -1,5 +1,4 @@
-﻿using CharacterCreator.DataModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CharacterCreator
+namespace CharacterCreator.Controls
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für CreateNewCharacterWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateNewCharacterWindow : Window
     {
-        public MainWindow()
+        public CreateNewCharacterWindow()
         {
             InitializeComponent();
         }
@@ -33,7 +31,7 @@ namespace CharacterCreator
 
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
-            if(Mouse.LeftButton == MouseButtonState.Pressed && this.WindowState == WindowState.Maximized)
+            if (Mouse.LeftButton == MouseButtonState.Pressed && this.WindowState == WindowState.Maximized)
             {
                 this.WindowState = WindowState.Normal;
             }

@@ -16,7 +16,6 @@ namespace CharacterCreator.MVVM.ViewModel
 {
     class ProfileViewModel : BaseViewModel
     {
-        public Character Character { get => Character.GetActiveCharacter(); }
         public RelayCommand ChangePicture { get; set; }
 
         public ProfileViewModel()

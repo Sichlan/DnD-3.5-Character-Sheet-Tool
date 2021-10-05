@@ -1,0 +1,73 @@
+﻿<Window x:Class="CharacterCreator.Controls.CreateNewCharacterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CharacterCreator.Controls"
+        xmlns:viewmodel="clr-namespace:CharacterCreator.MVVM.ViewModel"
+        xmlns:resx="clr-namespace:CharacterCreator.Properties"
+        mc:Ignorable="d" Style="{StaticResource PopupWindowStyle}"
+        Title="{x:Static resx:Resources.CreateNewCharacterWindowTitle}"
+        d:DataContext="{d:DesignInstance Type=viewmodel:NewCharacterWindowViewModel, IsDesignTimeCreatable=True}"
+        WindowState="{Binding CurrentWindowState, UpdateSourceTrigger=PropertyChanged, TargetNullValue={x:Static WindowState.Normal}}" d:DesignWidth="800" d:DesignHeight="450">
+    <Window.DataContext>
+        <viewmodel:NewCharacterWindowViewModel/>
+    </Window.DataContext>
+    <Grid Margin="7" Background="{StaticResource MainColourLight}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="{StaticResource HighlightColourDark}" MouseDown="Grid_MouseDown" MouseMove="Grid_MouseMove">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Image Source="../Images/Logo-Small.png" Grid.Column="0" Margin="2"/>
+
+            <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=Title, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Margin="5" FontSize="18"/>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Button x:Name="btnMinimize" Style="{StaticResource ButtonResizeStyle}" Command="{Binding CommandMinimize}">
+                    <Image Source="../Images/MinimizeButton.png"/>
+                </Button>
+                <Button x:Name="btnMaximize" Command="{Binding CommandMaximize}">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonResizeStyle}">
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Image Source="../Images/NormalizeButton.png"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=WindowState}" Value="{x:Static WindowState.Normal}">
+                                    <Setter Property="Content">
+                                        <Setter.Value>
+                                            <Image Source="../Images/MaximizeButton.png"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button x:Name="btnClose" Command="{Binding CommandClose}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" Style="{StaticResource ButtonCloseStyle}">
+                    <Image Source="../Images/CloseButton.png"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <ContentControl Content="{Binding Path=NewCharacterViewModel}" Grid.Row="1"/>
+
+        <Grid Background="{StaticResource HighlightColourDark}" Grid.Column="0" Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

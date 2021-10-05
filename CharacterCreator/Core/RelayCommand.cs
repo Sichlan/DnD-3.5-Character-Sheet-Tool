@@ -3,10 +3,12 @@ using System.Windows.Input;
 
 namespace CharacterCreator.Core
 {
-    public class RelayCommand : ICommand
+    public class RelayCommand : ObservableObject, ICommand
     {
         private readonly Action<object> _execute;
         private readonly Func<object, bool> _canExecute;
+
+        public bool IsExecuting { get; set; }
 
         public event EventHandler CanExecuteChanged
         {
@@ -22,12 +24,32 @@ namespace CharacterCreator.Core
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null || _canExecute(parameter);
+            try
+            {
+                return _canExecute == null || _canExecute(parameter);
+            }
+            catch (Exception ex)
+            {
+                DebugLogger.WriteLog(ex.Message, DebugLogger.LogLevel.ERROR);
+                return false;
+            }
         }
 
         public void Execute(object parameter)
         {
-            _execute(parameter);
+            try
+            {
+                IsExecuting = true;
+                _execute(parameter);
+            }
+            catch (Exception ex)
+            {
+                DebugLogger.WriteLog(ex.Message, DebugLogger.LogLevel.ERROR);
+            }
+            finally
+            {
+                IsExecuting = false;
+            }
         }
     }
 }

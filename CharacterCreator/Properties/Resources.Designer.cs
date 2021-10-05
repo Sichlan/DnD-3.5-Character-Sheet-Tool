@@ -61,6 +61,124 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Charisma ähnelt.
+        /// </summary>
+        public static string AbilityCharisma {
+            get {
+                return ResourceManager.GetString("AbilityCharisma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die CHA ähnelt.
+        /// </summary>
+        public static string AbilityCharismaShort {
+            get {
+                return ResourceManager.GetString("AbilityCharismaShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Constitution ähnelt.
+        /// </summary>
+        public static string AbilityConstitution {
+            get {
+                return ResourceManager.GetString("AbilityConstitution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die CON ähnelt.
+        /// </summary>
+        public static string AbilityConstitutionShort {
+            get {
+                return ResourceManager.GetString("AbilityConstitutionShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Dexterity ähnelt.
+        /// </summary>
+        public static string AbilityDexterity {
+            get {
+                return ResourceManager.GetString("AbilityDexterity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die DEX ähnelt.
+        /// </summary>
+        public static string AbilityDexterityShort {
+            get {
+                return ResourceManager.GetString("AbilityDexterityShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Intelligence ähnelt.
+        /// </summary>
+        public static string AbilityIntelligence {
+            get {
+                return ResourceManager.GetString("AbilityIntelligence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die INT ähnelt.
+        /// </summary>
+        public static string AbilityIntelligenceShort {
+            get {
+                return ResourceManager.GetString("AbilityIntelligenceShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Strength ähnelt.
+        /// </summary>
+        public static string AbilityStrength {
+            get {
+                return ResourceManager.GetString("AbilityStrength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die STR ähnelt.
+        /// </summary>
+        public static string AbilityStrengthShort {
+            get {
+                return ResourceManager.GetString("AbilityStrengthShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Wisdom ähnelt.
+        /// </summary>
+        public static string AbilityWisdom {
+            get {
+                return ResourceManager.GetString("AbilityWisdom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die WIS ähnelt.
+        /// </summary>
+        public static string AbilityWisdomShort {
+            get {
+                return ResourceManager.GetString("AbilityWisdomShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap AddButton {
+            get {
+                object obj = ResourceManager.GetObject("AddButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die All files ähnelt.
         /// </summary>
         public static string AllFilesFileType {
@@ -70,11 +188,93 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Character saved ähnelt.
+        /// </summary>
+        public static string ButtonSaveContentNoUnsavedChanges {
+            get {
+                return ResourceManager.GetString("ButtonSaveContentNoUnsavedChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save character ähnelt.
+        /// </summary>
+        public static string ButtonSaveContentUnsavedChanges {
+            get {
+                return ResourceManager.GetString("ButtonSaveContentUnsavedChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Character sheet ähnelt.
         /// </summary>
         public static string CharacterSheetFileType {
             get {
                 return ResourceManager.GetString("CharacterSheetFileType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Click to create a new character ähnelt.
+        /// </summary>
+        public static string ClickToCreateNewCharacter {
+            get {
+                return ResourceManager.GetString("ClickToCreateNewCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap CloseButton {
+            get {
+                object obj = ResourceManager.GetObject("CloseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Level advancement ähnelt.
+        /// </summary>
+        public static string ColumnHeaderAbilityScoreAdvancement {
+            get {
+                return ResourceManager.GetString("ColumnHeaderAbilityScoreAdvancement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Base value ähnelt.
+        /// </summary>
+        public static string ColumnHeaderAbilityScoreBaseValue {
+            get {
+                return ResourceManager.GetString("ColumnHeaderAbilityScoreBaseValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ability score ähnelt.
+        /// </summary>
+        public static string ColumnHeaderAbilityScoreName {
+            get {
+                return ResourceManager.GetString("ColumnHeaderAbilityScoreName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New Character ähnelt.
+        /// </summary>
+        public static string CreateNewCharacter {
+            get {
+                return ResourceManager.GetString("CreateNewCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New Character ähnelt.
+        /// </summary>
+        public static string CreateNewCharacterWindowTitle {
+            get {
+                return ResourceManager.GetString("CreateNewCharacterWindowTitle", resourceCulture);
             }
         }
         
@@ -124,6 +324,25 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ExpanderButton {
+            get {
+                object obj = ResourceManager.GetObject("ExpanderButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ability scores ähnelt.
+        /// </summary>
+        public static string GroupBoxHeaderAbilityScores {
+            get {
+                return ResourceManager.GetString("GroupBoxHeaderAbilityScores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die General infos ähnelt.
         /// </summary>
         public static string GroupBoxHeaderGeneralInfos {
@@ -156,6 +375,15 @@ namespace CharacterCreator.Properties {
         public static string GroupBoxHeaderProfilePicture {
             get {
                 return ResourceManager.GetString("GroupBoxHeaderProfilePicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Alignment ähnelt.
+        /// </summary>
+        public static string LabelAlignment {
+            get {
+                return ResourceManager.GetString("LabelAlignment", resourceCulture);
             }
         }
         
@@ -250,11 +478,50 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Logo_Large {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Logo_Small {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die D&amp;D 3.5 character creator ähnelt.
         /// </summary>
         public static string MainAppTitle {
             get {
                 return ResourceManager.GetString("MainAppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MaximizeButton {
+            get {
+                object obj = ResourceManager.GetObject("MaximizeButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ability scores ähnelt.
+        /// </summary>
+        public static string MenuButtonAbilityScores {
+            get {
+                return ResourceManager.GetString("MenuButtonAbilityScores", resourceCulture);
             }
         }
         
@@ -304,6 +571,15 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die ABILITIES ähnelt.
+        /// </summary>
+        public static string MenuCategoryAbilities {
+            get {
+                return ResourceManager.GetString("MenuCategoryAbilities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die CHARACTER ähnelt.
         /// </summary>
         public static string MenuCategoryCharacter {
@@ -331,6 +607,35 @@ namespace CharacterCreator.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MinimizeButton {
+            get {
+                object obj = ResourceManager.GetObject("MinimizeButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap NormalizeButton {
+            get {
+                object obj = ResourceManager.GetObject("NormalizeButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No warnings to display. ähnelt.
+        /// </summary>
+        public static string NoWarningToDisplay {
+            get {
+                return ResourceManager.GetString("NoWarningToDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Save character has been canceled by the user. ähnelt.
         /// </summary>
         public static string SaveCharacterCancelledMessage {
@@ -345,6 +650,24 @@ namespace CharacterCreator.Properties {
         public static string SaveCharacterDialogTitle {
             get {
                 return ResourceManager.GetString("SaveCharacterDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value less than or equal to zero may mean you are dead or unable to act. ähnelt.
+        /// </summary>
+        public static string WarningAbilityScoreIsZeroOrBelow {
+            get {
+                return ResourceManager.GetString("WarningAbilityScoreIsZeroOrBelow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Active character has unsaved changes. Save? ähnelt.
+        /// </summary>
+        public static string WarningCharacterHasUnsavedChanges {
+            get {
+                return ResourceManager.GetString("WarningCharacterHasUnsavedChanges", resourceCulture);
             }
         }
     }

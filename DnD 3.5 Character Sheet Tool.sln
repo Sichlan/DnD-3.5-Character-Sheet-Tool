@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonCreator", "PoisonCrea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCreatorTests", "CharacterCreatorTests\CharacterCreatorTests.csproj", "{D9C879C1-9FF7-44C8-826A-9588F80CBD67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathParserTestProject", "MathParserTestProject\MathParserTestProject.csproj", "{98AE9DA9-8ABC-42DD-B73F-14BAC1E94D53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,12 +41,16 @@ Global
 		{D9C879C1-9FF7-44C8-826A-9588F80CBD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C879C1-9FF7-44C8-826A-9588F80CBD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C879C1-9FF7-44C8-826A-9588F80CBD67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AE9DA9-8ABC-42DD-B73F-14BAC1E94D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AE9DA9-8ABC-42DD-B73F-14BAC1E94D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AE9DA9-8ABC-42DD-B73F-14BAC1E94D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AE9DA9-8ABC-42DD-B73F-14BAC1E94D53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EB85A03F-CFD1-4336-B614-23B275178E41}
 		RESX_SortFileContentOnSave = True
+		SolutionGuid = {EB85A03F-CFD1-4336-B614-23B275178E41}
 	EndGlobalSection
 EndGlobal

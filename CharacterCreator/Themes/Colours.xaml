@@ -8,6 +8,8 @@
     <SolidColorBrush Color="#ffeeeeee" x:Key="LightGrayBrush"/>
     <SolidColorBrush Color="#bb555555" x:Key="GrayOverlay"/>
     <SolidColorBrush Color="#ff21272c" x:Key="BlueOverlay"/>
+    <SolidColorBrush Color="#ff00f078" x:Key="SaveButtonGreen"/>
+    <SolidColorBrush Color="#ffff0202" x:Key="SaveButtonRed"/>
     <!--#endregion-->
 
 </ResourceDictionary>

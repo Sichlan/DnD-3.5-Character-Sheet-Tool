@@ -1,4 +1,5 @@
-﻿using CharacterCreator.Core;
+﻿using CharacterCreator.Controls;
+using CharacterCreator.Core;
 using CharacterCreator.Core.Converter;
 using Newtonsoft.Json;
 using PropertyChanged;
@@ -8,13 +9,13 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace CharacterCreator.MVVM.Model
 {
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     public class RecentlyUsedCharacterEntry : ObservableObject
     {
+        public bool isNewCharacter = false;
         public string FolderPath { get; set; }
         public string FileName { get; set; }
         public string Name { get; set; }
@@ -25,7 +26,7 @@ namespace CharacterCreator.MVVM.Model
         public Guid? ID { get; set; }
 
         [JsonConverter(typeof(JsonImageConverter))]
-        public System.Drawing.Image ProfilePicture { get; set; }
+        public System.Drawing.Image ProfilePicture { get; set; } = null;
 
         [JsonIgnore]
         public RelayCommand LoadSelectedCharacter
@@ -33,16 +34,37 @@ namespace CharacterCreator.MVVM.Model
             get
             {
                 RelayCommand relayCommand = new RelayCommand(x =>
+                {
+                    if (ID == null)
+                        ID = Guid.NewGuid();
+
+                    if (isNewCharacter)
                     {
-                        if (ID == null)
-                            ID = Guid.NewGuid();
+                        CreateNewCharacterWindow characterWindow = new CreateNewCharacterWindow()
+                        {
+                            ShowInTaskbar = false
+                        };
 
-                        Console.WriteLine(ID);
+                        var result = characterWindow.ShowDialog();
+                        var test = Character.GetActiveCharacter();
 
+                        //TODO: check via 'result' after dialog implements 'Continue' and 'Cancel' buttons
+                        if (test != null)
+                        {
+                            test.ID = ID.Value;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
                         Character.SetActiveCharacter(FolderPath, FileName, ID.Value);
+                    }
 
-                        CharacterSelectedCommand?.Execute(x);
-                    });
+                    CharacterSelectedCommand?.Execute(x);
+                });
 
                 return relayCommand;
             }
@@ -60,7 +82,7 @@ namespace CharacterCreator.MVVM.Model
                     EndPoint = new Point(1, 2)
                 };
                 output.GradientStops.Add(new GradientStop(LeftColor, 0));
-                output.GradientStops.Add(new GradientStop(RightColor == null ? GetComplementaryColor(LeftColor) : RightColor.Value, 1));
+                output.GradientStops.Add(new GradientStop(RightColor == null ? GetComplementaryColor(LeftColor) : RightColor.Value, 0.75));
 
                 return output;
             }

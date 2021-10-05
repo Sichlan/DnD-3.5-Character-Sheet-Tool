@@ -39,6 +39,24 @@ namespace CharacterCreator.MVVM.Model
             return recently;
         }
 
+        internal static RecentlyUsedCharacterEntry AddRecentlyUsedCharacterEntry(Character character)
+        {
+            var characterEntry = new RecentlyUsedCharacterEntry()
+            {
+                FileName = character.FileName,
+                FolderPath = character.FolderPath,
+                ID = character.ID,
+                LastUpdate = DateTime.Now,
+                Name = character.CharacterName,
+                PreviewInfo = "TEST INFO PLACEHOLDER",
+                ProfilePicture = character.ProfilePicture
+            };
+
+            RecentlyUsedCharacterModel.GetRecentlyUsedCharacterModel(null).RecentlyUsedCharacter.Add(characterEntry);
+
+            return characterEntry;
+        }
+
         private void SetCharacterSelectedCommand(RelayCommand characterSelected)
         {
             if (this.RecentlyUsedCharacter == null)

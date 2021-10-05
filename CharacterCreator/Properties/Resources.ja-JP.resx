@@ -120,14 +120,29 @@
   <data name="AllFilesFileType" xml:space="preserve">
     <value>全ファイル</value>
   </data>
+  <data name="ButtonSaveContentUnsavedChanges" xml:space="preserve">
+    <value>コードを変更して保存</value>
+  </data>
   <data name="CharacterSheetFileType" xml:space="preserve">
     <value>キャラクターシート</value>
   </data>
   <data name="GroupBoxHeaderNotes" xml:space="preserve">
     <value>ノート</value>
   </data>
+  <data name="GroupBoxHeaderProfilePicture" xml:space="preserve">
+    <value>プロファイル画像</value>
+  </data>
+  <data name="LabelAlignmentSocial" xml:space="preserve">
+    <value>ソーシャル</value>
+  </data>
   <data name="LabelCharacterName" xml:space="preserve">
     <value>キャラクターの名前</value>
+  </data>
+  <data name="LabelDisplayName" xml:space="preserve">
+    <value>表示名</value>
+  </data>
+  <data name="LabelPlayerName" xml:space="preserve">
+    <value>プレーヤー名</value>
   </data>
   <data name="LoadCharacterCancelledMessage" xml:space="preserve">
     <value>ファイルをロードがユーザーによってキャンセルされた場合.</value>
@@ -147,11 +162,17 @@
   <data name="MenuButtonJournal" xml:space="preserve">
     <value>ノート</value>
   </data>
+  <data name="MenuButtonNewCharacter" xml:space="preserve">
+    <value>新しい文字範囲の作成</value>
+  </data>
   <data name="MenuButtonProfile" xml:space="preserve">
     <value>プロフィール</value>
   </data>
   <data name="MenuCategoryCharacter" xml:space="preserve">
     <value>キャラクター</value>
+  </data>
+  <data name="MenuCategoryFiles" xml:space="preserve">
+    <value>ファイル</value>
   </data>
   <data name="MenuCategoryPlay" xml:space="preserve">
     <value>プレイ</value>

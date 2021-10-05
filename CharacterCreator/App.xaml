@@ -21,6 +21,9 @@
                 <ResourceDictionary Source="Themes/ScrollViewerTheme.xaml"/>
                 <ResourceDictionary Source="Themes/GroupBoxMainTheme.xaml"/>
                 <ResourceDictionary Source="Themes/InfoListViewStyle.xaml"/>
+                <ResourceDictionary Source="Themes/ButtonThemes.xaml"/>
+                <ResourceDictionary Source="Themes/TextBoxThemes.xaml"/>
+                <ResourceDictionary Source="Themes/WindowThemes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <!--#region DataTemplates-->
@@ -46,6 +49,10 @@
 
             <DataTemplate DataType="{x:Type model:RecentlyUsedCharacterEntry}">
                 <controls:RecentlyUsedCharacterEntryControl DataContext="{Binding}"/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AbilityScoresViewModel}">
+                <view:AbilityScoresView DataContext="{Binding}"/>
             </DataTemplate>
             <!--#endregion-->
 

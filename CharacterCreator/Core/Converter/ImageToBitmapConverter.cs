@@ -22,7 +22,7 @@ namespace CharacterCreator.Core.Converter
 
                 using (var ms = new MemoryStream())
                 {
-                    image.Save(ms, ImageFormat.Bmp);
+                    image.Save(ms, ImageFormat.Png);
                     ms.Seek(0, SeekOrigin.Begin);
 
                     var bitmapImage = new BitmapImage();

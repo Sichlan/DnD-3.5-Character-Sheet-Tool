@@ -31,7 +31,7 @@
             <!--#endregion-->
             
             <!--#region -->
-            <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="0" Grid.Row="1" MaxWidth="800" MaxHeight="475">
+            <GroupBox Style="{StaticResource GroupBoxMainTheme}" Grid.Column="0" Grid.Row="1" MaxWidth="800" MaxHeight="475" Cursor="Hand">
                 <GroupBox.Header>
                     <TextBlock Text="{x:Static resx:Resources.GroupBoxHeaderProfilePicture}" Style="{StaticResource GroupBoxHeaderTheme}"/>
                 </GroupBox.Header>
@@ -63,14 +63,15 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static resx:Resources.LabelCharacterName}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static resx:Resources.LabelDisplayName}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{x:Static resx:Resources.LabelPlayerName}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static resx:Resources.LabelAlignmentCreed}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static resx:Resources.LabelAlignmentSocial}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static resx:Resources.LabelAlignment}" Margin="5" Style="{StaticResource GroupBoxBodyTextBlockTheme}"/>
 
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Character.CharacterName}" Margin="5" MinWidth="100"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Character.DisplayName}" Margin="5" MinWidth="100"/>
                     <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Character.PlayerName}" Margin="5" MinWidth="100"/>
-                    <ComboBox Grid.Row="3" Grid.Column="1" SelectedItem="{Binding Character.Creed, UpdateSourceTrigger=PropertyChanged}" Margin="5" MinWidth="100" ItemsSource="{Binding Source={StaticResource CreedEnumValues}}"/>
-                    <ComboBox Grid.Row="4" Grid.Column="1" SelectedItem="{Binding Character.Social, UpdateSourceTrigger=PropertyChanged}" Margin="5" MinWidth="100" ItemsSource="{Binding Source={StaticResource SocialEnumValues}}"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                        <ComboBox Grid.Row="3" Grid.Column="1" SelectedItem="{Binding Character.Creed, UpdateSourceTrigger=PropertyChanged}" Margin="5" MinWidth="100" ItemsSource="{Binding Source={StaticResource CreedEnumValues}}"/>
+                        <ComboBox Grid.Row="4" Grid.Column="1" SelectedItem="{Binding Character.Social, UpdateSourceTrigger=PropertyChanged}" Margin="5" MinWidth="100" ItemsSource="{Binding Source={StaticResource SocialEnumValues}}"/>
+                    </StackPanel>
                 </Grid>
             </GroupBox>
 
